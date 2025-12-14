@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SC Bebbi United Basel 2025</title>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Config für Tailwind Farben -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        bebbi: {
+                            void: '#02110b',   /* Fast schwarzer Hintergrund */
+                            deep: '#064e3b',   /* Dunkelgrün */
+                            main: '#10b981',   /* Hauptgrün */
+                            neon: '#34d399',   /* Neon Akzent */
+                            panel: '#f4f6f7',  /* Off-white für Panels */
+                        }
+                    },
+                    backgroundImage: {
+                        'noise': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E\")",
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(52, 211, 153, 0.4)',
+                        'neon': '0 0 10px rgba(52, 211, 153, 0.6), 0 0 20px rgba(52, 211, 153, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* --- Base & Background --- */
+        body {
+            background-color: #02110b;
+            color: #1f2937;
+        }
+
+        /* Noise Overlay fixed to background */
+        .bg-texture {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.07'/%3E%3C/svg%3E");
+        }
+
+        /* --- Animations --- */
+
+        /* Rotating Glow behind Logo */
+        @keyframes rotate-slow {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-rotate-slow {
+            animation: rotate-slow 30s linear infinite;
+        }
+
+        /* Ticker Animation */
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .animate-marquee {
+            animation: marquee 25s linear infinite;
+            white-space: nowrap;
+        }
+
+        /* Scroll Reveal Utility Classes */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Button Interactions */
+        .btn-interactive {
+            transition: transform 0.1s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .btn-interactive:active {
+            transform: scale(0.95);
+        }
+
+        /* Mobile Menu */
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+
+            .animate-rotate-slow,
+            .animate-marquee,
+            .logo-glow {
+                animation: none !important;
+            }
+
+            .reveal-on-scroll {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased selection:bg-bebbi-neon selection:text-bebbi-void overflow-x-hidden">
+
+    <!-- Global Noise Texture -->
+    <div class="bg-texture"></div>
+
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-bebbi-void/90 backdrop-blur-md border-b border-white/5 text-white shadow-lg transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo Bereich -->
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer group" onclick="window.scrollTo(0,0)">
+                    <div class="relative">
+                        <!-- Static Glow for Nav Logo -->
+                        <div
+                            class="absolute inset-0 bg-bebbi-neon rounded-full blur opacity-20 group-hover:opacity-40 transition-opacity">
+                        </div>
+                        <img src="assets/images/logo.png" alt="SC Bebbi United Logo"
+                            class="relative h-10 w-auto object-contain drop-shadow-md transition-transform transform group-hover:scale-110">
+                    </div>
+                    <div>
+                        <span class="block font-black text-lg tracking-wider font-sans leading-none text-gray-100">SC
+                            BEBBI UNITED</span>
+                        <span
+                            class="block text-[10px] text-bebbi-neon font-bold uppercase tracking-[0.2em] leading-tight">Basel
+                            2025</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-1">
+                        <a href="#startseite"
+                            class="hover:text-bebbi-neon px-3 py-2 rounded-md text-sm font-medium transition-colors">Startseite</a>
+                        <a href="#matchcenter"
+                            class="hover:text-bebbi-neon px-3 py-2 rounded-md text-sm font-medium transition-colors">Matchcenter</a>
+                        <a href="#verein"
+                            class="hover:text-bebbi-neon px-3 py-2 rounded-md text-sm font-medium transition-colors">Verein</a>
+                        <a href="#teams"
+                            class="hover:text-bebbi-neon px-3 py-2 rounded-md text-sm font-medium transition-colors">Teams</a>
+                        <a href="#news"
+                            class="hover:text-bebbi-neon px-3 py-2 rounded-md text-sm font-medium transition-colors">News</a>
+                        <a href="#sponsoren"
+                            class="hover:text-bebbi-neon px-3 py-2 rounded-md text-sm font-medium transition-colors">Partner</a>
+                        <a href="#kontakt"
+                            class="hover:text-bebbi-neon px-3 py-2 rounded-md text-sm font-medium transition-colors">Kontakt</a>
+                        <a href="#mitmachen"
+                            class="ml-4 bg-bebbi-main hover:bg-bebbi-neon hover:text-bebbi-void text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-glow hover:shadow-neon transform transition-all hover:-translate-y-0.5 btn-interactive">
+                            Mitmachen
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="toggleMenu()"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-white/10 focus:outline-none">
+                        <i data-lucide="menu" class="h-8 w-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-bebbi-void border-t border-white/10" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#startseite" onclick="toggleMenu()"
+                    class="block hover:bg-white/5 px-3 py-3 rounded-md text-base font-bold text-white border-l-4 border-transparent hover:border-bebbi-neon">Startseite</a>
+                <a href="#matchcenter" onclick="toggleMenu()"
+                    class="block hover:bg-white/5 px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white">Matchcenter</a>
+                <a href="#verein" onclick="toggleMenu()"
+                    class="block hover:bg-white/5 px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white">Verein</a>
+                <a href="#teams" onclick="toggleMenu()"
+                    class="block hover:bg-white/5 px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white">Teams</a>
+                <a href="#mitmachen" onclick="toggleMenu()"
+                    class="block bg-bebbi-main text-white px-3 py-3 rounded-md text-base font-bold text-center mt-4">Jetzt
+                    Mitmachen</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sektion 1: Hero -->
+    <section id="startseite"
+        class="relative min-h-screen flex flex-col justify-center items-center text-center text-white pt-20 pb-10 overflow-hidden z-10">
+
+        <!-- Hero Background Image with Vignette & Parallax base -->
+        <div class="absolute inset-0 z-0">
+            <div
+                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center bg-fixed opacity-40">
+            </div>
+            <!-- Vignette Gradient -->
+            <div class="absolute inset-0 bg-radial-gradient from-transparent via-bebbi-void/80 to-bebbi-void"></div>
+        </div>
+
+        <div class="container mx-auto px-4 z-10 flex flex-col items-center relative">
+
+            <!-- Animated Rotating Glow behind Logo -->
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none">
+                <div
+                    class="w-full h-full bg-[conic-gradient(from_0deg,transparent_0deg,#10b981_100deg,transparent_200deg)] rounded-full opacity-20 blur-[80px] animate-rotate-slow">
+                </div>
+            </div>
+
+            <!-- Grosses Logo -->
+            <div class="mb-10 relative reveal-on-scroll">
+                <img src="assets/images/logo.png" alt="SC Bebbi United Wappen"
+                    class="h-48 w-auto md:h-64 drop-shadow-2xl relative z-10">
+            </div>
+
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight mb-6 drop-shadow-xl leading-none reveal-on-scroll"
+                style="transition-delay: 100ms;">
+                SC Bebbi <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">United</span>
+            </h1>
+
+            <div class="flex items-center gap-3 mb-8 reveal-on-scroll" style="transition-delay: 200ms;">
+                <span class="h-px w-12 bg-bebbi-neon/50"></span>
+                <span
+                    class="text-bebbi-neon tracking-[0.3em] font-bold uppercase text-sm md:text-base text-shadow-glow">Basel
+                    2025</span>
+                <span class="h-px w-12 bg-bebbi-neon/50"></span>
+            </div>
+
+            <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-300 font-light leading-relaxed mb-10 reveal-on-scroll"
+                style="transition-delay: 300ms;">
+                Leidenschaft. Zusammenhalt. Basler Kultur.<br>
+                <span class="text-white font-medium">Dein neuer Verein im Herzen der Stadt.</span>
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-5 w-full justify-center px-4 reveal-on-scroll"
+                style="transition-delay: 400ms;">
+                <a href="#mitmachen"
+                    class="w-full sm:w-auto px-8 py-4 bg-bebbi-main hover:bg-bebbi-neon text-white hover:text-bebbi-void rounded-full font-bold text-lg shadow-glow hover:shadow-neon transition-all btn-interactive flex items-center justify-center gap-2">
+                    <i data-lucide="user-plus" class="w-5 h-5"></i> Probetraining anfragen
+                </a>
+                <a href="#matchcenter"
+                    class="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/20 text-white hover:bg-white hover:text-bebbi-deep rounded-full font-bold text-lg transition-all btn-interactive flex items-center justify-center gap-2 backdrop-blur-sm">
+                    <i data-lucide="calendar" class="w-5 h-5"></i> Nächstes Spiel
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 animate-bounce cursor-pointer opacity-70 hover:opacity-100 transition-opacity z-10"
+            onclick="document.getElementById('matchcenter').scrollIntoView({behavior: 'smooth'})">
+            <div class="flex flex-col items-center gap-2">
+                <span class="text-[10px] uppercase tracking-widest text-white/50">Scroll</span>
+                <i data-lucide="arrow-down-circle" class="w-8 h-8 text-bebbi-neon"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ticker Section -->
+    <div class="bg-bebbi-deep border-y border-bebbi-neon/30 overflow-hidden py-3 relative z-20">
+        <div class="flex animate-marquee gap-8 items-center">
+            <!-- Repeated Items for seamless loop -->
+            <span class="text-bebbi-neon font-bold uppercase tracking-widest text-sm inline-flex items-center gap-2"><i
+                    data-lucide="zap" class="w-3 h-3"></i> Nächstes Spiel: SC Bebbi United vs. FC Kleinbasel · Sa 16:00
+                · Sportplatz Schützenmatte</span>
+            <span class="text-white/30">///</span>
+            <span class="text-white font-medium text-sm">Probetrainings für Junioren C & D gesucht!</span>
+            <span class="text-white/30">///</span>
+            <span class="text-white font-medium text-sm">Hauptversammlung am 12. Dezember im Clubhaus</span>
+            <span class="text-white/30">///</span>
+            <!-- Duplicate for Loop -->
+            <span class="text-bebbi-neon font-bold uppercase tracking-widest text-sm inline-flex items-center gap-2"><i
+                    data-lucide="zap" class="w-3 h-3"></i> Nächstes Spiel: SC Bebbi United vs. FC Kleinbasel · Sa 16:00
+                · Sportplatz Schützenmatte</span>
+            <span class="text-white/30">///</span>
+            <span class="text-white font-medium text-sm">Probetrainings für Junioren C & D gesucht!</span>
+            <span class="text-white/30">///</span>
+            <span class="text-white font-medium text-sm">Hauptversammlung am 12. Dezember im Clubhaus</span>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <!-- Hier beginnt der Bereich mit den "schwebenden Panels" -->
+    <main class="relative z-10 space-y-16 md:space-y-24 py-16 md:py-24">
+
+        <!-- Sektion 2: Matchcenter (Floating Panel) -->
+        <section id="matchcenter" class="container mx-auto px-4 max-w-6xl reveal-on-scroll">
+            <div class="bg-bebbi-panel rounded-3xl p-1 md:p-2 shadow-2xl relative overflow-hidden group">
+                <!-- Neon Top Border -->
+                <div
+                    class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-bebbi-deep via-bebbi-neon to-bebbi-deep opacity-80">
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden flex flex-col lg:flex-row h-full">
+
+                    <!-- Links: Nächstes Spiel -->
+                    <div class="lg:w-7/12 p-8 md:p-12 bg-white relative">
+                        <div class="flex justify-between items-center mb-8">
+                            <span class="flex items-center gap-2 text-bebbi-deep font-bold tracking-wide">
+                                <i data-lucide="timer" class="w-5 h-5 text-bebbi-main"></i> Matchday
+                            </span>
+                            <!-- Animated Slide-In Badge -->
+                            <span id="match-badge"
+                                class="bg-bebbi-panel text-bebbi-deep px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider border border-bebbi-main/20 transform translate-x-10 opacity-0 transition-all duration-700 ease-out">
+                                Heimspiel
+                            </span>
+                        </div>
+
+                        <div class="flex items-center justify-between text-center mb-8">
+                            <div class="flex flex-col items-center gap-3 flex-1">
+                                <img src="assets/images/logo.png"
+                                    class="h-16 w-16 md:h-24 md:w-24 object-contain drop-shadow-lg hover:scale-110 transition-transform duration-300"
+                                    alt="Bebbi Logo">
+                                <span class="font-black text-xl md:text-2xl text-bebbi-deep leading-none">SC
+                                    BEBBI</span>
+                            </div>
+
+                            <div class="flex flex-col items-center px-2">
+                                <span class="text-4xl md:text-5xl font-black text-gray-200">VS</span>
+                            </div>
+
+                            <div class="flex flex-col items-center gap-3 flex-1">
+                                <div
+                                    class="h-16 w-16 md:h-24 md:w-24 bg-gray-100 rounded-full flex items-center justify-center border-4 border-gray-200 text-gray-400 font-bold text-xl">
+                                    FCK</div>
+                                <span class="font-bold text-xl md:text-2xl text-gray-600 leading-none">Kleinbasel</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 border-t border-gray-100 pt-6">
+                            <div class="text-center md:text-left">
+                                <p class="text-xs text-gray-400 uppercase font-bold tracking-wider mb-1">Datum</p>
+                                <p
+                                    class="font-semibold text-gray-800 flex items-center justify-center md:justify-start gap-2">
+                                    <i data-lucide="calendar" class="w-4 h-4 text-bebbi-main"></i> 25. Okt
+                                </p>
+                            </div>
+                            <div class="text-center md:text-left">
+                                <p class="text-xs text-gray-400 uppercase font-bold tracking-wider mb-1">Zeit</p>
+                                <p
+                                    class="font-semibold text-gray-800 flex items-center justify-center md:justify-start gap-2">
+                                    <i data-lucide="clock" class="w-4 h-4 text-bebbi-main"></i> 16:00
+                                </p>
+                            </div>
+                            <div class="text-center md:text-left col-span-2 md:col-span-1">
+                                <p class="text-xs text-gray-400 uppercase font-bold tracking-wider mb-1">Ort</p>
+                                <p
+                                    class="font-semibold text-gray-800 flex items-center justify-center md:justify-start gap-2">
+                                    <i data-lucide="map-pin" class="w-4 h-4 text-bebbi-main"></i> Schützenmatte
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rechts: Resultat (Dark) -->
+                    <div
+                        class="lg:w-5/12 bg-bebbi-deep text-white p-8 md:p-12 flex flex-col justify-center relative overflow-hidden">
+                        <div
+                            class="absolute inset-0 opacity-10 bg-[radial-gradient(#059669_1px,transparent_1px)] [background-size:20px_20px]">
+                        </div>
+
+                        <div class="relative z-10 text-center">
+                            <span class="text-xs font-bold uppercase tracking-widest text-bebbi-neon mb-4 block">Letztes
+                                Spiel</span>
+
+                            <div class="flex items-center justify-center gap-6 mb-4">
+                                <div class="text-center">
+                                    <span class="text-3xl md:text-5xl font-black text-gray-400 tabular-nums"
+                                        id="score-opponent">0</span>
+                                    <span class="block text-xs mt-2 text-gray-400">Allschwil</span>
+                                </div>
+                                <span class="text-2xl text-gray-600 font-light">:</span>
+                                <div class="text-center">
+                                    <span
+                                        class="text-4xl md:text-6xl font-black text-bebbi-neon tabular-nums shadow-neon"
+                                        id="score-home">0</span>
+                                    <span class="block text-xs mt-2 text-white">SC Bebbi</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-6">
+                                <a href="#"
+                                    class="inline-block px-6 py-2 border border-white/20 rounded-full text-xs font-bold uppercase tracking-wide hover:bg-white hover:text-bebbi-deep transition-all btn-interactive">
+                                    Zum Spielplan
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sektion 3: Verein (Floating Panel) -->
+        <section id="verein" class="container mx-auto px-4 max-w-7xl reveal-on-scroll">
+            <div class="bg-bebbi-panel rounded-3xl p-8 md:p-16 shadow-2xl relative">
+                <!-- Decorative Element -->
+                <div class="absolute top-0 right-0 w-32 h-32 bg-bebbi-main/10 rounded-bl-full pointer-events-none">
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="order-2 lg:order-1">
+                        <span class="text-bebbi-main font-bold tracking-widest text-xs uppercase mb-2 block">Die Bebbi
+                            DNA</span>
+                        <h2 class="text-4xl md:text-5xl font-black text-bebbi-deep leading-tight mb-6">
+                            Mehr als nur ein Club.<br>
+                            Eine Basler <span class="text-bebbi-main">Familie.</span>
+                        </h2>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-10">
+                            Gegründet 2025. Wir sind laut, wir sind leidenschaftlich, wir sind Bebbi.
+                        </p>
+
+                        <div class="space-y-6">
+                            <div
+                                class="flex gap-5 group p-4 rounded-xl hover:bg-white transition-colors cursor-default">
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 bg-white shadow-sm rounded-xl flex items-center justify-center group-hover:bg-bebbi-main group-hover:text-white transition-colors">
+                                    <i data-lucide="heart" class="w-6 h-6 text-bebbi-deep group-hover:text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-gray-900 mb-1">Bebbi-Mentalität</h4>
+                                    <p class="text-gray-500 text-sm">Offen, direkt und herzlich. Respekt auf und neben
+                                        dem Platz.</p>
+                                </div>
+                            </div>
+                            <!-- More items... -->
+                            <div
+                                class="flex gap-5 group p-4 rounded-xl hover:bg-white transition-colors cursor-default">
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 bg-white shadow-sm rounded-xl flex items-center justify-center group-hover:bg-bebbi-main group-hover:text-white transition-colors">
+                                    <i data-lucide="sprout" class="w-6 h-6 text-bebbi-deep group-hover:text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-gray-900 mb-1">Zukunftsschmiede</h4>
+                                    <p class="text-gray-500 text-sm">Unsere Jugend ist unsere Zukunft. Top Ausbildung in
+                                        Basel.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-1 lg:order-2 relative group perspective-1000">
+                        <div
+                            class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white transform transition-transform duration-500 hover:rotate-1 hover:scale-[1.02]">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-bebbi-deep/80 to-transparent opacity-60 z-10">
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                                alt="Teamfoto" class="w-full h-[500px] object-cover">
+                            <div
+                                class="absolute bottom-6 left-6 z-20 bg-white/90 backdrop-blur px-5 py-3 rounded-lg shadow-lg">
+                                <p class="text-bebbi-deep font-black text-2xl">150+</p>
+                                <p class="text-gray-600 text-xs font-bold uppercase tracking-wider">Aktive Mitglieder
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sektion 4: Teams (Floating Grid) -->
+        <section id="teams" class="container mx-auto px-4 max-w-7xl reveal-on-scroll">
+            <div class="bg-bebbi-panel rounded-3xl p-8 md:p-12 shadow-2xl">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                    <div>
+                        <span class="text-bebbi-main font-bold tracking-widest text-xs uppercase mb-2 block">Kader &
+                            Kategorien</span>
+                        <h2 class="text-3xl md:text-4xl font-black text-bebbi-deep">Unsere Mannschaften</h2>
+                    </div>
+                    <a href="#mitmachen"
+                        class="text-bebbi-deep font-bold hover:text-bebbi-main transition-colors flex items-center gap-2 btn-interactive">
+                        Alle Trainingszeiten <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Team Card 1 -->
+                    <div
+                        class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 overflow-hidden group">
+                        <div class="h-2 bg-bebbi-deep group-hover:bg-bebbi-neon transition-colors"></div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl text-bebbi-deep mb-4 flex justify-between items-center">
+                                1. Mannschaft <span class="text-xs bg-gray-100 px-2 py-1 rounded text-gray-500">4.
+                                    Liga</span>
+                            </h3>
+                            <div class="space-y-3 mb-6">
+                                <div class="flex items-center gap-3 text-sm text-gray-600"><i data-lucide="user"
+                                        class="w-4 h-4 text-bebbi-main"></i> Marco Streller</div>
+                                <div class="flex items-center gap-3 text-sm text-gray-600"><i data-lucide="clock"
+                                        class="w-4 h-4 text-bebbi-main"></i> Di & Do, 19:30</div>
+                            </div>
+                            <a href="#mitmachen"
+                                class="w-full block text-center py-2 border border-gray-200 rounded-lg text-sm font-bold text-gray-600 hover:bg-bebbi-deep hover:text-white hover:border-bebbi-deep transition-all">Zum
+                                Team</a>
+                        </div>
+                    </div>
+
+                    <!-- Team Card 2 -->
+                    <div
+                        class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 overflow-hidden group">
+                        <div class="h-2 bg-bebbi-main group-hover:bg-bebbi-neon transition-colors"></div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl text-bebbi-deep mb-4 flex justify-between items-center">
+                                Junioren U14 <span class="text-xs bg-gray-100 px-2 py-1 rounded text-gray-500">Jun.
+                                    C</span>
+                            </h3>
+                            <div class="space-y-3 mb-6">
+                                <div class="flex items-center gap-3 text-sm text-gray-600"><i data-lucide="user"
+                                        class="w-4 h-4 text-bebbi-main"></i> Sarah Müller</div>
+                                <div class="flex items-center gap-3 text-sm text-gray-600"><i data-lucide="clock"
+                                        class="w-4 h-4 text-bebbi-main"></i> Mo & Mi, 18:00</div>
+                            </div>
+                            <a href="#mitmachen"
+                                class="w-full block text-center py-2 border border-gray-200 rounded-lg text-sm font-bold text-gray-600 hover:bg-bebbi-deep hover:text-white hover:border-bebbi-deep transition-all">Zum
+                                Team</a>
+                        </div>
+                    </div>
+
+                    <!-- Team Card 3 -->
+                    <div
+                        class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 overflow-hidden group">
+                        <div class="h-2 bg-yellow-400 group-hover:bg-yellow-300 transition-colors"></div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl text-bebbi-deep mb-4 flex justify-between items-center">
+                                Kids Fussball <span class="text-xs bg-gray-100 px-2 py-1 rounded text-gray-500">4-6
+                                    J.</span>
+                            </h3>
+                            <div class="space-y-3 mb-6">
+                                <div class="flex items-center gap-3 text-sm text-gray-600"><i data-lucide="smile"
+                                        class="w-4 h-4 text-yellow-500"></i> Urs Meier</div>
+                                <div class="flex items-center gap-3 text-sm text-gray-600"><i data-lucide="clock"
+                                        class="w-4 h-4 text-yellow-500"></i> Sa, 10:00</div>
+                            </div>
+                            <a href="#mitmachen"
+                                class="w-full block text-center py-2 border border-gray-200 rounded-lg text-sm font-bold text-gray-600 hover:bg-yellow-500 hover:text-white hover:border-yellow-500 transition-all">Anmelden</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sektion 6: News (Floating Panel with Skew trick) -->
+        <section id="news" class="container mx-auto px-4 max-w-7xl reveal-on-scroll">
+            <div class="relative transform md:-skew-y-1">
+                <div class="bg-bebbi-panel rounded-3xl p-8 md:p-16 shadow-2xl transform md:skew-y-1">
+                    <!-- Counter-skew content -->
+                    <h2 class="text-3xl font-black text-bebbi-deep mb-12 flex items-center gap-3">
+                        <span class="w-2 h-8 bg-bebbi-neon rounded-full"></span>
+                        Aktuelles vom Verein
+                    </h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <article class="group cursor-pointer">
+                            <div class="relative overflow-hidden rounded-2xl mb-4 aspect-video shadow-md">
+                                <img src="https://images.unsplash.com/photo-1575361204480-aadea25d4633?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                                    alt="News">
+                                <div
+                                    class="absolute inset-0 bg-bebbi-deep/20 group-hover:bg-transparent transition-colors">
+                                </div>
+                            </div>
+                            <h3
+                                class="text-xl font-bold text-gray-900 group-hover:text-bebbi-main transition-colors mb-2">
+                                Saisonstart geglückt!</h3>
+                            <p class="text-sm text-gray-500">Die 1. Mannschaft gewinnt das Auftaktspiel souverän mit
+                                4:0.</p>
+                        </article>
+
+                        <article class="group cursor-pointer">
+                            <div class="relative overflow-hidden rounded-2xl mb-4 aspect-video shadow-md">
+                                <img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                                    alt="News">
+                            </div>
+                            <h3
+                                class="text-xl font-bold text-gray-900 group-hover:text-bebbi-main transition-colors mb-2">
+                                Grümpelturnier 2025</h3>
+                            <p class="text-sm text-gray-500">Anmeldungen für das beliebte Plauschturnier sind jetzt
+                                offen.</p>
+                        </article>
+
+                        <article class="group cursor-pointer">
+                            <div class="relative overflow-hidden rounded-2xl mb-4 aspect-video shadow-md">
+                                <img src="https://images.unsplash.com/photo-1434648957308-5e6a859697e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                                    alt="News">
+                            </div>
+                            <h3
+                                class="text-xl font-bold text-gray-900 group-hover:text-bebbi-main transition-colors mb-2">
+                                Trainer gesucht</h3>
+                            <p class="text-sm text-gray-500">Wir suchen Verstärkung für unsere Junioren E und F.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sektion 5: Mitmachen (Conversion Form - Dark Theme) -->
+        <section id="mitmachen" class="container mx-auto px-4 max-w-5xl relative z-10 reveal-on-scroll">
+            <div class="relative rounded-3xl p-1 bg-gradient-to-br from-bebbi-neon/50 to-bebbi-deep/50 shadow-glow">
+                <div class="bg-bebbi-deep rounded-[22px] p-8 md:p-12 overflow-hidden relative">
+                    <!-- Background blobs -->
+                    <div
+                        class="absolute top-0 right-0 w-[400px] h-[400px] bg-bebbi-main rounded-full mix-blend-overlay filter blur-[100px] opacity-20 pointer-events-none">
+                    </div>
+
+                    <div class="flex flex-col lg:flex-row gap-12 relative z-10">
+                        <div class="lg:w-1/3 text-white flex flex-col justify-center">
+                            <h2 class="text-3xl md:text-4xl font-black mb-6">Werde ein <span
+                                    class="text-bebbi-neon">Bebbi!</span></h2>
+                            <p class="text-gray-300 mb-8">Komm vorbei. Zeig uns, was du drauf hast.</p>
+                            <ul class="space-y-4 mb-8">
+                                <li class="flex items-center gap-3 text-sm font-medium"><i data-lucide="check-circle"
+                                        class="text-bebbi-neon"></i> Kostenloses Probetraining</li>
+                                <li class="flex items-center gap-3 text-sm font-medium"><i data-lucide="check-circle"
+                                        class="text-bebbi-neon"></i> Versicherung inkludiert</li>
+                                <li class="flex items-center gap-3 text-sm font-medium"><i data-lucide="check-circle"
+                                        class="text-bebbi-neon"></i> Für Anfänger & Profis</li>
+                            </ul>
+                        </div>
+
+                        <div class="lg:w-2/3 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 backdrop-blur-sm">
+                            <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                                <div id="successMessage" class="hidden text-center py-8">
+                                    <div
+                                        class="w-16 h-16 bg-bebbi-neon text-bebbi-deep rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <i data-lucide="check" class="w-8 h-8"></i>
+                                    </div>
+                                    <h3 class="text-white font-bold text-xl">Anfrage gesendet!</h3>
+                                    <p class="text-gray-300 mt-2">Wir melden uns in Kürze.</p>
+                                    <button type="button" onclick="resetForm()"
+                                        class="mt-6 text-bebbi-neon underline">Neue Anfrage</button>
+                                </div>
+
+                                <div id="formFields">
+
+                                    <!-- 1. Rolle auswählen (Radio Buttons) -->
+                                    <div class="mb-6">
+                                        <label class="block text-sm font-bold text-gray-300 mb-3">Ich bin:</label>
+                                        <div class="flex flex-wrap gap-4">
+                                            <label class="inline-flex items-center cursor-pointer group">
+                                                <input type="radio" name="role" value="spieler" checked
+                                                    class="form-radio text-bebbi-neon border-white/20 bg-white/10 focus:ring-bebbi-neon accent-[#34d399] w-4 h-4">
+                                                <span
+                                                    class="ml-2 text-white group-hover:text-bebbi-neon transition-colors">Spieler*in</span>
+                                            </label>
+                                            <label class="inline-flex items-center cursor-pointer group">
+                                                <input type="radio" name="role" value="mutter"
+                                                    class="form-radio text-bebbi-neon border-white/20 bg-white/10 focus:ring-bebbi-neon accent-[#34d399] w-4 h-4">
+                                                <span
+                                                    class="ml-2 text-white group-hover:text-bebbi-neon transition-colors">Mutter</span>
+                                            </label>
+                                            <label class="inline-flex items-center cursor-pointer group">
+                                                <input type="radio" name="role" value="vater"
+                                                    class="form-radio text-bebbi-neon border-white/20 bg-white/10 focus:ring-bebbi-neon accent-[#34d399] w-4 h-4">
+                                                <span
+                                                    class="ml-2 text-white group-hover:text-bebbi-neon transition-colors">Vater</span>
+                                            </label>
+                                            <label class="inline-flex items-center cursor-pointer group">
+                                                <input type="radio" name="role" value="andere"
+                                                    class="form-radio text-bebbi-neon border-white/20 bg-white/10 focus:ring-bebbi-neon accent-[#34d399] w-4 h-4">
+                                                <span
+                                                    class="ml-2 text-white group-hover:text-bebbi-neon transition-colors">Andere</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- 2. Personendaten (Grid Layout) -->
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+                                        <div>
+                                            <label for="name"
+                                                class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Name
+                                                *</label>
+                                            <input type="text" id="name" required placeholder="Vor- & Nachname"
+                                                class="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-bebbi-neon focus:outline-none transition-colors focus:bg-white/5">
+                                        </div>
+                                        <div>
+                                            <label for="year"
+                                                class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Jahrgang
+                                                *</label>
+                                            <input type="number" id="year" required placeholder="z.B. 2010"
+                                                class="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-bebbi-neon focus:outline-none transition-colors focus:bg-white/5">
+                                        </div>
+                                        <div>
+                                            <label for="email"
+                                                class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">E-Mail
+                                                *</label>
+                                            <input type="email" id="email" required placeholder="deine@email.ch"
+                                                class="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-bebbi-neon focus:outline-none transition-colors focus:bg-white/5">
+                                        </div>
+                                        <div>
+                                            <label for="phone"
+                                                class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Telefon
+                                                (Optional)</label>
+                                            <input type="tel" id="phone" placeholder="+41 79 ..."
+                                                class="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-bebbi-neon focus:outline-none transition-colors focus:bg-white/5">
+                                        </div>
+                                    </div>
+
+                                    <!-- 3. Team Wahl -->
+                                    <div class="mb-5">
+                                        <label for="team"
+                                            class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Gewünschtes
+                                            Team *</label>
+                                        <div class="relative">
+                                            <select id="team" required
+                                                class="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-bebbi-neon focus:outline-none transition-colors appearance-none focus:bg-white/5">
+                                                <option value="" class="bg-gray-900 text-gray-400">Bitte wählen...
+                                                </option>
+                                                <option value="aktive" class="bg-gray-900">1. Mannschaft</option>
+                                                <option value="u14" class="bg-gray-900">Junioren U14</option>
+                                                <option value="u10" class="bg-gray-900">Junioren U10</option>
+                                                <option value="frauen" class="bg-gray-900">Frauen</option>
+                                                <option value="kids" class="bg-gray-900">Kids Fussball</option>
+                                            </select>
+                                            <i data-lucide="chevron-down"
+                                                class="absolute right-4 top-3.5 w-5 h-5 text-gray-400 pointer-events-none"></i>
+                                        </div>
+                                    </div>
+
+                                    <!-- 4. Bemerkungen -->
+                                    <div class="mb-6">
+                                        <label for="message"
+                                            class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Erfahrung
+                                            / Bemerkungen</label>
+                                        <textarea id="message" rows="3"
+                                            placeholder="Hast du schon im Verein gespielt? Position?"
+                                            class="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-bebbi-neon focus:outline-none transition-colors focus:bg-white/5"></textarea>
+                                    </div>
+
+                                    <!-- 5. Checkbox Datenschutz -->
+                                    <div class="mb-8">
+                                        <label class="flex items-start gap-3 cursor-pointer group">
+                                            <input type="checkbox" required
+                                                class="mt-1 w-4 h-4 rounded border-white/20 bg-white/10 text-bebbi-neon focus:ring-bebbi-neon focus:ring-offset-0 accent-[#34d399]">
+                                            <span
+                                                class="text-sm text-gray-300 group-hover:text-white transition-colors leading-tight">
+                                                Ich bin einverstanden, dass der SC Bebbi United mich per E-Mail oder
+                                                Telefon kontaktiert. *
+                                            </span>
+                                        </label>
+                                    </div>
+
+                                    <!-- Submit Button & Hint -->
+                                    <div>
+                                        <button type="submit"
+                                            class="w-full bg-bebbi-neon hover:bg-white text-bebbi-deep font-black py-4 rounded-xl shadow-lg hover:shadow-neon transition-all transform hover:-translate-y-1 btn-interactive flex items-center justify-center gap-2 group">
+                                            <span>PROBETRAINING ANFRAGEN</span>
+                                            <i data-lucide="send"
+                                                class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                                        </button>
+                                        <p class="text-center text-xs text-gray-500 mt-4 font-medium">Wir melden uns in
+                                            der Regel innerhalb von 1–2 Werktagen.</p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sektion 7: Sponsoren (Simple Grid) -->
+        <section id="sponsoren" class="container mx-auto px-4 text-center reveal-on-scroll">
+            <h2 class="text-xs font-bold text-gray-500 mb-8 uppercase tracking-[0.3em]">Unsere Partner</h2>
+            <div class="flex flex-wrap justify-center gap-8 opacity-60">
+                <!-- Using Text as placeholder for logos to keep file clean -->
+                <div class="text-gray-400 font-black text-2xl hover:text-white transition-colors cursor-pointer">MÜLLER
+                </div>
+                <div class="text-gray-400 font-serif italic text-2xl hover:text-white transition-colors cursor-pointer">
+                    BaselBistro</div>
+                <div class="text-gray-400 font-bold text-2xl hover:text-white transition-colors cursor-pointer">
+                    SPORTSHOP</div>
+                <div class="text-gray-400 font-mono text-2xl hover:text-white transition-colors cursor-pointer">
+                    RegioBank</div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Area -->
+    <footer id="kontakt" class="bg-black/50 border-t border-white/5 text-white pt-16 pb-10 backdrop-blur-md">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <img src="assets/images/logo.png" alt="Logo" class="h-12 w-auto mb-6 opacity-80">
+                    <p class="text-gray-500 text-sm leading-relaxed">Der Verein für Fussballkultur in Basel. Seit 2025.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Rheinstrasse 100, 4058 Basel</li>
+                        <li>info@scbebbiunited.ch</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-bebbi-neon">Mitglied werden</a></li>
+                        <li><a href="#" class="hover:text-bebbi-neon">Sponsoring</a></li>
+                        <li><a href="#" class="hover:text-bebbi-neon">Impressum</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">Social</h4>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="p-2 bg-white/5 rounded-full hover:bg-bebbi-neon hover:text-bebbi-void transition-colors"><i
+                                data-lucide="instagram" class="w-5 h-5"></i></a>
+                        <a href="#"
+                            class="p-2 bg-white/5 rounded-full hover:bg-bebbi-neon hover:text-bebbi-void transition-colors"><i
+                                data-lucide="facebook" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 text-center text-xs text-gray-600">
+                &copy; <span id="year"></span> SC Bebbi United Basel.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Logic -->
+    <script>
+        lucide.createIcons();
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // --- ANIMATION LOGIC ---
+
+        // 1. Intersection Observer for Scroll Reveals
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+
+                    // Special Trigger for Matchcenter Score
+                    if (entry.target.id === 'matchcenter') {
+                        animateScores();
+                        document.getElementById('match-badge').classList.remove('opacity-0', 'translate-x-10');
+                    }
+
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // 2. Score Counter Animation
+        let scoresAnimated = false;
+        function animateScores() {
+            if (scoresAnimated) return;
+            scoresAnimated = true;
+
+            const home = document.getElementById('score-home');
+            const opponent = document.getElementById('score-opponent');
+
+            // Simple counter utility
+            const animateValue = (obj, start, end, duration) => {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    obj.innerHTML = Math.floor(progress * (end - start) + start);
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            };
+
+            animateValue(opponent, 0, 1, 1000);
+            setTimeout(() => {
+                animateValue(home, 0, 3, 800);
+            }, 500); // Home starts slightly later
+        }
+
+        // 3. Form Handling (Keep existing logic)
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const btn = event.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+
+            btn.innerHTML = '<i data-lucide="loader" class="animate-spin w-5 h-5"></i>';
+            btn.classList.add('opacity-75', 'cursor-not-allowed');
+
+            setTimeout(() => {
+                document.getElementById('formFields').style.display = 'none';
+                document.getElementById('successMessage').classList.remove('hidden');
+                btn.innerHTML = originalText;
+                btn.classList.remove('opacity-75', 'cursor-not-allowed');
+            }, 1000);
+        }
+
+        function resetForm() {
+            document.getElementById('contactForm').reset();
+            document.getElementById('successMessage').classList.add('hidden');
+            document.getElementById('formFields').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
