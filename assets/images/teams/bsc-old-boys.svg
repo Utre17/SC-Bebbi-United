@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   width="200"
+   height="200"
+   id="svg2">
+  <defs
+     id="defs5" />
+  <rect
+     width="200"
+     height="200"
+     ry="0.057199039"
+     x="0"
+     y="0"
+     style="opacity:1;fill:black;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect1873" />
+  <path
+     d="M 68,68.144278 L 68,80.99224 L 132,80.999999 L 132,67.999999 L 68,68.144278 z "
+     style="opacity:1;fill:yellow;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="path2760" />
+  <path
+     d="M 68,119 L 68,132 L 132,132 L 132,119 L 68,119 z "
+     style="opacity:1;fill:yellow;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="path2762" />
+  <path
+     d="M 42,42.999999 L 42,170 L 30,170 L 30,29.999999 L 169,29.999999 L 170,29.999999 L 170,170 L 42,170 L 42,157 L 157,157 L 157,42.999999 L 42,42.999999 z "
+     style="opacity:1;fill:yellow;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="path2764" />
+</svg>
