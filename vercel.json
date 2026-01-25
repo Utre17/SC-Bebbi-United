@@ -10,6 +10,41 @@
       ],
       "destination": "https://www.scbebbiunited.ch/$1",
       "permanent": true
+    },
+    {
+      "source": "/matchcenter",
+      "destination": "/#matchcenter",
+      "permanent": true
+    },
+    {
+      "source": "/verein",
+      "destination": "/#verein",
+      "permanent": true
+    },
+    {
+      "source": "/teams",
+      "destination": "/#teams",
+      "permanent": true
+    },
+    {
+      "source": "/news",
+      "destination": "/#news",
+      "permanent": true
+    },
+    {
+      "source": "/mitmachen",
+      "destination": "/#mitmachen",
+      "permanent": true
+    },
+    {
+      "source": "/sponsoren",
+      "destination": "/#sponsoren",
+      "permanent": true
+    },
+    {
+      "source": "/kontakt",
+      "destination": "/#kontakt",
+      "permanent": true
     }
   ]
 }
