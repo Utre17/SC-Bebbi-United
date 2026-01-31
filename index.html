@@ -877,28 +877,97 @@
                         <div class="lg:w-1/3 text-white flex flex-col justify-center">
                             <h2 class="text-3xl md:text-4xl font-black mb-6">Mitmachen bei den <span
                                     class="text-bebbi-neon">Bebbi</span></h2>
-                            <p class="text-gray-300 mb-8">Infos zu Probetrainings und Anmeldung folgen.</p>
+                            <p class="text-gray-300 mb-8">Melde dich für Probetraining oder Fragen direkt über das Formular.</p>
                             <ul class="space-y-4 mb-8">
                                 <li class="flex items-center gap-3 text-sm font-medium"><i data-lucide="check-circle"
-                                        class="text-bebbi-neon"></i> Probetrainings: Infos folgen</li>
+                                        class="text-bebbi-neon"></i> Probetrainings: nach Absprache</li>
                                 <li class="flex items-center gap-3 text-sm font-medium"><i data-lucide="check-circle"
-                                        class="text-bebbi-neon"></i> Teams & Kategorien: Infos folgen</li>
+                                        class="text-bebbi-neon"></i> Teams: FF-17, FF-14 (9v9), Junioren D-9</li>
                                 <li class="flex items-center gap-3 text-sm font-medium"><i data-lucide="check-circle"
-                                        class="text-bebbi-neon"></i> Kontakt: Infos folgen</li>
+                                        class="text-bebbi-neon"></i> Kontakt: info@scbebbiunited.ch</li>
                             </ul>
                         </div>
 
                         <div class="lg:w-2/3 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 backdrop-blur-sm">
-                            <div class="text-center text-gray-200 py-8">
-                                <div
-                                    class="w-16 h-16 bg-bebbi-neon/20 text-bebbi-neon rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i data-lucide="clock" class="w-8 h-8"></i>
+                            <form id="contact-form" action="https://formspree.io/f/mjgrnbeq" method="POST" class="space-y-5">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                    <div>
+                                        <label for="contact-name"
+                                            class="block text-xs uppercase tracking-widest text-white/70 font-semibold mb-2">Name</label>
+                                        <input id="contact-name" name="name" type="text" required
+                                            class="w-full rounded-lg bg-white/10 border border-white/10 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-bebbi-neon/60"
+                                            placeholder="Vor- und Nachname">
+                                    </div>
+                                    <div>
+                                        <label for="contact-email"
+                                            class="block text-xs uppercase tracking-widest text-white/70 font-semibold mb-2">E-Mail</label>
+                                        <input id="contact-email" name="email" type="email" required
+                                            class="w-full rounded-lg bg-white/10 border border-white/10 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-bebbi-neon/60"
+                                            placeholder="dein@email.ch">
+                                    </div>
+                                    <div>
+                                        <label for="contact-phone"
+                                            class="block text-xs uppercase tracking-widest text-white/70 font-semibold mb-2">Telefon</label>
+                                        <input id="contact-phone" name="phone" type="tel"
+                                            class="w-full rounded-lg bg-white/10 border border-white/10 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-bebbi-neon/60"
+                                            placeholder="079 123 45 67">
+                                    </div>
+                                    <div>
+                                        <label for="contact-age"
+                                            class="block text-xs uppercase tracking-widest text-white/70 font-semibold mb-2">Alter</label>
+                                        <input id="contact-age" name="age" type="number" min="4" max="99"
+                                            class="w-full rounded-lg bg-white/10 border border-white/10 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-bebbi-neon/60"
+                                            placeholder="z. B. 15">
+                                    </div>
                                 </div>
-                                <h3 class="text-white font-bold text-2xl">Kontaktformular folgt</h3>
-                                <p class="text-gray-300 mt-2">
-                                    Sobald Termine und Ansprechpartner feststehen, schalten wir das Formular frei.
-                                </p>
-                            </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                    <div>
+                                        <label for="contact-team"
+                                            class="block text-xs uppercase tracking-widest text-white/70 font-semibold mb-2">Team</label>
+                                        <select id="contact-team" name="team"
+                                            class="w-full rounded-lg bg-white/10 border border-white/10 px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-bebbi-neon/60">
+                                            <option value="" class="text-gray-900">Bitte wählen</option>
+                                            <option value="Juniorinnen FF-17" class="text-gray-900">Juniorinnen FF-17</option>
+                                            <option value="Juniorinnen FF-14 (9v9)" class="text-gray-900">Juniorinnen FF-14 (9v9)</option>
+                                            <option value="Junioren D-9" class="text-gray-900">Junioren D-9</option>
+                                            <option value="Andere" class="text-gray-900">Andere</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="contact-subject"
+                                            class="block text-xs uppercase tracking-widest text-white/70 font-semibold mb-2">Betreff</label>
+                                        <input id="contact-subject" name="subject" type="text"
+                                            class="w-full rounded-lg bg-white/10 border border-white/10 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-bebbi-neon/60"
+                                            placeholder="Probetraining / Frage">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="contact-message"
+                                        class="block text-xs uppercase tracking-widest text-white/70 font-semibold mb-2">Nachricht</label>
+                                    <textarea id="contact-message" name="message" rows="5" required
+                                        class="w-full rounded-lg bg-white/10 border border-white/10 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-bebbi-neon/60"
+                                        placeholder="Deine Nachricht an uns..."></textarea>
+                                </div>
+
+                                <div class="hidden">
+                                    <label for="website">Website</label>
+                                    <input id="website" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                                    <button id="contact-submit" type="submit"
+                                        class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-bebbi-neon text-bebbi-void font-bold uppercase tracking-wider shadow-neon hover:bg-white transition-colors">
+                                        Absenden <i data-lucide="send" class="w-4 h-4"></i>
+                                    </button>
+                                    <p class="text-xs text-white/60">
+                                        Mit dem Absenden stimmst du der Kontaktaufnahme zu. Wir melden uns schnellstmöglich.
+                                    </p>
+                                </div>
+                                <div id="contact-status" class="hidden rounded-lg border px-4 py-3 text-sm"
+                                    role="status" aria-live="polite"></div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -988,6 +1057,57 @@
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
+        }
+
+        function initContactForm() {
+            const form = document.getElementById('contact-form');
+            if (!form) return;
+
+            const statusEl = document.getElementById('contact-status');
+            const submitBtn = document.getElementById('contact-submit');
+
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                if (!statusEl || !submitBtn) return;
+
+                statusEl.classList.add('hidden');
+                statusEl.textContent = '';
+
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
+
+                try {
+                    const formData = new FormData(form);
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            Accept: 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        form.reset();
+                        statusEl.textContent = 'Danke! Deine Nachricht wurde erfolgreich gesendet.';
+                        statusEl.className =
+                            'rounded-lg border border-bebbi-neon/40 bg-bebbi-neon/10 text-bebbi-neon px-4 py-3 text-sm';
+                    } else {
+                        statusEl.textContent =
+                            'Leider hat das Senden nicht geklappt. Bitte versuche es später erneut.';
+                        statusEl.className =
+                            'rounded-lg border border-red-500/40 bg-red-500/10 text-red-200 px-4 py-3 text-sm';
+                    }
+                } catch (error) {
+                    statusEl.textContent =
+                        'Netzwerkfehler. Bitte prüfe deine Verbindung und versuche es erneut.';
+                    statusEl.className =
+                        'rounded-lg border border-red-500/40 bg-red-500/10 text-red-200 px-4 py-3 text-sm';
+                } finally {
+                    statusEl.classList.remove('hidden');
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+                }
+            });
         }
 
         // --- MATCHCENTER DATA & RENDERING ---
@@ -1557,6 +1677,7 @@
         renderMatchList(matchesD9, 'match-list-body-d9', 'match-list-toggle-d9',
             'match-list-toggle-label-d9', isD9Expanded);
         setActiveScheduleTab('ff17');
+        initContactForm();
 
         // --- ANIMATION LOGIC ---
 
