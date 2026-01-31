@@ -184,37 +184,42 @@
             }
         }
 
-        .matchday-logo {
-            height: 5rem;
-            width: 5rem;
+        .matchday-logo-wrap {
+            height: 5.5rem;
+            width: 5.5rem;
         }
 
-        .matchday-logo.club {
-            height: 6rem;
-            width: 6rem;
+        .matchday-logo-wrap.club {
+            height: 7rem;
+            width: 7rem;
+        }
+
+        .matchday-logo {
+            height: 100%;
+            width: 100%;
         }
 
         @media (min-width: 640px) {
-            .matchday-logo {
-                height: 6rem;
-                width: 6rem;
+            .matchday-logo-wrap {
+                height: 6.5rem;
+                width: 6.5rem;
             }
 
-            .matchday-logo.club {
-                height: 7rem;
-                width: 7rem;
+            .matchday-logo-wrap.club {
+                height: 8rem;
+                width: 8rem;
             }
         }
 
         @media (min-width: 768px) {
-            .matchday-logo {
-                height: 7rem;
-                width: 7rem;
+            .matchday-logo-wrap {
+                height: 7.5rem;
+                width: 7.5rem;
             }
 
-            .matchday-logo.club {
-                height: 8rem;
-                width: 8rem;
+            .matchday-logo-wrap.club {
+                height: 9rem;
+                width: 9rem;
             }
         }
     </style>
@@ -437,8 +442,7 @@
                                 <div
                                     class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 md:gap-14">
                                     <div class="flex flex-col items-center gap-4 min-w-[120px] sm:min-w-[140px]">
-                                        <div
-                                            class="h-24 w-24 sm:h-28 sm:w-28 md:h-32 md:w-32 flex items-center justify-center">
+                                        <div class="matchday-logo-wrap flex items-center justify-center">
                                             <img id="matchday-home-logo-img" src="assets/images/logo.png"
                                                 alt="SC Bebbi United Logo"
                                                 class="matchday-logo object-contain drop-shadow">
@@ -457,8 +461,7 @@
                                     </div>
 
                                     <div class="flex flex-col items-center gap-4 min-w-[120px] sm:min-w-[140px]">
-                                        <div
-                                            class="h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 flex items-center justify-center text-gray-400">
+                                        <div class="matchday-logo-wrap flex items-center justify-center text-gray-400">
                                             <img id="matchday-away-logo-img" src="assets/images/logo.png"
                                                 alt="SC Bebbi United Logo"
                                                 class="matchday-logo hidden object-contain drop-shadow">
@@ -1285,9 +1288,12 @@
             const abbrEl = document.getElementById(`matchday-${side}-logo-abbr`);
             if (!imgEl || !abbrEl) return;
 
+            const wrapEl = imgEl.parentElement;
             const isClub = teamName === clubName;
             const logoSrc = isClub ? clubLogoSrc : teamLogos[teamName];
-            imgEl.classList.toggle('club', isClub);
+            if (wrapEl) {
+                wrapEl.classList.toggle('club', isClub);
+            }
 
             if (logoSrc) {
                 imgEl.src = logoSrc;
