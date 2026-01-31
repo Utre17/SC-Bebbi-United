@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SC Bebbi United Basel 2025</title>
     <meta name="description"
-        content="SC Bebbi United Basel: Spielplan und Matchcenter der Juniorinnen FF-17 (2. Stärkeklasse, Frühjahrsrunde).">
+        content="SC Bebbi United Basel: Spielplan und Matchcenter der Juniorinnen FF-17 & FF-14 (9v9) sowie Junioren D-9 (Frühjahrsrunde).">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.scbebbiunited.ch/">
     <link rel="icon" type="image/png" href="assets/images/logo.png">
@@ -14,13 +14,13 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="SC Bebbi United Basel 2025">
     <meta property="og:description"
-        content="Spielplan und Matchcenter der Juniorinnen FF-17 (2. Stärkeklasse, Frühjahrsrunde).">
+        content="Spielplan und Matchcenter der Juniorinnen FF-17 & FF-14 (9v9) sowie Junioren D-9 (Frühjahrsrunde).">
     <meta property="og:url" content="https://www.scbebbiunited.ch/">
     <meta property="og:image" content="https://www.scbebbiunited.ch/assets/images/logo.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="SC Bebbi United Basel 2025">
     <meta name="twitter:description"
-        content="Spielplan und Matchcenter der Juniorinnen FF-17 (2. Stärkeklasse, Frühjahrsrunde).">
+        content="Spielplan und Matchcenter der Juniorinnen FF-17 & FF-14 (9v9) sowie Junioren D-9 (Frühjahrsrunde).">
     <meta name="twitter:image" content="https://www.scbebbiunited.ch/assets/images/logo.png">
 
     <!-- Tailwind CSS via CDN -->
@@ -181,6 +181,40 @@
                 opacity: 1 !important;
                 transform: none !important;
                 transition: none !important;
+            }
+        }
+
+        .matchday-logo {
+            height: 5rem;
+            width: 5rem;
+        }
+
+        .matchday-logo.club {
+            height: 6rem;
+            width: 6rem;
+        }
+
+        @media (min-width: 640px) {
+            .matchday-logo {
+                height: 6rem;
+                width: 6rem;
+            }
+
+            .matchday-logo.club {
+                height: 7rem;
+                width: 7rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .matchday-logo {
+                height: 7rem;
+                width: 7rem;
+            }
+
+            .matchday-logo.club {
+                height: 8rem;
+                width: 8rem;
             }
         }
     </style>
@@ -349,7 +383,7 @@
         <div class="flex animate-marquee gap-8 items-center">
             <!-- Repeated Items for seamless loop -->
             <span class="text-bebbi-neon font-bold uppercase tracking-widest text-sm inline-flex items-center gap-2"><i
-                    data-lucide="zap" class="w-3 h-3"></i> Spielplan live: Juniorinnen FF-17 Frühjahrsrunde</span>
+                    data-lucide="zap" class="w-3 h-3"></i> Spielplan live: FF-17, FF-14 (9v9) & Junioren D-9</span>
             <span class="text-white/30">///</span>
             <span class="text-white font-medium text-sm">Weitere Updates folgen bald.</span>
             <span class="text-white/30">///</span>
@@ -357,7 +391,7 @@
             <span class="text-white/30">///</span>
             <!-- Duplicate for Loop -->
             <span class="text-bebbi-neon font-bold uppercase tracking-widest text-sm inline-flex items-center gap-2"><i
-                    data-lucide="zap" class="w-3 h-3"></i> Spielplan live: Juniorinnen FF-17 Frühjahrsrunde</span>
+                    data-lucide="zap" class="w-3 h-3"></i> Spielplan live: FF-17, FF-14 (9v9) & Junioren D-9</span>
             <span class="text-white/30">///</span>
             <span class="text-white font-medium text-sm">Weitere Updates folgen bald.</span>
             <span class="text-white/30">///</span>
@@ -388,7 +422,8 @@
                                     <span class="flex items-center gap-2 text-bebbi-deep font-bold tracking-wide">
                                         <i data-lucide="alarm-clock" class="w-5 h-5 text-bebbi-main"></i> Matchday
                                     </span>
-                                    <p class="mt-1 text-xs font-semibold uppercase tracking-wider text-gray-500">
+                                    <p id="matchday-competition"
+                                        class="mt-1 text-xs font-semibold uppercase tracking-wider text-gray-500">
                                         Meisterschaft Juniorinnen FF-17 2. Stärkeklasse / Frühjahrsrunde
                                     </p>
                                 </div>
@@ -403,10 +438,10 @@
                                     class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 md:gap-14">
                                     <div class="flex flex-col items-center gap-4 min-w-[120px] sm:min-w-[140px]">
                                         <div
-                                            class="h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 flex items-center justify-center">
+                                            class="h-24 w-24 sm:h-28 sm:w-28 md:h-32 md:w-32 flex items-center justify-center">
                                             <img id="matchday-home-logo-img" src="assets/images/logo.png"
                                                 alt="SC Bebbi United Logo"
-                                                class="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 object-contain drop-shadow">
+                                                class="matchday-logo object-contain drop-shadow">
                                             <span id="matchday-home-logo-abbr"
                                                 class="hidden px-4 py-2 rounded-xl border border-gray-200 bg-bebbi-panel text-3xl md:text-4xl font-black text-gray-500 uppercase"></span>
                                         </div>
@@ -426,7 +461,7 @@
                                             class="h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 flex items-center justify-center text-gray-400">
                                             <img id="matchday-away-logo-img" src="assets/images/logo.png"
                                                 alt="SC Bebbi United Logo"
-                                                class="hidden h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 object-contain drop-shadow">
+                                                class="matchday-logo hidden object-contain drop-shadow">
                                             <span id="matchday-away-logo-abbr"
                                                 class="px-4 py-2 rounded-xl border border-gray-200 bg-white text-3xl md:text-4xl font-black uppercase tracking-tight text-gray-500">FCK</span>
                                         </div>
@@ -460,7 +495,7 @@
                                     <p
                                         class="font-semibold text-gray-800 flex items-center justify-center md:justify-start gap-2">
                                         <i data-lucide="map-pin" class="w-4 h-4 text-bebbi-main"></i>
-                                        <span id="matchday-location">Schuetzenmatte</span>
+                                        <span id="matchday-location">Schützenmatte</span>
                                     </p>
                                 </div>
                             </div>
@@ -532,38 +567,120 @@
 
                     <!-- Full Schedule List -->
                     <div class="bg-gray-50 p-8 md:p-10 border-t border-gray-100">
-                        <h3 class="font-bold text-xl text-bebbi-deep mb-1 flex items-center gap-2">
-                            <i data-lucide="calendar-days" class="w-5 h-5 text-bebbi-main"></i> Saisonspielplan SC Bebbi
-                            United
-                        </h3>
-                        <p class="mb-6 text-xs font-semibold uppercase tracking-wider text-gray-500">
-                            Meisterschaft Juniorinnen FF-17 2. Stärkeklasse / Frühjahrsrunde
-                        </p>
+                        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+                            <div>
+                                <h3 class="font-bold text-xl text-bebbi-deep mb-1 flex items-center gap-2">
+                                    <i data-lucide="calendar-days" class="w-5 h-5 text-bebbi-main"></i>
+                                    Saisonspielplan SC Bebbi United
+                                </h3>
+                                <p class="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                                    Meisterschaft Juniorinnen FF-17 & FF-14 (9v9) sowie Junioren D-9 / Frühjahrsrunde
+                                </p>
+                            </div>
+                        <div class="flex flex-wrap gap-2">
+                            <button data-schedule-tab="ff17"
+                                class="px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-colors bg-bebbi-main text-white shadow-glow">
+                                FF-17
+                            </button>
+                            <button data-schedule-tab="ff14"
+                                class="px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-colors bg-white text-bebbi-deep border border-gray-200 hover:border-bebbi-main">
+                                FF-14 (9v9)
+                            </button>
+                            <button data-schedule-tab="d9"
+                                class="px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-colors bg-white text-bebbi-deep border border-gray-200 hover:border-bebbi-main">
+                                D-9
+                            </button>
+                        </div>
+                    </div>
 
-                        <div class="overflow-x-auto custom-scrollbar">
-                            <table class="w-full text-sm text-left border-collapse min-w-[600px]">
-                                <thead class="text-xs text-gray-500 uppercase bg-gray-100 font-bold tracking-wider">
-                                    <tr>
-                                        <th class="px-4 py-3 rounded-l-lg">Datum</th>
-                                        <th class="px-4 py-3">Zeit</th>
-                                        <th class="px-4 py-3 text-right">Heim</th>
-                                        <th class="px-4 py-3 text-center">-</th>
-                                        <th class="px-4 py-3 text-left">Gast</th>
-                                        <th class="px-4 py-3 rounded-r-lg">Ort</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="match-list-body" class="text-gray-700 font-medium">
-                                    <!-- Matches will be inserted here via JS -->
-                                </tbody>
-                            </table>
+                        <div id="schedule-ff17" class="space-y-4">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                                Meisterschaft Juniorinnen FF-17 2. Stärkeklasse / Frühjahrsrunde
+                            </p>
+                            <div class="overflow-x-auto custom-scrollbar">
+                                <table class="w-full text-sm text-left border-collapse min-w-[600px]">
+                                    <thead class="text-xs text-gray-500 uppercase bg-gray-100 font-bold tracking-wider">
+                                        <tr>
+                                            <th class="px-4 py-3 rounded-l-lg">Datum</th>
+                                            <th class="px-4 py-3">Zeit</th>
+                                            <th class="px-4 py-3 text-right">Heim</th>
+                                            <th class="px-4 py-3 text-center">-</th>
+                                            <th class="px-4 py-3 text-left">Gast</th>
+                                            <th class="px-4 py-3 rounded-r-lg">Ort</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="match-list-body-ff17" class="text-gray-700 font-medium">
+                                        <!-- Matches will be inserted here via JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="text-center">
+                                <button id="match-list-toggle-ff17"
+                                    class="text-xs font-bold text-bebbi-main hover:text-bebbi-deep transition-colors uppercase tracking-wide inline-flex items-center justify-center gap-1 mx-auto">
+                                    <span id="match-list-toggle-label-ff17">Mehr anzeigen</span>
+                                    <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                                </button>
+                            </div>
                         </div>
 
-                        <div class="mt-4 text-center">
-                            <button id="match-list-toggle"
-                                class="text-xs font-bold text-bebbi-main hover:text-bebbi-deep transition-colors uppercase tracking-wide inline-flex items-center justify-center gap-1 mx-auto">
-                                <span id="match-list-toggle-label">Mehr anzeigen</span>
-                                <i data-lucide="chevron-down" class="w-3 h-3"></i>
-                            </button>
+                        <div id="schedule-ff14" class="space-y-4 hidden">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                                Meisterschaft Juniorinnen FF-14 (9v9) / Frühjahrsrunde
+                            </p>
+                            <div class="overflow-x-auto custom-scrollbar">
+                                <table class="w-full text-sm text-left border-collapse min-w-[600px]">
+                                    <thead class="text-xs text-gray-500 uppercase bg-gray-100 font-bold tracking-wider">
+                                        <tr>
+                                            <th class="px-4 py-3 rounded-l-lg">Datum</th>
+                                            <th class="px-4 py-3">Zeit</th>
+                                            <th class="px-4 py-3 text-right">Heim</th>
+                                            <th class="px-4 py-3 text-center">-</th>
+                                            <th class="px-4 py-3 text-left">Gast</th>
+                                            <th class="px-4 py-3 rounded-r-lg">Ort</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="match-list-body-ff14" class="text-gray-700 font-medium">
+                                        <!-- Matches will be inserted here via JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="text-center">
+                                <button id="match-list-toggle-ff14"
+                                    class="text-xs font-bold text-bebbi-main hover:text-bebbi-deep transition-colors uppercase tracking-wide inline-flex items-center justify-center gap-1 mx-auto">
+                                    <span id="match-list-toggle-label-ff14">Mehr anzeigen</span>
+                                    <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="schedule-d9" class="space-y-4 hidden">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                                Meisterschaft Junioren D-9 / Frühjahrsrunde
+                            </p>
+                            <div class="overflow-x-auto custom-scrollbar">
+                                <table class="w-full text-sm text-left border-collapse min-w-[600px]">
+                                    <thead class="text-xs text-gray-500 uppercase bg-gray-100 font-bold tracking-wider">
+                                        <tr>
+                                            <th class="px-4 py-3 rounded-l-lg">Datum</th>
+                                            <th class="px-4 py-3">Zeit</th>
+                                            <th class="px-4 py-3 text-right">Heim</th>
+                                            <th class="px-4 py-3 text-center">-</th>
+                                            <th class="px-4 py-3 text-left">Gast</th>
+                                            <th class="px-4 py-3 rounded-r-lg">Ort</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="match-list-body-d9" class="text-gray-700 font-medium">
+                                        <!-- Matches will be inserted here via JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="text-center">
+                                <button id="match-list-toggle-d9"
+                                    class="text-xs font-bold text-bebbi-main hover:text-bebbi-deep transition-colors uppercase tracking-wide inline-flex items-center justify-center gap-1 mx-auto">
+                                    <span id="match-list-toggle-label-d9">Mehr anzeigen</span>
+                                    <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -681,8 +798,8 @@
                         <div class="h-2 bg-bebbi-main group-hover:bg-bebbi-neon transition-colors"></div>
                         <div class="p-6">
                             <h3 class="font-bold text-xl text-bebbi-deep mb-4 flex justify-between items-center">
-                                Teamkategorie <span class="text-xs bg-gray-100 px-2 py-1 rounded text-gray-500">Info
-                                    folgt</span>
+                                Juniorinnen FF-14 (9v9) <span
+                                    class="text-xs bg-bebbi-main/10 text-bebbi-deep px-2 py-1 rounded font-bold">Aktiv</span>
                             </h3>
                             <div class="space-y-3 mb-6">
                                 <div class="flex items-center gap-3 text-sm text-gray-600"><i data-lucide="user"
@@ -690,9 +807,9 @@
                                 <div class="flex items-center gap-3 text-sm text-gray-600"><i data-lucide="clock"
                                         class="w-4 h-4 text-bebbi-main"></i> Trainingszeiten: folgt</div>
                             </div>
-                            <a href="#mitmachen"
-                                class="w-full block text-center py-2 border border-gray-200 rounded-lg text-sm font-bold text-gray-600 hover:bg-bebbi-deep hover:text-white hover:border-bebbi-deep transition-all">Updates
-                                folgen</a>
+                            <a href="#matchcenter"
+                                class="w-full block text-center py-2 border border-gray-200 rounded-lg text-sm font-bold text-gray-700 hover:bg-bebbi-deep hover:text-white hover:border-bebbi-deep transition-all">Spielplan
+                                ansehen</a>
                         </div>
                     </div>
 
@@ -702,18 +819,18 @@
                         <div class="h-2 bg-yellow-400 group-hover:bg-yellow-300 transition-colors"></div>
                         <div class="p-6">
                             <h3 class="font-bold text-xl text-bebbi-deep mb-4 flex justify-between items-center">
-                                Teamkategorie <span class="text-xs bg-gray-100 px-2 py-1 rounded text-gray-500">Info
-                                    folgt</span>
+                                Junioren D-9 <span
+                                    class="text-xs bg-bebbi-main/10 text-bebbi-deep px-2 py-1 rounded font-bold">Aktiv</span>
                             </h3>
                             <div class="space-y-3 mb-6">
-                                <div class="flex items-center gap-3 text-sm text-gray-600"><i data-lucide="smile"
-                                        class="w-4 h-4 text-yellow-500"></i> Trainer: folgt</div>
+                                <div class="flex items-center gap-3 text-sm text-gray-600"><i data-lucide="user"
+                                        class="w-4 h-4 text-bebbi-main"></i> Trainer: folgt</div>
                                 <div class="flex items-center gap-3 text-sm text-gray-600"><i data-lucide="clock"
-                                        class="w-4 h-4 text-yellow-500"></i> Trainingszeiten: folgt</div>
+                                        class="w-4 h-4 text-bebbi-main"></i> Trainingszeiten: folgt</div>
                             </div>
-                            <a href="#mitmachen"
-                                class="w-full block text-center py-2 border border-gray-200 rounded-lg text-sm font-bold text-gray-600 hover:bg-yellow-500 hover:text-white hover:border-yellow-500 transition-all">Updates
-                                folgen</a>
+                            <a href="#matchcenter"
+                                class="w-full block text-center py-2 border border-gray-200 rounded-lg text-sm font-bold text-gray-700 hover:bg-bebbi-deep hover:text-white hover:border-bebbi-deep transition-all">Spielplan
+                                ansehen</a>
                         </div>
                     </div>
                 </div>
@@ -875,17 +992,34 @@
         const teamLogos = {
             'FC Reinach': 'assets/images/teams/fc-reinach.png',
             'FC Frenkendorf': 'assets/images/teams/fc-frenkendorf.png',
+            'FC Frenkendorf blau': 'assets/images/teams/fc-frenkendorf.png',
             'FC Gelterkinden': 'assets/images/teams/fc-gelterkinden.png',
             'FC Liestal': 'assets/images/teams/fc-liestal.png',
+            'FC Concordia Basel a': 'assets/images/teams/fc-concordia-basel.png',
             'FC Concordia Basel b': 'assets/images/teams/fc-concordia-basel.png',
             'FC Therwil FF-17': 'assets/images/teams/fc-therwil-ff-17.png',
+            'FC Therwil FF-14/9': 'assets/images/teams/fc-therwil-ff-17.png',
             'FC Arlesheim': 'assets/images/teams/fc-arlesheim.png',
             'FC Telegraph BS': 'assets/images/teams/fc-telegraph-bs.png',
+            'FC Telegraph BS weiss': 'assets/images/teams/fc-telegraph-bs.png',
+            'FC Nordstern BS': 'assets/images/teams/fc-nordstern-bs.png',
+            'FC Nordstern BS schwarz': 'assets/images/teams/fc-nordstern-bs.png',
+            'FC Breitenbach': 'assets/images/teams/fc-breitenbach.png',
+            'FC Breitenbach rot': 'assets/images/teams/fc-breitenbach.png',
+            'FC Biel-Benken D1': 'assets/images/teams/fc-biel-benken.png',
+            'FC Black Stars D2': 'assets/images/teams/fc-black-stars.png',
+            'FC Ettingen': 'assets/images/teams/fc-ettingen.png',
+            'FC Laufen D14 schwarz': 'assets/images/teams/fc-laufen.png',
+            'FC Oberwil rot': 'assets/images/teams/fc-oberwil.png',
+            'SV Muttenz': 'assets/images/teams/sv-muttenz.png',
+            'US Olympia 1963': 'assets/images/teams/us-olympia-1963.png',
+            'BSC Old Boys a': 'assets/images/teams/bsc-old-boys.png',
             'BSC Old Boys b': 'assets/images/teams/bsc-old-boys.png',
-            'SC Steinen Basel': 'assets/images/teams/sc-steinen-basel.png'
+            'SC Steinen Basel': 'assets/images/teams/sc-steinen-basel.png',
+            'SC Binningen D9 c': 'assets/images/teams/sc-binningen.png'
         };
 
-        const matches = [
+        const matchesFF17 = [
             {
                 dateIso: '2026-03-14',
                 time: '11:00',
@@ -958,10 +1092,151 @@
             }
         ];
 
+        const matchesFF14 = [
+            {
+                dateIso: '2026-03-28',
+                time: '16:00',
+                homeTeam: 'FC Therwil FF-14/9',
+                awayTeam: clubName,
+                location: '-'
+            },
+            {
+                dateIso: '2026-04-11',
+                time: '11:00',
+                homeTeam: clubName,
+                awayTeam: 'FC Nordstern BS',
+                location: '-'
+            },
+            {
+                dateIso: '2026-04-18',
+                time: '10:00',
+                homeTeam: 'FC Arlesheim',
+                awayTeam: clubName,
+                location: '-'
+            },
+            {
+                dateIso: '2026-04-25',
+                time: '13:00',
+                homeTeam: clubName,
+                awayTeam: 'FC Frenkendorf blau',
+                location: '-'
+            },
+            {
+                dateIso: '2026-05-02',
+                time: '11:00',
+                homeTeam: 'FC Concordia Basel a',
+                awayTeam: clubName,
+                location: '-'
+            },
+            {
+                dateIso: '2026-05-10',
+                time: '13:00',
+                homeTeam: clubName,
+                awayTeam: 'FC Breitenbach',
+                location: '-'
+            },
+            {
+                dateIso: '2026-05-16',
+                time: '10:00',
+                homeTeam: 'SV Muttenz',
+                awayTeam: clubName,
+                location: '-'
+            },
+            {
+                dateIso: '2026-05-31',
+                time: '11:30',
+                homeTeam: 'FC Allschwil',
+                awayTeam: clubName,
+                location: '-'
+            },
+            {
+                dateIso: '2026-06-07',
+                time: '13:00',
+                homeTeam: clubName,
+                awayTeam: 'BSC Old Boys a',
+                location: '-'
+            }
+        ];
+
+        const matchesD9 = [
+            {
+                dateIso: '2026-03-21',
+                time: '11:00',
+                homeTeam: 'FC Biel-Benken D1',
+                awayTeam: clubName,
+                location: '-'
+            },
+            {
+                dateIso: '2026-03-28',
+                time: '15:00',
+                homeTeam: clubName,
+                awayTeam: 'FC Black Stars D2',
+                location: '-'
+            },
+            {
+                dateIso: '2026-04-12',
+                time: '11:30',
+                homeTeam: 'FC Breitenbach rot',
+                awayTeam: clubName,
+                location: '-'
+            },
+            {
+                dateIso: '2026-04-18',
+                time: '11:00',
+                homeTeam: clubName,
+                awayTeam: 'FC Ettingen',
+                location: '-'
+            },
+            {
+                dateIso: '2026-04-25',
+                time: '11:45',
+                homeTeam: 'FC Laufen D14 schwarz',
+                awayTeam: clubName,
+                location: '-'
+            },
+            {
+                dateIso: '2026-05-02',
+                time: '11:00',
+                homeTeam: clubName,
+                awayTeam: 'FC Nordstern BS schwarz',
+                location: '-'
+            },
+            {
+                dateIso: '2026-05-09',
+                time: '10:00',
+                homeTeam: 'FC Oberwil rot',
+                awayTeam: clubName,
+                location: '-'
+            },
+            {
+                dateIso: '2026-05-16',
+                time: '11:00',
+                homeTeam: clubName,
+                awayTeam: 'FC Telegraph BS weiss',
+                location: '-'
+            },
+            {
+                dateIso: '2026-05-30',
+                time: '13:00',
+                homeTeam: clubName,
+                awayTeam: 'US Olympia 1963',
+                location: '-'
+            },
+            {
+                dateIso: '2026-06-06',
+                time: '09:30',
+                homeTeam: 'SC Binningen D9 c',
+                awayTeam: clubName,
+                location: '-'
+            }
+        ];
+
         const lastResult = null;
 
         const initialVisibleMatches = 6;
-        let isMatchListExpanded = false;
+        let isFF17Expanded = false;
+        let isFF14Expanded = false;
+        let isD9Expanded = false;
 
         function getDateFromMatch(match) {
             if (match.dateIso) {
@@ -1012,6 +1287,7 @@
 
             const isClub = teamName === clubName;
             const logoSrc = isClub ? clubLogoSrc : teamLogos[teamName];
+            imgEl.classList.toggle('club', isClub);
 
             if (logoSrc) {
                 imgEl.src = logoSrc;
@@ -1030,7 +1306,7 @@
             const matchBadge = document.getElementById('match-badge');
             const isHomeMatch = match.homeTeam === clubName;
             if (matchBadge) {
-                matchBadge.textContent = isHomeMatch ? 'Heimspiel' : 'Auswaertsspiel';
+                matchBadge.textContent = isHomeMatch ? 'Heimspiel' : 'Auswärtsspiel';
             }
 
             const homeNameEl = document.getElementById('matchday-home-name');
@@ -1099,14 +1375,14 @@
             const isHomeMatch = match.homeTeam === clubName;
             const opponent = isHomeMatch ? match.awayTeam : match.homeTeam;
 
-            if (metaEl) metaEl.textContent = isHomeMatch ? 'Heimspiel' : 'Auswaertsspiel';
+            if (metaEl) metaEl.textContent = isHomeMatch ? 'Heimspiel' : 'Auswärtsspiel';
             if (dateEl) dateEl.textContent = formatMatchDateShort(match);
             if (timeEl) timeEl.textContent = match.time || '-';
             if (opponentEl) opponentEl.textContent = opponent || clubName;
             if (locationEl) locationEl.textContent = `Ort: ${match.location || '-'}`;
         }
 
-        function renderLastResult(result) {
+        function renderLastResult(result, matchList) {
             const titleEl = document.getElementById('last-result-title');
             const nextMatchPanelEl = document.getElementById('next-match-panel');
             const scoreRowEl = document.getElementById('last-result-score-row');
@@ -1121,7 +1397,7 @@
                 if (nextMatchPanelEl) nextMatchPanelEl.classList.remove('hidden');
                 if (scoreRowEl) scoreRowEl.classList.add('hidden');
                 if (statusEl) statusEl.classList.add('hidden');
-                renderNextMatch(getNextMatch(matches));
+                renderNextMatch(getNextMatch(matchList));
                 return;
             }
 
@@ -1160,37 +1436,119 @@
             `;
         }
 
-        function renderMatchList() {
-            const matchListBody = document.getElementById('match-list-body');
-            const toggleButton = document.getElementById('match-list-toggle');
-            const toggleLabel = document.getElementById('match-list-toggle-label');
+        function renderMatchList(list, bodyId, toggleId, labelId, isExpanded) {
+            const matchListBody = document.getElementById(bodyId);
+            const toggleButton = document.getElementById(toggleId);
+            const toggleLabel = document.getElementById(labelId);
             if (!matchListBody || !toggleButton || !toggleLabel) return;
 
-            const hasMoreThanInitial = matches.length > initialVisibleMatches;
-            const visibleMatches = hasMoreThanInitial && !isMatchListExpanded
-                ? matches.slice(0, initialVisibleMatches)
-                : matches;
+            const hasMoreThanInitial = list.length > initialVisibleMatches;
+            const visibleMatches = hasMoreThanInitial && !isExpanded
+                ? list.slice(0, initialVisibleMatches)
+                : list;
 
             matchListBody.innerHTML = visibleMatches
                 .map((match, index) => buildMatchRow(match, index, visibleMatches.length))
                 .join('');
 
             toggleButton.classList.toggle('hidden', !hasMoreThanInitial);
-            toggleButton.classList.toggle('is-expanded', hasMoreThanInitial && isMatchListExpanded);
-            toggleLabel.textContent = isMatchListExpanded ? 'Weniger anzeigen' : 'Mehr anzeigen';
+            toggleButton.classList.toggle('is-expanded', hasMoreThanInitial && isExpanded);
+            toggleLabel.textContent = isExpanded ? 'Weniger anzeigen' : 'Mehr anzeigen';
         }
 
-        const matchListToggle = document.getElementById('match-list-toggle');
-        if (matchListToggle) {
-            matchListToggle.addEventListener('click', () => {
-                isMatchListExpanded = !isMatchListExpanded;
-                renderMatchList();
+        const scheduleConfig = {
+            ff17: {
+                matches: matchesFF17,
+                label: 'Meisterschaft Juniorinnen FF-17 2. Stärkeklasse / Frühjahrsrunde'
+            },
+            ff14: {
+                matches: matchesFF14,
+                label: 'Meisterschaft Juniorinnen FF-14 (9v9) / Frühjahrsrunde'
+            },
+            d9: {
+                matches: matchesD9,
+                label: 'Meisterschaft Junioren D-9 / Frühjahrsrunde'
+            }
+        };
+
+        function renderMatchdayForTab(tab) {
+            const config = scheduleConfig[tab] || scheduleConfig.ff17;
+            const matchdayMatch = getNextMatch(config.matches) || config.matches[0];
+            renderMatchday(matchdayMatch);
+            renderLastResult(lastResult, config.matches);
+
+            const competitionEl = document.getElementById('matchday-competition');
+            if (competitionEl) {
+                competitionEl.textContent = config.label;
+            }
+        }
+
+        const matchListToggleFF17 = document.getElementById('match-list-toggle-ff17');
+        if (matchListToggleFF17) {
+            matchListToggleFF17.addEventListener('click', () => {
+                isFF17Expanded = !isFF17Expanded;
+                renderMatchList(matchesFF17, 'match-list-body-ff17', 'match-list-toggle-ff17',
+                    'match-list-toggle-label-ff17', isFF17Expanded);
             });
         }
 
-        renderMatchday(matches[0]);
-        renderLastResult(lastResult);
-        renderMatchList();
+        const matchListToggleFF14 = document.getElementById('match-list-toggle-ff14');
+        if (matchListToggleFF14) {
+            matchListToggleFF14.addEventListener('click', () => {
+                isFF14Expanded = !isFF14Expanded;
+                renderMatchList(matchesFF14, 'match-list-body-ff14', 'match-list-toggle-ff14',
+                    'match-list-toggle-label-ff14', isFF14Expanded);
+            });
+        }
+
+        const matchListToggleD9 = document.getElementById('match-list-toggle-d9');
+        if (matchListToggleD9) {
+            matchListToggleD9.addEventListener('click', () => {
+                isD9Expanded = !isD9Expanded;
+                renderMatchList(matchesD9, 'match-list-body-d9', 'match-list-toggle-d9',
+                    'match-list-toggle-label-d9', isD9Expanded);
+            });
+        }
+
+        function setActiveScheduleTab(tab) {
+            const tabs = document.querySelectorAll('[data-schedule-tab]');
+            const ff17Section = document.getElementById('schedule-ff17');
+            const ff14Section = document.getElementById('schedule-ff14');
+            const d9Section = document.getElementById('schedule-d9');
+
+            if (ff17Section) ff17Section.classList.toggle('hidden', tab !== 'ff17');
+            if (ff14Section) ff14Section.classList.toggle('hidden', tab !== 'ff14');
+            if (d9Section) d9Section.classList.toggle('hidden', tab !== 'd9');
+
+            tabs.forEach((button) => {
+                const isActive = button.getAttribute('data-schedule-tab') === tab;
+                button.classList.toggle('bg-bebbi-main', isActive);
+                button.classList.toggle('text-white', isActive);
+                button.classList.toggle('shadow-glow', isActive);
+                button.classList.toggle('bg-white', !isActive);
+                button.classList.toggle('text-bebbi-deep', !isActive);
+                button.classList.toggle('border', !isActive);
+                button.classList.toggle('border-gray-200', !isActive);
+            });
+
+            renderMatchdayForTab(tab);
+        }
+
+        document.querySelectorAll('[data-schedule-tab]').forEach((button) => {
+            button.addEventListener('click', () => {
+                const tab = button.getAttribute('data-schedule-tab');
+                setActiveScheduleTab(tab);
+            });
+        });
+
+        renderMatchdayForTab('ff17');
+        renderMatchList(matchesFF17, 'match-list-body-ff17', 'match-list-toggle-ff17',
+            'match-list-toggle-label-ff17', isFF17Expanded);
+        renderMatchList(matchesFF14, 'match-list-body-ff14', 'match-list-toggle-ff14',
+            'match-list-toggle-label-ff14', isFF14Expanded);
+        renderMatchList(matchesD9, 'match-list-body-d9', 'match-list-toggle-d9',
+            'match-list-toggle-label-d9', isD9Expanded);
+        setActiveScheduleTab('ff17');
 
         // --- ANIMATION LOGIC ---
 
