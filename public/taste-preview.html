@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SC Bebbi United Basel 2025</title>
+    <title>SC Bebbi United Basel 2025 | Taste Preview</title>
     <meta name="description"
         content="SC Bebbi United Basel: Spielplan und Matchcenter der Juniorinnen FF-17 & FF-14 (9v9) sowie Junioren D-9 (Frühjahrsrunde).">
     <meta name="robots" content="index, follow">
@@ -12,13 +12,13 @@
     <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="apple-touch-icon" href="assets/images/logo.png">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="SC Bebbi United Basel 2025">
+    <meta property="og:title" content="SC Bebbi United Basel 2025 | Taste Preview">
     <meta property="og:description"
         content="Spielplan und Matchcenter der Juniorinnen FF-17 & FF-14 (9v9) sowie Junioren D-9 (Frühjahrsrunde).">
     <meta property="og:url" content="https://www.scbebbiunited.ch/">
     <meta property="og:image" content="https://www.scbebbiunited.ch/assets/images/logo.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SC Bebbi United Basel 2025">
+    <meta name="twitter:title" content="SC Bebbi United Basel 2025 | Taste Preview">
     <meta name="twitter:description"
         content="Spielplan und Matchcenter der Juniorinnen FF-17 & FF-14 (9v9) sowie Junioren D-9 (Frühjahrsrunde).">
     <meta name="twitter:image" content="https://www.scbebbiunited.ch/assets/images/logo.png">
@@ -27,7 +27,7 @@
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Lucide Icons -->
@@ -39,23 +39,24 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['IBM Plex Mono', 'monospace'],
                     },
                     colors: {
                         bebbi: {
-                            void: '#02110b',   /* Fast schwarzer Hintergrund */
-                            deep: '#064e3b',   /* Dunkelgrün */
-                            main: '#10b981',   /* Hauptgrün */
-                            neon: '#34d399',   /* Neon Akzent */
-                            panel: '#f4f6f7',  /* Off-white für Panels */
+                            void: '#111513',
+                            deep: '#23372f',
+                            main: '#6c8778',
+                            neon: '#c7d6c2',
+                            panel: '#f3efe7',
                         }
                     },
                     backgroundImage: {
                         'noise': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E\")",
                     },
                     boxShadow: {
-                        'glow': '0 0 20px rgba(52, 211, 153, 0.4)',
-                        'neon': '0 0 10px rgba(52, 211, 153, 0.6), 0 0 20px rgba(52, 211, 153, 0.3)',
+                        'glow': '0 24px 80px -42px rgba(17, 21, 19, 0.42)',
+                        'neon': '0 18px 50px -34px rgba(35, 55, 47, 0.36)',
                     }
                 }
             }
@@ -64,9 +65,24 @@
 
     <style>
         /* --- Base & Background --- */
+        :root {
+            --taste-bg: #e7ece7;
+            --taste-ink: #101614;
+            --taste-muted: #59685f;
+            --taste-line: rgba(16, 22, 20, 0.09);
+            --taste-surface: rgba(255, 255, 255, 0.78);
+            --taste-panel: rgba(247, 250, 247, 0.92);
+            --taste-accent: #3c6f5a;
+            --taste-accent-soft: #d8e2da;
+        }
+
         body {
-            background-color: #02110b;
-            color: #1f2937;
+            background:
+                radial-gradient(circle at top left, rgba(60, 111, 90, 0.28), transparent 28rem),
+                radial-gradient(circle at 88% 10%, rgba(199, 214, 194, 0.2), transparent 20rem),
+                linear-gradient(180deg, #101614 0rem, #16201d 36rem, #eef2ee 36rem, #e7ece7 100%);
+            color: var(--taste-ink);
+            font-family: 'Outfit', sans-serif;
         }
 
         /* Noise Overlay fixed to background */
@@ -78,7 +94,8 @@
             height: 100%;
             pointer-events: none;
             z-index: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.07'/%3E%3C/svg%3E");
+            opacity: 0.35;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
         }
 
         /* --- Animations --- */
@@ -110,8 +127,147 @@
         }
 
         .animate-marquee {
-            animation: marquee 25s linear infinite;
+            animation: marquee 32s linear infinite;
             white-space: nowrap;
+        }
+
+        .taste-shell {
+            border: 1px solid var(--taste-line);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.82) 0%, rgba(247, 250, 247, 0.96) 100%);
+            box-shadow: 0 32px 84px -54px rgba(11, 18, 15, 0.28);
+            backdrop-filter: blur(18px);
+        }
+
+        .taste-section-title {
+            font-size: clamp(2.3rem, 4vw, 4.6rem);
+            line-height: 0.96;
+            letter-spacing: -0.06em;
+        }
+
+        .taste-eyebrow {
+            color: var(--taste-accent);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+        }
+
+        .taste-button {
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .taste-button:active {
+            transform: translateY(1px) scale(0.985);
+        }
+
+        .taste-preview-badge {
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(14px);
+        }
+
+        #startseite {
+            min-height: 100dvh;
+            color: #f3f6f2;
+        }
+
+        #startseite::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background:
+                radial-gradient(circle at top left, rgba(95, 145, 118, 0.24), transparent 28rem),
+                linear-gradient(135deg, #111513 0%, #18211e 52%, #2b463b 100%);
+        }
+
+        #startseite>.mx-auto {
+            position: relative;
+            z-index: 2;
+        }
+
+        #startseite .taste-preview-badge {
+            color: #f3f6f2 !important;
+        }
+
+        #startseite .taste-eyebrow {
+            color: #c7d6c2;
+        }
+
+        #startseite .taste-section-title {
+            color: #f7faf5;
+        }
+
+        #startseite .taste-note-line {
+            background: linear-gradient(90deg, transparent 0%, rgba(199, 214, 194, 0.9) 50%, transparent 100%);
+        }
+
+        #startseite .text-\[color\:var\(--taste-muted\)\] {
+            color: rgba(242, 246, 241, 0.72) !important;
+        }
+
+        #startseite .taste-soft-panel {
+            border-color: rgba(255, 255, 255, 0.09);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
+
+        #startseite .taste-soft-panel .text-bebbi-void {
+            color: #f6f8f5 !important;
+        }
+
+        #startseite .taste-hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+            gap: 2rem;
+            align-items: end;
+        }
+
+        .taste-hero-aside-card {
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            background: linear-gradient(180deg, rgba(24, 33, 30, 0.82) 0%, rgba(10, 14, 12, 0.94) 100%);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 34px 80px -50px rgba(0, 0, 0, 0.55);
+        }
+
+        .taste-status-rail {
+            border-top: 1px solid rgba(17, 21, 19, 0.08);
+            border-bottom: 1px solid rgba(17, 21, 19, 0.08);
+            background: rgba(244, 247, 243, 0.78);
+            backdrop-filter: blur(10px);
+        }
+
+        .taste-soft-panel {
+            border: 1px solid rgba(17, 21, 19, 0.08);
+            background: rgba(248, 250, 248, 0.82);
+            box-shadow: 0 20px 46px -34px rgba(17, 21, 19, 0.18);
+        }
+
+        .taste-grid-uneven {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
+            gap: 1.5rem;
+        }
+
+        .taste-team-stack {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .taste-team-card {
+            border: 1px solid rgba(17, 21, 19, 0.08);
+            background: rgba(251, 252, 250, 0.92);
+            box-shadow: 0 18px 42px -30px rgba(17, 21, 19, 0.16);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+        }
+
+        .taste-team-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 22px 48px -30px rgba(17, 21, 19, 0.24);
+        }
+
+        .taste-note-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(60, 111, 90, 0.66) 50%, transparent 100%);
         }
 
         /* Scroll Reveal Utility Classes */
@@ -199,58 +355,6 @@
             width: 100%;
         }
 
-        /* Scroll-state navbar */
-        #site-nav-shell {
-            border-radius: 1.75rem;
-            background: linear-gradient(180deg, rgba(2, 17, 11, 0.94) 0%, rgba(4, 25, 16, 0.92) 100%);
-            border-color: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
-            backdrop-filter: none;
-            -webkit-backdrop-filter: none;
-            transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease,
-                transform 0.25s ease, border-radius 0.25s ease, backdrop-filter 0.25s ease;
-        }
-
-        #site-nav-shell .nav-link {
-            color: rgba(255, 255, 255, 0.82);
-        }
-
-        #site-nav-shell .nav-link:hover {
-            color: #34d399;
-            background-color: rgba(255, 255, 255, 0.06);
-        }
-
-        #site-nav-shell .nav-logo-label {
-            color: rgba(255, 255, 255, 0.96);
-        }
-
-        #site-nav-shell.is-scrolled {
-            border-radius: 1.1rem;
-            background: linear-gradient(180deg, rgba(2, 17, 11, 0.985) 0%, rgba(4, 25, 16, 0.985) 100%);
-            border-color: rgba(52, 211, 153, 0.14);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
-            backdrop-filter: none !important;
-            -webkit-backdrop-filter: none !important;
-            transform: translateY(-1px);
-        }
-
-        #site-nav-shell.is-scrolled .nav-link {
-            color: rgba(255, 255, 255, 0.88);
-        }
-
-        #site-nav-shell.is-scrolled .nav-link:hover {
-            color: #34d399;
-            background-color: rgba(255, 255, 255, 0.06);
-        }
-
-        #site-nav-shell.is-scrolled .nav-logo-label {
-            color: rgba(255, 255, 255, 0.98);
-        }
-
-        #site-nav-shell.is-scrolled .nav-logo-sub {
-            color: #34d399;
-        }
-
         @media (min-width: 640px) {
             .matchday-logo-wrap {
                 height: 6.5rem;
@@ -274,6 +378,17 @@
                 width: 9rem;
             }
         }
+
+        @media (max-width: 767px) {
+            #startseite .taste-hero-grid,
+            .taste-grid-uneven {
+                grid-template-columns: 1fr;
+            }
+
+            .taste-section-title {
+                letter-spacing: -0.05em;
+            }
+        }
     </style>
 </head>
 
@@ -283,188 +398,157 @@
     <div class="bg-texture"></div>
 
     <!-- Navigation -->
-    <nav class="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-6">
-        <div
-            id="site-nav-shell"
-            class="max-w-7xl mx-auto rounded-[1.75rem] border border-white/10 bg-bebbi-void/88 backdrop-blur-md text-white shadow-2xl transition-all duration-300">
-            <div class="px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between h-20">
-                    <div class="flex-shrink-0 flex items-center gap-4 cursor-pointer group"
-                        onclick="window.scrollTo(0,0)">
-                        <div class="relative">
-                            <div
-                                class="absolute inset-0 bg-bebbi-neon rounded-full blur opacity-15 group-hover:opacity-35 transition-opacity">
-                            </div>
-                            <img src="assets/images/logo.png" alt="SC Bebbi United Logo"
-                                class="relative h-11 w-auto object-contain drop-shadow-md transition-transform group-hover:scale-105">
-                        </div>
-                        <div>
-                            <span
-                                class="nav-logo-label block font-black text-lg tracking-tight leading-none text-gray-100">SC
-                                BEBBI
-                                UNITED</span>
-                            <span
-                                class="nav-logo-sub block text-[10px] text-bebbi-neon font-bold uppercase tracking-[0.22em] leading-tight mt-1">Basel
-                                2025</span>
-                        </div>
+    <nav class="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-8">
+        <div class="taste-shell mx-auto max-w-[1400px] rounded-[2rem] px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-4 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <img src="assets/images/logo.png" alt="SC Bebbi United Logo"
+                        class="h-11 w-auto object-contain">
+                    <div>
+                        <span class="block font-black text-lg tracking-[-0.04em] leading-none text-bebbi-void">SC BEBBI UNITED</span>
+                        <span class="taste-eyebrow block mt-1">Basel 2025</span>
                     </div>
+                </div>
 
-                    <div class="hidden md:block">
-                        <div class="ml-10 flex items-baseline gap-1 text-sm font-medium text-gray-300">
-                            <a href="#startseite"
-                                class="nav-link px-3 py-2 rounded-full hover:bg-white/5 hover:text-bebbi-neon transition-colors">Startseite</a>
-                            <a href="#matchcenter"
-                                class="nav-link px-3 py-2 rounded-full hover:bg-white/5 hover:text-bebbi-neon transition-colors">Matchcenter</a>
-                            <a href="/academy"
-                                class="nav-link px-3 py-2 rounded-full hover:bg-white/5 hover:text-bebbi-neon transition-colors">Academy</a>
-                            <a href="#verein"
-                                class="nav-link px-3 py-2 rounded-full hover:bg-white/5 hover:text-bebbi-neon transition-colors">Verein</a>
-                            <a href="#teams"
-                                class="nav-link px-3 py-2 rounded-full hover:bg-white/5 hover:text-bebbi-neon transition-colors">Teams</a>
-                            <a href="#news"
-                                class="nav-link px-3 py-2 rounded-full hover:bg-white/5 hover:text-bebbi-neon transition-colors">News</a>
-                            <a href="#sponsoren"
-                                class="nav-link px-3 py-2 rounded-full hover:bg-white/5 hover:text-bebbi-neon transition-colors">Partner</a>
-                            <a href="#kontakt"
-                                class="nav-link px-3 py-2 rounded-full hover:bg-white/5 hover:text-bebbi-neon transition-colors">Kontakt</a>
-                            <a href="#mitmachen"
-                                class="ml-3 bg-bebbi-main hover:bg-bebbi-neon hover:text-bebbi-void text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-glow transition-all btn-interactive">
-                                Mitmachen
-                            </a>
-                        </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline gap-1 text-sm font-medium text-gray-600">
+                        <a href="#startseite" class="px-3 py-2 rounded-full hover:bg-black/[0.04] hover:text-bebbi-void transition-colors">Start</a>
+                        <a href="#matchcenter" class="px-3 py-2 rounded-full hover:bg-black/[0.04] hover:text-bebbi-void transition-colors">Matchcenter</a>
+                        <a href="#verein" class="px-3 py-2 rounded-full hover:bg-black/[0.04] hover:text-bebbi-void transition-colors">Club</a>
+                        <a href="#teams" class="px-3 py-2 rounded-full hover:bg-black/[0.04] hover:text-bebbi-void transition-colors">Teams</a>
+                        <a href="#news" class="px-3 py-2 rounded-full hover:bg-black/[0.04] hover:text-bebbi-void transition-colors">News</a>
+                        <a href="#sponsoren" class="px-3 py-2 rounded-full hover:bg-black/[0.04] hover:text-bebbi-void transition-colors">Partner</a>
+                        <a href="#kontakt" class="px-3 py-2 rounded-full hover:bg-black/[0.04] hover:text-bebbi-void transition-colors">Kontakt</a>
+                        <a href="#mitmachen"
+                            class="taste-button ml-3 inline-flex items-center rounded-full border border-bebbi-void bg-bebbi-void px-5 py-2.5 text-sm font-bold text-white">
+                            Mitmachen
+                        </a>
                     </div>
+                </div>
 
-                    <div class="-mr-2 flex md:hidden">
-                        <button type="button" onclick="toggleMenu()"
-                            class="inline-flex items-center justify-center p-2 rounded-full border border-white/10 bg-white/5 text-gray-200 hover:text-white hover:bg-white/10 focus:outline-none">
-                            <i data-lucide="menu" class="h-7 w-7"></i>
-                        </button>
-                    </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="toggleMenu()"
+                        class="inline-flex items-center justify-center rounded-full border border-black/10 bg-white/60 p-2 text-bebbi-void focus:outline-none">
+                        <i data-lucide="menu" class="h-7 w-7"></i>
+                    </button>
                 </div>
             </div>
         </div>
 
-        <div class="md:hidden hidden max-w-7xl mx-auto mt-3 rounded-[1.5rem] border border-white/10 bg-bebbi-void/95 backdrop-blur-md shadow-2xl"
-            id="mobile-menu">
-            <div class="p-2 space-y-1">
-                <a href="#startseite" onclick="toggleMenu()"
-                    class="block px-4 py-3 rounded-2xl text-base font-bold text-white hover:bg-white/5">Startseite</a>
-                <a href="#matchcenter" onclick="toggleMenu()"
-                    class="block px-4 py-3 rounded-2xl text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Matchcenter</a>
-                <a href="/academy" onclick="toggleMenu()"
-                    class="block px-4 py-3 rounded-2xl text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Academy</a>
-                <a href="#verein" onclick="toggleMenu()"
-                    class="block px-4 py-3 rounded-2xl text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Verein</a>
-                <a href="#teams" onclick="toggleMenu()"
-                    class="block px-4 py-3 rounded-2xl text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Teams</a>
-                <a href="#news" onclick="toggleMenu()"
-                    class="block px-4 py-3 rounded-2xl text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">News</a>
-                <a href="#sponsoren" onclick="toggleMenu()"
-                    class="block px-4 py-3 rounded-2xl text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Partner</a>
-                <a href="#kontakt" onclick="toggleMenu()"
-                    class="block px-4 py-3 rounded-2xl text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Kontakt</a>
-                <a href="#mitmachen" onclick="toggleMenu()"
-                    class="mt-3 block bg-bebbi-main text-white px-4 py-3 rounded-2xl text-base font-bold text-center">Jetzt
-                    Mitmachen</a>
+        <div class="md:hidden hidden mx-auto mt-3 max-w-[1400px] rounded-[1.5rem] border border-black/10 bg-white/80 p-2 backdrop-blur-xl" id="mobile-menu">
+            <div class="space-y-1">
+                <a href="#startseite" onclick="toggleMenu()" class="block rounded-2xl px-4 py-3 text-base font-semibold text-bebbi-void hover:bg-black/[0.04]">Start</a>
+                <a href="#matchcenter" onclick="toggleMenu()" class="block rounded-2xl px-4 py-3 text-base font-medium text-gray-600 hover:bg-black/[0.04] hover:text-bebbi-void">Matchcenter</a>
+                <a href="#verein" onclick="toggleMenu()" class="block rounded-2xl px-4 py-3 text-base font-medium text-gray-600 hover:bg-black/[0.04] hover:text-bebbi-void">Club</a>
+                <a href="#teams" onclick="toggleMenu()" class="block rounded-2xl px-4 py-3 text-base font-medium text-gray-600 hover:bg-black/[0.04] hover:text-bebbi-void">Teams</a>
+                <a href="#news" onclick="toggleMenu()" class="block rounded-2xl px-4 py-3 text-base font-medium text-gray-600 hover:bg-black/[0.04] hover:text-bebbi-void">News</a>
+                <a href="#mitmachen" onclick="toggleMenu()" class="mt-3 block rounded-2xl bg-bebbi-void px-4 py-3 text-center text-base font-bold text-white">Interesse bekunden</a>
             </div>
         </div>
     </nav>
 
     <!-- Sektion 1: Hero -->
-    <section id="startseite"
-        class="relative min-h-screen flex flex-col justify-center items-center text-center text-white pt-20 pb-10 overflow-hidden z-10">
-
-        <!-- Hero Background Image with Vignette & Parallax base -->
-        <div class="absolute inset-0 z-0">
-            <div
-                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center bg-fixed opacity-40">
+    <section id="startseite" class="relative overflow-hidden px-4 pt-32 pb-12 md:px-8 md:pt-36 md:pb-16">
+        <div class="absolute inset-x-0 top-0 h-[36rem] bg-[radial-gradient(circle_at_top_left,rgba(199,214,194,0.75),transparent_52%)]"></div>
+        <div class="absolute right-[-8rem] top-32 h-[28rem] w-[28rem] rounded-full bg-bebbi-main/15 blur-3xl"></div>
+        <div class="mx-auto max-w-[1400px]">
+            <div class="taste-preview-badge mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-bebbi-void reveal-on-scroll">
+                <span class="inline-block h-2 w-2 rounded-full bg-bebbi-main"></span>
+                Taste Preview
             </div>
-            <!-- Vignette Gradient -->
-            <div class="absolute inset-0 bg-radial-gradient from-transparent via-bebbi-void/80 to-bebbi-void"></div>
-        </div>
 
-        <div class="container mx-auto px-4 z-10 flex flex-col items-center relative">
+            <div class="taste-hero-grid">
+                <div class="relative reveal-on-scroll">
+                    <span class="taste-eyebrow mb-5 block">Basler Fussballkultur neu gesetzt</span>
+                    <h1 class="taste-section-title max-w-4xl text-bebbi-void">
+                        Ein Auftritt, der sich mehr nach Verein als nach Vorlage anfühlt.
+                    </h1>
+                    <div class="taste-note-line my-8 w-28"></div>
+                    <p class="max-w-[42rem] text-lg leading-relaxed text-[color:var(--taste-muted)] md:text-xl">
+                        Leidenschaft. Zusammenhalt. Basler Kultur. Diese Preview zeigt, wie SC Bebbi United mit einer
+                        ruhigeren, hochwertigeren und markanteren Designsprache wirken könnte, ohne die Inhalte komplett zu verändern.
+                    </p>
 
-            <!-- Animated Rotating Glow behind Logo -->
-            <div
-                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none">
-                <div
-                    class="w-full h-full bg-[conic-gradient(from_0deg,transparent_0deg,#10b981_100deg,transparent_200deg)] rounded-full opacity-20 blur-[80px] animate-rotate-slow">
+                    <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+                        <a href="#matchcenter"
+                            class="taste-button inline-flex items-center justify-center gap-2 rounded-full border border-bebbi-void bg-bebbi-void px-7 py-4 text-base font-bold text-white">
+                            <i data-lucide="calendar-range" class="w-5 h-5"></i> Matchcenter ansehen
+                        </a>
+                        <a href="#mitmachen"
+                            class="taste-button inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-white/60 px-7 py-4 text-base font-bold text-bebbi-void backdrop-blur-sm">
+                            <i data-lucide="user-plus" class="w-5 h-5"></i> Probetraining anfragen
+                        </a>
+                    </div>
+
+                    <div class="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-3">
+                        <div class="taste-soft-panel rounded-[1.8rem] p-5 reveal-on-scroll" style="transition-delay: 120ms;">
+                            <p class="taste-eyebrow mb-3">Identität</p>
+                            <p class="text-xl font-bold text-bebbi-void">Club first, nicht Flyer-first.</p>
+                        </div>
+                        <div class="taste-soft-panel rounded-[1.8rem] p-5 reveal-on-scroll" style="transition-delay: 180ms;">
+                            <p class="taste-eyebrow mb-3">Ton</p>
+                            <p class="text-xl font-bold text-bebbi-void">Weniger Effekt, mehr Haltung.</p>
+                        </div>
+                        <div class="taste-soft-panel rounded-[1.8rem] p-5 reveal-on-scroll" style="transition-delay: 240ms;">
+                            <p class="taste-eyebrow mb-3">Struktur</p>
+                            <p class="text-xl font-bold text-bebbi-void">Editorial statt Standard-Kartenraster.</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Grosses Logo -->
-            <div class="mb-10 relative reveal-on-scroll">
-                <img src="assets/images/logo.png" alt="SC Bebbi United Wappen"
-                    class="h-48 w-auto md:h-64 drop-shadow-2xl relative z-10">
-            </div>
+                <div class="reveal-on-scroll" style="transition-delay: 160ms;">
+                    <div class="taste-hero-aside-card rounded-[2.4rem] p-6 text-white md:p-8">
+                        <div class="flex items-start justify-between gap-4">
+                            <div>
+                                <span class="taste-eyebrow text-bebbi-neon">SC Bebbi United</span>
+                                <h2 class="mt-3 text-3xl font-black tracking-[-0.05em]">Basel, Academy, Verein.</h2>
+                            </div>
+                            <img src="assets/images/logo.png" alt="SC Bebbi United Wappen"
+                                class="h-20 w-auto object-contain opacity-95">
+                        </div>
 
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight mb-6 drop-shadow-xl leading-none reveal-on-scroll"
-                style="transition-delay: 100ms;">
-                SC Bebbi <span
-                    class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">United</span>
-            </h1>
-
-            <div class="flex items-center gap-3 mb-8 reveal-on-scroll" style="transition-delay: 200ms;">
-                <span class="h-px w-12 bg-bebbi-neon/50"></span>
-                <span
-                    class="text-bebbi-neon tracking-[0.3em] font-bold uppercase text-sm md:text-base text-shadow-glow">Basel
-                    2025</span>
-                <span class="h-px w-12 bg-bebbi-neon/50"></span>
-            </div>
-
-            <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-300 font-light leading-relaxed mb-10 reveal-on-scroll"
-                style="transition-delay: 300ms;">
-                Leidenschaft. Zusammenhalt. Basler Kultur.<br>
-                <span class="text-white font-medium">Dein neuer Verein im Herzen der Stadt.</span>
-            </p>
-            <div class="flex items-center gap-3 mb-8 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-xs uppercase tracking-widest text-gray-200 reveal-on-scroll"
-                style="transition-delay: 350ms;">
-                <span class="w-2 h-2 rounded-full bg-bebbi-neon"></span>
-                Spielplan live · Kontaktformular aktiv
-            </div>
-
-            <div class="flex flex-col sm:flex-row gap-5 w-full justify-center px-4 reveal-on-scroll"
-                style="transition-delay: 400ms;">
-                <a href="#mitmachen"
-                    class="w-full sm:w-auto px-8 py-4 bg-bebbi-main hover:bg-bebbi-neon text-white hover:text-bebbi-void rounded-full font-bold text-lg shadow-glow hover:shadow-neon transition-all btn-interactive flex items-center justify-center gap-2">
-                    <i data-lucide="user-plus" class="w-5 h-5"></i> Interesse bekunden
-                </a>
-                <a href="#matchcenter"
-                    class="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/20 text-white hover:bg-white hover:text-bebbi-deep rounded-full font-bold text-lg transition-all btn-interactive flex items-center justify-center gap-2 backdrop-blur-sm">
-                    <i data-lucide="calendar" class="w-5 h-5"></i> Zum Spielplan
-                </a>
-            </div>
-        </div>
-
-        <!-- Scroll Down Indicator -->
-        <div class="hidden md:block absolute bottom-8 md:bottom-10 animate-bounce cursor-pointer opacity-70 hover:opacity-100 transition-opacity z-10"
-            onclick="document.getElementById('matchcenter').scrollIntoView({behavior: 'smooth'})">
-            <div class="flex flex-col items-center gap-2">
-                <span class="text-[10px] uppercase tracking-widest text-white/50">Scroll</span>
-                <i data-lucide="arrow-down-circle" class="w-8 h-8 text-bebbi-neon"></i>
+                        <div class="mt-8 grid gap-4">
+                            <div class="rounded-[1.8rem] border border-white/10 bg-white/5 p-5">
+                                <p class="taste-eyebrow text-bebbi-neon/80">Was die Richtung verändert</p>
+                                <p class="mt-3 text-2xl font-bold">Asymmetrische Hero-Struktur statt zentrierter Startscreen.</p>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="rounded-[1.6rem] border border-white/10 bg-white/5 p-5">
+                                    <p class="text-sm uppercase tracking-[0.24em] text-white/55">Look</p>
+                                    <p class="mt-3 text-lg font-bold">Warmes Editorial-Finish</p>
+                                </div>
+                                <div class="rounded-[1.6rem] border border-white/10 bg-white/5 p-5">
+                                    <p class="text-sm uppercase tracking-[0.24em] text-white/55">Motion</p>
+                                    <p class="mt-3 text-lg font-bold">Ruhiger, präziser, weniger Neon</p>
+                                </div>
+                            </div>
+                            <div class="rounded-[1.8rem] border border-white/10 bg-white/5 p-5">
+                                <p class="text-sm uppercase tracking-[0.24em] text-white/55">Vorschau-Fokus</p>
+                                <p class="mt-3 text-base leading-relaxed text-white/78">
+                                    Diese Version zeigt vor allem Typografie, Flächen, Hierarchie und Komposition.
+                                    Inhalte und Logik bleiben bewusst nah am Original.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Ticker Section -->
-    <div class="bg-bebbi-deep border-y border-bebbi-neon/30 overflow-hidden py-3 relative z-20">
-        <div class="flex animate-marquee gap-8 items-center">
-            <!-- Repeated Items for seamless loop -->
-            <span class="text-bebbi-neon font-bold uppercase tracking-widest text-sm inline-flex items-center gap-2"><i
-                    data-lucide="zap" class="w-3 h-3"></i> Spielplan live: FF-17, FF-14 (9v9) & Junioren D-9</span>
-            <span class="text-white/30">///</span>
-            <span class="text-white font-medium text-sm">Kontakt: info@scbebbiunited.ch</span>
-            <span class="text-white/30">///</span>
-            <span class="text-white font-medium text-sm">Instagram: @sc.bebbi.united</span>
-            <span class="text-white/30">///</span>
-            <!-- Duplicate for Loop -->
-            <span class="text-bebbi-neon font-bold uppercase tracking-widest text-sm inline-flex items-center gap-2"><i
-                    data-lucide="zap" class="w-3 h-3"></i> Spielplan live: FF-17, FF-14 (9v9) & Junioren D-9</span>
-            <span class="text-white/30">///</span>
-            <span class="text-white font-medium text-sm">Kontakt: info@scbebbiunited.ch</span>
-            <span class="text-white/30">///</span>
-            <span class="text-white font-medium text-sm">Instagram: @sc.bebbi.united</span>
+    <!-- Status Rail -->
+    <div class="taste-status-rail relative z-20 overflow-hidden py-4">
+        <div class="flex animate-marquee gap-10 items-center text-sm text-bebbi-void/78">
+            <span class="taste-eyebrow inline-flex items-center gap-2 text-bebbi-main"><i data-lucide="badge-check" class="w-4 h-4"></i> Taste Preview aktiv</span>
+            <span>Matchdetails weiterhin manuell gepflegt</span>
+            <span>FVNWS später als offizielle Detail-Quelle verlinken</span>
+            <span>Academy, Teams, News und Partner klarer getrennt</span>
+            <span>Club-Auftritt ruhiger und hochwertiger ausgerichtet</span>
+            <span class="taste-eyebrow inline-flex items-center gap-2 text-bebbi-main"><i data-lucide="badge-check" class="w-4 h-4"></i> Taste Preview aktiv</span>
+            <span>Matchdetails weiterhin manuell gepflegt</span>
+            <span>FVNWS später als offizielle Detail-Quelle verlinken</span>
+            <span>Academy, Teams, News und Partner klarer getrennt</span>
+            <span>Club-Auftritt ruhiger und hochwertiger ausgerichtet</span>
         </div>
     </div>
 
@@ -643,9 +727,6 @@
                                 <p class="text-xs font-semibold uppercase tracking-wider text-gray-500">
                                     Meisterschaft Juniorinnen FF-17 & FF-14 (9v9) sowie Junioren D-9 / Frühjahrsrunde
                                 </p>
-                                <p class="mt-3 text-xs font-medium text-gray-500">
-                                    Klick auf ein Spiel für offizielle Details auf FVNWS.
-                                </p>
                             </div>
                         <div class="flex flex-wrap gap-2">
                             <button data-schedule-tab="ff17"
@@ -758,77 +839,59 @@
         </section>
 
         <!-- Sektion 3: Verein (Floating Panel) -->
-        <section id="verein" class="container mx-auto px-4 max-w-7xl reveal-on-scroll">
-            <div class="bg-bebbi-panel rounded-3xl p-8 md:p-16 shadow-2xl relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-40 h-40 bg-bebbi-main/10 rounded-bl-[3rem] pointer-events-none">
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-[1.25fr_0.9fr] gap-10 md:gap-14 items-start">
+        <section id="verein" class="container mx-auto px-4 max-w-[1400px] reveal-on-scroll">
+            <div class="taste-shell rounded-[2.6rem] p-8 md:p-14">
+                <div class="taste-grid-uneven items-start">
                     <div>
-                        <span class="text-bebbi-main font-bold tracking-widest text-xs uppercase mb-3 block">Die Bebbi
-                            DNA</span>
-                        <h2 class="text-4xl md:text-5xl font-black text-bebbi-deep leading-[0.95] tracking-tight mb-6">
-                            Mehr als ein Club.<br>
-                            Ein Verein für <span class="text-bebbi-main">Nachwuchs</span>, Zusammenhalt und Basel.
+                        <span class="taste-eyebrow mb-4 block">Die Bebbi DNA</span>
+                        <h2 class="taste-section-title max-w-3xl text-bebbi-void">
+                            Mehr Vereinscharakter, weniger Landingpage-Routine.
                         </h2>
-                        <p class="text-gray-600 text-lg leading-relaxed max-w-2xl mb-10">
-                            SC Bebbi United steht für eine klare Haltung auf und neben dem Platz. Wir wollen Kinder und
-                            Jugendliche fussballerisch fördern und gleichzeitig Werte wie Respekt, Disziplin und
-                            Teamgeist mitgeben.
+                        <p class="mt-8 max-w-[40rem] text-lg leading-relaxed text-[color:var(--taste-muted)]">
+                            In dieser Richtung bekommt der Club mehr Haltung: klarere Typografie, ruhigere Materialien,
+                            bessere Hierarchie und eine Struktur, die Academy, Teams und Verein nicht wie austauschbare
+                            Content-Blöcke behandelt.
                         </p>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                            <div class="bg-white rounded-2xl border border-white/70 shadow-sm p-6">
-                                <div
-                                    class="w-12 h-12 rounded-2xl bg-bebbi-main/10 text-bebbi-deep flex items-center justify-center mb-4">
-                                    <i data-lucide="heart-handshake" class="w-6 h-6"></i>
-                                </div>
-                                <h4 class="text-xl font-black text-gray-900 mb-2">Bebbi-Mentalität</h4>
-                                <p class="text-sm text-gray-600 leading-relaxed">
-                                    Offen, direkt und herzlich. Wir stehen für Respekt, Verantwortung und einen
-                                    starken Zusammenhalt im Verein.
+                        <div class="mt-10 grid gap-5 md:grid-cols-2">
+                            <div class="taste-soft-panel rounded-[1.8rem] p-6">
+                                <p class="taste-eyebrow mb-3">Mentalität</p>
+                                <h3 class="text-2xl font-bold text-bebbi-void">Direkt, offen, lokal verankert.</h3>
+                                <p class="mt-3 text-sm leading-relaxed text-[color:var(--taste-muted)]">
+                                    Die Sprache wirkt erwachsener und die Gestaltung muss dieselbe Ruhe und Klarheit transportieren.
                                 </p>
                             </div>
-
-                            <div class="bg-white rounded-2xl border border-white/70 shadow-sm p-6">
-                                <div
-                                    class="w-12 h-12 rounded-2xl bg-bebbi-main/10 text-bebbi-deep flex items-center justify-center mb-4">
-                                    <i data-lucide="sprout" class="w-6 h-6"></i>
-                                </div>
-                                <h4 class="text-xl font-black text-gray-900 mb-2">Academy-Fokus</h4>
-                                <p class="text-sm text-gray-600 leading-relaxed">
-                                    Technik, Taktik und Mentalität gehören zusammen. Die Entwicklung der Juniorinnen
-                                    und Junioren ist ein zentraler Teil unseres Vereins.
+                            <div class="taste-soft-panel rounded-[1.8rem] p-6">
+                                <p class="taste-eyebrow mb-3">Academy</p>
+                                <h3 class="text-2xl font-bold text-bebbi-void">Technik, Taktik, Mentalität.</h3>
+                                <p class="mt-3 text-sm leading-relaxed text-[color:var(--taste-muted)]">
+                                    Statt die Nachwuchsarbeit nur zu erwähnen, wird sie visuell als Hauptwert des Vereins gesetzt.
                                 </p>
                             </div>
                         </div>
                     </div>
 
                     <div class="space-y-4">
-                        <div class="bg-bebbi-deep text-white rounded-3xl p-8 shadow-glow">
-                            <span class="text-bebbi-neon font-bold tracking-[0.22em] text-xs uppercase">SC Bebbi
-                                United</span>
+                        <div class="rounded-[2.2rem] bg-bebbi-void p-8 text-white shadow-glow">
+                            <span class="taste-eyebrow text-bebbi-neon">Preview-Motiv</span>
                             <div class="mt-6 flex items-end justify-between gap-6">
                                 <div>
-                                    <p class="text-3xl md:text-4xl font-black tracking-tight">Academy & Verein</p>
-                                    <p class="mt-3 max-w-xs text-sm leading-relaxed text-white/75">
-                                        Förderung im technischen, taktischen und mentalen Bereich. Mit dem Blick auf
-                                        den Menschen, nicht nur auf das Resultat.
+                                    <p class="text-4xl font-black tracking-[-0.05em]">SC Bebbi United</p>
+                                    <p class="mt-3 max-w-xs text-sm leading-relaxed text-white/72">
+                                        Kein Stock-Foto nötig. Die Identität kann mit Materialität, Typografie und Logoarbeit selbst tragen.
                                     </p>
                                 </div>
-                                <img src="assets/images/logo.png" alt="SC Bebbi United Wappen"
-                                    class="h-24 w-auto object-contain drop-shadow-xl">
+                                <img src="assets/images/logo.png" alt="SC Bebbi United Wappen" class="h-28 w-auto object-contain">
                             </div>
                         </div>
-
                         <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-                                <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-bebbi-main">Academy</p>
-                                <p class="mt-3 text-lg font-black text-bebbi-deep">Förderung mit Struktur</p>
+                            <div class="taste-soft-panel rounded-[1.8rem] p-5">
+                                <p class="font-mono text-xs uppercase tracking-[0.24em] text-bebbi-main">Richtung</p>
+                                <p class="mt-3 text-lg font-bold text-bebbi-void">Editorial</p>
                             </div>
-                            <div class="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-                                <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-bebbi-main">Verein</p>
-                                <p class="mt-3 text-lg font-black text-bebbi-deep">Basler Fussballkultur</p>
+                            <div class="taste-soft-panel rounded-[1.8rem] p-5">
+                                <p class="font-mono text-xs uppercase tracking-[0.24em] text-bebbi-main">Material</p>
+                                <p class="mt-3 text-lg font-bold text-bebbi-void">Warmes Glas</p>
                             </div>
                         </div>
                     </div>
@@ -837,107 +900,76 @@
         </section>
 
         <!-- Sektion 4: Teams (Floating Grid) -->
-        <section id="teams" class="container mx-auto px-4 max-w-7xl reveal-on-scroll">
-            <div class="bg-bebbi-panel rounded-3xl p-8 md:p-12 shadow-2xl">
-                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+        <section id="teams" class="container mx-auto px-4 max-w-[1400px] reveal-on-scroll">
+            <div class="taste-shell rounded-[2.6rem] p-8 md:p-12">
+                <div class="flex flex-col md:flex-row justify-between items-end gap-5">
                     <div>
-                        <span class="text-bebbi-main font-bold tracking-widest text-xs uppercase mb-2 block">Kader &
-                            Kategorien</span>
-                        <h2 class="text-3xl md:text-4xl font-black text-bebbi-deep tracking-tight">Teams &
-                            Kategorien</h2>
+                        <span class="taste-eyebrow mb-3 block">Kader und Kategorien</span>
+                        <h2 class="taste-section-title text-bebbi-void">Teams in einer stärkeren Hierarchie</h2>
                     </div>
-                    <a href="#mitmachen"
-                        class="text-bebbi-deep font-bold hover:text-bebbi-main transition-colors flex items-center gap-2 btn-interactive">
-                        Mehr Infos <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    <a href="#mitmachen" class="taste-button inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-5 py-3 font-bold text-bebbi-void backdrop-blur-sm">
+                        Mehr Infos <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                     </a>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-[1.25fr_0.85fr] gap-6">
-                    <article class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
-                        <div class="h-2 bg-bebbi-deep"></div>
-                        <div class="p-8">
-                            <div class="flex items-start justify-between gap-4">
-                                <div>
-                                    <p class="text-xs font-bold uppercase tracking-[0.24em] text-bebbi-main mb-3">Team</p>
-                                    <h3 class="text-3xl font-black tracking-tight text-bebbi-deep">Juniorinnen FF-17</h3>
-                                </div>
-                                <span
-                                    class="text-xs bg-bebbi-main/10 text-bebbi-deep px-3 py-1.5 rounded-full font-bold uppercase tracking-[0.18em]">Aktiv</span>
+                <div class="mt-10 taste-grid-uneven">
+                    <article class="taste-team-card rounded-[2.2rem] p-8">
+                        <div class="flex items-start justify-between gap-4">
+                            <div>
+                                <p class="taste-eyebrow mb-3">Lead Team</p>
+                                <h3 class="text-3xl font-black tracking-[-0.05em] text-bebbi-void">Juniorinnen FF-17</h3>
                             </div>
-
-                            <p class="mt-6 max-w-2xl text-base leading-relaxed text-gray-600">
-                                Eines unserer aktiven Teams im Spielbetrieb. Auf der Website sollen hier künftig auch
-                                Trainerinfos, Spielerfotos und weitere Teamdetails ergänzt werden.
-                            </p>
-
-                            <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div class="rounded-2xl border border-bebbi-main/10 bg-bebbi-main/5 p-5">
-                                    <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-bebbi-main mb-3">
-                                        Trainer</p>
-                                    <p class="text-lg font-black text-bebbi-deep">auf Anfrage</p>
-                                </div>
-                                <div class="rounded-2xl border border-gray-100 bg-white p-5">
-                                    <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-bebbi-main mb-3">
-                                        Trainingszeiten</p>
-                                    <p class="text-lg font-black text-bebbi-deep">nach Absprache</p>
-                                </div>
-                            </div>
-
-                            <a href="https://matchcenter.fvnws.ch/default.aspx?a=trr&lng=1&oid=8&t=77789&v=480"
-                                target="_blank" rel="noopener noreferrer"
-                                class="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-bebbi-deep text-white font-bold hover:bg-bebbi-main transition-all btn-interactive">
-                                FVNWS-Spielplan <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                            </a>
+                            <span class="rounded-full bg-bebbi-neon px-3 py-1 text-xs font-bold uppercase tracking-[0.22em] text-bebbi-void">Aktiv</span>
                         </div>
+                        <p class="mt-6 max-w-xl text-base leading-relaxed text-[color:var(--taste-muted)]">
+                            In der Preview wird nicht jedes Team gleich stark gewichtet. Ein Hauptteam bekommt Fläche,
+                            die anderen werden als kompaktere Module geführt. Das wirkt redaktioneller und weniger nach Standard-Grid.
+                        </p>
+                        <div class="mt-8 grid gap-4 sm:grid-cols-2">
+                            <div class="rounded-[1.4rem] border border-black/5 bg-[color:var(--taste-accent-soft)]/70 p-5">
+                                <p class="font-mono text-xs uppercase tracking-[0.24em] text-bebbi-main">Trainer</p>
+                                <p class="mt-3 text-lg font-bold text-bebbi-void">auf Anfrage</p>
+                            </div>
+                            <div class="rounded-[1.4rem] border border-black/5 bg-white p-5">
+                                <p class="font-mono text-xs uppercase tracking-[0.24em] text-bebbi-main">Training</p>
+                                <p class="mt-3 text-lg font-bold text-bebbi-void">nach Absprache</p>
+                            </div>
+                        </div>
+                        <a href="#matchcenter" class="taste-button mt-8 inline-flex items-center gap-2 rounded-full border border-bebbi-void bg-bebbi-void px-5 py-3 font-bold text-white">
+                            Spielplan ansehen <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
                     </article>
 
-                    <div class="grid gap-4">
-                        <article class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+                    <div class="taste-team-stack">
+                        <article class="taste-team-card rounded-[2rem] p-6">
                             <div class="flex items-start justify-between gap-4">
                                 <div>
-                                    <p class="text-xs font-bold uppercase tracking-[0.22em] text-bebbi-main mb-2">
-                                        Team</p>
-                                    <h3 class="text-2xl font-black tracking-tight text-bebbi-deep">Juniorinnen FF-14
-                                        (9v9)</h3>
+                                    <p class="taste-eyebrow mb-2">Academy</p>
+                                    <h3 class="text-2xl font-black tracking-[-0.05em] text-bebbi-void">Juniorinnen FF-14 (9v9)</h3>
                                 </div>
-                                <span
-                                    class="text-[11px] bg-bebbi-main/10 text-bebbi-deep px-3 py-1 rounded-full font-bold uppercase tracking-[0.18em]">Aktiv</span>
+                                <span class="rounded-full bg-bebbi-neon px-3 py-1 text-[11px] font-bold uppercase tracking-[0.22em] text-bebbi-void">Aktiv</span>
                             </div>
-                            <p class="mt-4 text-sm leading-relaxed text-gray-600">
-                                Trainer: auf Anfrage. Trainingszeiten: nach Absprache.
-                            </p>
-                            <a href="https://matchcenter.fvnws.ch/default.aspx?a=trr&lng=1&oid=8&t=77790&v=480"
-                                target="_blank" rel="noopener noreferrer"
-                                class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-bebbi-deep hover:text-bebbi-main transition-colors">
-                                FVNWS-Spielplan <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                            </a>
+                            <p class="mt-4 text-sm leading-relaxed text-[color:var(--taste-muted)]">Trainer auf Anfrage. Trainingszeiten nach Absprache.</p>
+                            <a href="#matchcenter" class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-bebbi-void">Spielplan <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
                         </article>
 
-                        <article class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+                        <article class="taste-team-card rounded-[2rem] p-6">
                             <div class="flex items-start justify-between gap-4">
                                 <div>
-                                    <p class="text-xs font-bold uppercase tracking-[0.22em] text-bebbi-main mb-2">
-                                        Team</p>
-                                    <h3 class="text-2xl font-black tracking-tight text-bebbi-deep">Junioren D-9</h3>
+                                    <p class="taste-eyebrow mb-2">Development</p>
+                                    <h3 class="text-2xl font-black tracking-[-0.05em] text-bebbi-void">Junioren D-9</h3>
                                 </div>
-                                <span
-                                    class="text-[11px] bg-bebbi-main/10 text-bebbi-deep px-3 py-1 rounded-full font-bold uppercase tracking-[0.18em]">Aktiv</span>
+                                <span class="rounded-full bg-bebbi-neon px-3 py-1 text-[11px] font-bold uppercase tracking-[0.22em] text-bebbi-void">Aktiv</span>
                             </div>
-                            <p class="mt-4 text-sm leading-relaxed text-gray-600">
-                                Trainer: auf Anfrage. Trainingszeiten: nach Absprache.
-                            </p>
-                            <a href="https://matchcenter.fvnws.ch/default.aspx?a=trr&lng=1&oid=8&t=77791&v=480"
-                                target="_blank" rel="noopener noreferrer"
-                                class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-bebbi-deep hover:text-bebbi-main transition-colors">
-                                FVNWS-Spielplan <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                            </a>
+                            <p class="mt-4 text-sm leading-relaxed text-[color:var(--taste-muted)]">Trainer auf Anfrage. Trainingszeiten nach Absprache.</p>
+                            <a href="#matchcenter" class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-bebbi-void">Spielplan <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
                         </article>
 
-                        <article class="rounded-2xl border border-dashed border-bebbi-main/25 bg-white/70 p-6">
-                            <p class="text-xs font-bold uppercase tracking-[0.22em] text-bebbi-main mb-2">Demnächst</p>
-                            <p class="text-sm leading-relaxed text-gray-600">
-                                Spielerfotos, Trainerprofile und zusätzliche Informationen zu den Mannschaften sollen
-                                hier Schritt für Schritt ergänzt werden.
+                        <article class="rounded-[2rem] border border-dashed border-black/10 bg-white/45 p-6">
+                            <p class="taste-eyebrow mb-2">Design note</p>
+                            <p class="text-base leading-relaxed text-[color:var(--taste-muted)]">
+                                Der Unterschied hier ist nicht mehr Inhalt, sondern Priorisierung: Lead-Content gross,
+                                Nebenteams kompakt, Informationen klarer geführt.
                             </p>
                         </article>
                     </div>
@@ -946,35 +978,25 @@
         </section>
 
         <!-- Sektion 6: News (Floating Panel with Skew trick) -->
-        <section id="news" class="container mx-auto px-4 max-w-7xl reveal-on-scroll">
-            <div class="bg-bebbi-panel rounded-3xl p-8 md:p-14 shadow-2xl">
-                <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 items-start">
+        <section id="news" class="container mx-auto px-4 max-w-[1400px] reveal-on-scroll">
+            <div class="taste-shell rounded-[2.6rem] p-8 md:p-12">
+                <div class="taste-grid-uneven items-stretch">
                     <div>
-                        <span class="text-bebbi-main font-bold tracking-widest text-xs uppercase mb-3 block">Aktuelles
-                            vom Verein</span>
-                        <h2 class="text-3xl md:text-5xl font-black tracking-tight text-bebbi-deep leading-tight">
-                            Aktuelles, Flyer und Vereinsinfos auf einen Blick.
-                        </h2>
-                        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">
-                            Hier sollen künftig offizielle Vereinsnews, Academy-Flyer, Spieltagsinfos und wichtige
-                            Mitteilungen publiziert werden.
+                        <span class="taste-eyebrow mb-3 block">Aktuelles vom Verein</span>
+                        <h2 class="taste-section-title text-bebbi-void">News und Flyer nicht als Lücke, sondern als Bühne.</h2>
+                        <p class="mt-6 max-w-[40rem] text-lg leading-relaxed text-[color:var(--taste-muted)]">
+                            Statt einer leeren Box könnte dieser Bereich künftig offizielle Updates, Academy-Flyer,
+                            Spieltagsinfos oder Sponsorenhinweise in einem klaren Redaktionslayout aufnehmen.
                         </p>
                     </div>
-
-                    <div class="bg-white rounded-3xl border border-gray-100 p-8 shadow-sm">
+                    <div class="taste-soft-panel rounded-[2.2rem] p-8">
                         <div class="flex items-center gap-3 text-bebbi-main">
-                            <div
-                                class="w-12 h-12 rounded-2xl bg-bebbi-main/10 flex items-center justify-center text-bebbi-main">
-                                <i data-lucide="newspaper" class="w-6 h-6"></i>
-                            </div>
-                            <span class="text-xs font-bold uppercase tracking-[0.22em]">Vorschau</span>
+                            <i data-lucide="newspaper" class="w-5 h-5"></i>
+                            <span class="taste-eyebrow">Modul-Vorschau</span>
                         </div>
-                        <h3 class="mt-6 text-2xl font-black tracking-tight text-bebbi-deep">
-                            Platz für aktuelle Informationen.
-                        </h3>
-                        <p class="mt-4 text-sm leading-relaxed text-gray-600">
-                            Sobald Inhalte vorhanden sind, erscheinen hier Newsbeiträge, PDFs, Flyer oder Hinweise zu
-                            Anlässen und Spieltagen.
+                        <h3 class="mt-5 text-2xl font-black tracking-[-0.05em] text-bebbi-void">Flyer, Resultat-Links, Vereinsupdates.</h3>
+                        <p class="mt-4 text-sm leading-relaxed text-[color:var(--taste-muted)]">
+                            Sobald Inhalte da sind, kann dieser Block in Karten, Flyer-Slots oder ein Magazin-Layout aufgeteilt werden.
                         </p>
                     </div>
                 </div>
@@ -1092,32 +1114,26 @@
         </section>
 
         <!-- Sektion 7: Sponsoren (Call to Action) -->
-        <section id="sponsoren" class="container mx-auto px-4 max-w-7xl reveal-on-scroll">
-            <div class="bg-bebbi-deep rounded-3xl p-8 md:p-12 shadow-glow text-white">
-                <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 items-end">
+        <section id="sponsoren" class="container mx-auto px-4 max-w-[1400px] reveal-on-scroll">
+            <div class="rounded-[2.8rem] bg-bebbi-void p-8 text-white shadow-glow md:p-12">
+                <div class="taste-grid-uneven items-end">
                     <div>
-                        <span class="text-bebbi-neon font-bold tracking-[0.22em] text-xs uppercase mb-3 block">Partner
-                            und Sponsoren</span>
-                        <h2 class="text-3xl md:text-5xl font-black tracking-tight leading-tight">
-                            Gemeinsam mehr bewegen für den Nachwuchs.
-                        </h2>
-                        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-white/75">
-                            Unsere Partner begleiten den Verein auf und neben dem Platz. Sichtbarkeit, lokale
-                            Verbundenheit und die Förderung des Nachwuchses stehen dabei im Mittelpunkt.
+                        <span class="taste-eyebrow text-bebbi-neon mb-3 block">Partner und Sponsoren</span>
+                        <h2 class="taste-section-title text-white">Sponsoring kann wertiger und glaubwürdiger aussehen.</h2>
+                        <p class="mt-6 max-w-[38rem] text-lg leading-relaxed text-white/72">
+                            Nicht als generischer Call-to-Action, sondern als echter Partnerbereich mit Haltung,
+                            Sichtbarkeit und Clubnähe.
                         </p>
                     </div>
-
-                    <div
-                        class="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
-                        <p class="text-bebbi-neon text-xs font-bold uppercase tracking-[0.22em]">Wirkung</p>
-                        <div class="mt-5 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
-                            <span class="px-3 py-2 rounded-full border border-white/10 bg-white/5">Community</span>
-                            <span class="px-3 py-2 rounded-full border border-white/10 bg-white/5">Sichtbarkeit</span>
-                            <span class="px-3 py-2 rounded-full border border-white/10 bg-white/5">Nachwuchs</span>
-                            <span class="px-3 py-2 rounded-full border border-white/10 bg-white/5">Events</span>
+                    <div class="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+                        <p class="taste-eyebrow text-bebbi-neon">Wirkung</p>
+                        <div class="mt-5 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/64">
+                            <span class="rounded-full border border-white/10 px-3 py-2">Community</span>
+                            <span class="rounded-full border border-white/10 px-3 py-2">Sichtbarkeit</span>
+                            <span class="rounded-full border border-white/10 px-3 py-2">Nachwuchs</span>
+                            <span class="rounded-full border border-white/10 px-3 py-2">Events</span>
                         </div>
-                        <a href="#kontakt"
-                            class="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-bebbi-deep font-bold hover:bg-bebbi-neon hover:text-bebbi-void transition-all btn-interactive">
+                        <a href="#kontakt" class="taste-button mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-bold text-bebbi-void">
                             Partner werden <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
                     </div>
@@ -1179,13 +1195,6 @@
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
-        }
-
-        function syncNavState() {
-            const navShell = document.getElementById('site-nav-shell');
-            if (!navShell) return;
-
-            navShell.classList.toggle('is-scrolled', window.scrollY > 80);
         }
 
         function initContactForm() {
@@ -1670,7 +1679,7 @@
             if (statusEl) statusEl.textContent = result.status;
         }
 
-        function buildMatchRow(match, index, totalVisible, officialUrl) {
+        function buildMatchRow(match, index, totalVisible) {
             const homeIsClub = match.homeTeam === clubName;
             const awayIsClub = match.awayTeam === clubName;
             const borderClass = index === totalVisible - 1 ? '' : 'border-b border-gray-100';
@@ -1682,18 +1691,18 @@
             const time = match.time || '-';
 
             return `
-                <tr class="cursor-pointer hover:bg-bebbi-main/5 transition-colors ${borderClass}" tabindex="0" role="link" data-official-url="${officialUrl}" title="Offizielle Details auf FVNWS öffnen">
+                <tr class="hover:bg-white/70 transition-colors ${borderClass}">
                     <td class="px-4 py-3 font-semibold text-gray-800">${dateLabel}</td>
                     <td class="px-4 py-3 text-gray-600">${time}</td>
                     <td class="px-4 py-3 text-right ${homeClasses}">${match.homeTeam}</td>
                     <td class="px-4 py-3 text-center text-gray-400">-</td>
                     <td class="px-4 py-3 ${awayClasses}">${match.awayTeam}</td>
-                    <td class="px-4 py-3 text-gray-500">${location}<span class="ml-2 text-[11px] font-bold uppercase tracking-[0.16em] text-bebbi-main">FVNWS</span></td>
+                    <td class="px-4 py-3 text-gray-500">${location}</td>
                 </tr>
             `;
         }
 
-        function renderMatchList(list, bodyId, toggleId, labelId, isExpanded, officialUrl) {
+        function renderMatchList(list, bodyId, toggleId, labelId, isExpanded) {
             const matchListBody = document.getElementById(bodyId);
             const toggleButton = document.getElementById(toggleId);
             const toggleLabel = document.getElementById(labelId);
@@ -1705,24 +1714,8 @@
                 : list;
 
             matchListBody.innerHTML = visibleMatches
-                .map((match, index) => buildMatchRow(match, index, visibleMatches.length, officialUrl))
+                .map((match, index) => buildMatchRow(match, index, visibleMatches.length))
                 .join('');
-
-            matchListBody.querySelectorAll('tr[data-official-url]').forEach((row) => {
-                const openOfficial = () => {
-                    const url = row.getAttribute('data-official-url');
-                    if (!url) return;
-                    window.open(url, '_blank', 'noopener,noreferrer');
-                };
-
-                row.addEventListener('click', openOfficial);
-                row.addEventListener('keydown', (event) => {
-                    if (event.key === 'Enter' || event.key === ' ') {
-                        event.preventDefault();
-                        openOfficial();
-                    }
-                });
-            });
 
             toggleButton.classList.toggle('hidden', !hasMoreThanInitial);
             toggleButton.classList.toggle('is-expanded', hasMoreThanInitial && isExpanded);
@@ -1732,18 +1725,15 @@
         const scheduleConfig = {
             ff17: {
                 matches: matchesFF17,
-                label: 'Meisterschaft Juniorinnen FF-17 2. Stärkeklasse / Frühjahrsrunde',
-                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?a=trr&lng=1&oid=8&t=77789&v=480'
+                label: 'Meisterschaft Juniorinnen FF-17 2. Stärkeklasse / Frühjahrsrunde'
             },
             ff14: {
                 matches: matchesFF14,
-                label: 'Meisterschaft Juniorinnen FF-14 (9v9) / Frühjahrsrunde',
-                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?a=trr&lng=1&oid=8&t=77790&v=480'
+                label: 'Meisterschaft Juniorinnen FF-14 (9v9) / Frühjahrsrunde'
             },
             d9: {
                 matches: matchesD9,
-                label: 'Meisterschaft Junioren D-9 / Frühjahrsrunde',
-                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?a=trr&lng=1&oid=8&t=77791&v=480'
+                label: 'Meisterschaft Junioren D-9 / Frühjahrsrunde'
             }
         };
 
@@ -1764,7 +1754,7 @@
             matchListToggleFF17.addEventListener('click', () => {
                 isFF17Expanded = !isFF17Expanded;
                 renderMatchList(matchesFF17, 'match-list-body-ff17', 'match-list-toggle-ff17',
-                    'match-list-toggle-label-ff17', isFF17Expanded, scheduleConfig.ff17.officialUrl);
+                    'match-list-toggle-label-ff17', isFF17Expanded);
             });
         }
 
@@ -1773,7 +1763,7 @@
             matchListToggleFF14.addEventListener('click', () => {
                 isFF14Expanded = !isFF14Expanded;
                 renderMatchList(matchesFF14, 'match-list-body-ff14', 'match-list-toggle-ff14',
-                    'match-list-toggle-label-ff14', isFF14Expanded, scheduleConfig.ff14.officialUrl);
+                    'match-list-toggle-label-ff14', isFF14Expanded);
             });
         }
 
@@ -1782,7 +1772,7 @@
             matchListToggleD9.addEventListener('click', () => {
                 isD9Expanded = !isD9Expanded;
                 renderMatchList(matchesD9, 'match-list-body-d9', 'match-list-toggle-d9',
-                    'match-list-toggle-label-d9', isD9Expanded, scheduleConfig.d9.officialUrl);
+                    'match-list-toggle-label-d9', isD9Expanded);
             });
         }
 
@@ -1819,15 +1809,13 @@
 
         renderMatchdayForTab('ff17');
         renderMatchList(matchesFF17, 'match-list-body-ff17', 'match-list-toggle-ff17',
-            'match-list-toggle-label-ff17', isFF17Expanded, scheduleConfig.ff17.officialUrl);
+            'match-list-toggle-label-ff17', isFF17Expanded);
         renderMatchList(matchesFF14, 'match-list-body-ff14', 'match-list-toggle-ff14',
-            'match-list-toggle-label-ff14', isFF14Expanded, scheduleConfig.ff14.officialUrl);
+            'match-list-toggle-label-ff14', isFF14Expanded);
         renderMatchList(matchesD9, 'match-list-body-d9', 'match-list-toggle-d9',
-            'match-list-toggle-label-d9', isD9Expanded, scheduleConfig.d9.officialUrl);
+            'match-list-toggle-label-d9', isD9Expanded);
         setActiveScheduleTab('ff17');
         initContactForm();
-        syncNavState();
-        window.addEventListener('scroll', syncNavState, { passive: true });
 
         // --- ANIMATION LOGIC ---
 

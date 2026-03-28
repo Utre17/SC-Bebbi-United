@@ -22,28 +22,8 @@
       "permanent": true
     },
     {
-      "source": "/teams",
-      "destination": "/#teams",
-      "permanent": true
-    },
-    {
-      "source": "/news",
-      "destination": "/#news",
-      "permanent": true
-    },
-    {
       "source": "/mitmachen",
       "destination": "/#mitmachen",
-      "permanent": true
-    },
-    {
-      "source": "/sponsoren",
-      "destination": "/#sponsoren",
-      "permanent": true
-    },
-    {
-      "source": "/kontakt",
-      "destination": "/#kontakt",
       "permanent": true
     }
   ]

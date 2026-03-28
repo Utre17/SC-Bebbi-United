@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+body {
+  background-color: #02110b;
+  color: #1f2937;
+}
+
+.bg-texture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.07'/%3E%3C/svg%3E");
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 30s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+  white-space: nowrap;
+}
+
+#startseite h1 span {
+  display: inline-block;
+  background-image: linear-gradient(90deg, #ffffff 0%, #9ca3af 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-interactive {
+  transition: transform 0.1s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn-interactive:active {
+  transform: scale(0.95);
+}
+
+#mobile-menu {
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(16, 185, 129, 0.4) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(16, 185, 129, 0.4);
+  border-radius: 9999px;
+}
+
+#match-list-toggle svg {
+  transition: transform 0.2s ease;
+}
+
+#match-list-toggle.is-expanded svg {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rotate-slow,
+  .animate-marquee,
+  .logo-glow {
+    animation: none !important;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+.matchday-logo-wrap {
+  height: 5.5rem;
+  width: 5.5rem;
+}
+
+.matchday-logo-wrap.club {
+  height: 7rem;
+  width: 7rem;
+}
+
+.matchday-logo {
+  height: 100%;
+  width: 100%;
+}
+
+#site-nav-shell {
+  border-radius: 1.75rem;
+  background: linear-gradient(180deg, rgba(2, 17, 11, 0.94) 0%, rgba(4, 25, 16, 0.92) 100%) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease,
+    border-radius 0.25s ease,
+    backdrop-filter 0.25s ease;
+}
+
+#site-nav-shell .nav-link {
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+
+#site-nav-shell .nav-link:hover {
+  color: #34d399 !important;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+#site-nav-shell .nav-logo-label {
+  color: rgba(255, 255, 255, 0.96) !important;
+}
+
+#site-nav-shell.is-scrolled {
+  border-radius: 1.1rem;
+  background: linear-gradient(180deg, rgba(2, 17, 11, 0.985) 0%, rgba(4, 25, 16, 0.985) 100%) !important;
+  border-color: rgba(52, 211, 153, 0.14) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  transform: translateY(-1px);
+}
+
+#site-nav-shell.is-scrolled .nav-link {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+#site-nav-shell.is-scrolled .nav-link:hover {
+  color: #34d399 !important;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+#site-nav-shell.is-scrolled .nav-logo-label {
+  color: rgba(255, 255, 255, 0.98) !important;
+}
+
+#site-nav-shell.is-scrolled .nav-logo-sub {
+  color: #34d399 !important;
+}
+
+@media (min-width: 640px) {
+  .matchday-logo-wrap {
+    height: 6.5rem;
+    width: 6.5rem;
+  }
+
+  .matchday-logo-wrap.club {
+    height: 8rem;
+    width: 8rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .matchday-logo-wrap {
+    height: 7.5rem;
+    width: 7.5rem;
+  }
+
+  .matchday-logo-wrap.club {
+    height: 9rem;
+    width: 9rem;
+  }
+}
