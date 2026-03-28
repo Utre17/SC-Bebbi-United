@@ -1,17 +1,6 @@
 {
   "redirects": [
     {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "scbebbiunited.ch"
-        }
-      ],
-      "destination": "https://www.scbebbiunited.ch/$1",
-      "permanent": true
-    },
-    {
       "source": "/matchcenter",
       "destination": "/#matchcenter",
       "permanent": true
