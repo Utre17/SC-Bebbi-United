@@ -675,6 +675,8 @@ lucide.createIcons();
             const ff17Section = document.getElementById('schedule-ff17');
             const ff14Section = document.getElementById('schedule-ff14');
             const d9Section = document.getElementById('schedule-d9');
+            const fullScheduleLink = document.getElementById('schedule-full-link');
+            const config = scheduleConfig[tab] || scheduleConfig.ff17;
 
             if (ff17Section) ff17Section.classList.toggle('hidden', tab !== 'ff17');
             if (ff14Section) ff14Section.classList.toggle('hidden', tab !== 'ff14');
@@ -690,6 +692,10 @@ lucide.createIcons();
                 button.classList.toggle('border', !isActive);
                 button.classList.toggle('border-gray-200', !isActive);
             });
+
+            if (fullScheduleLink) {
+                fullScheduleLink.href = config.officialUrl;
+            }
 
             renderMatchdayForTab(tab);
         }
