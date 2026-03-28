@@ -67,7 +67,7 @@ export const navItems: NavItem[] = [
 ];
 
 export const tickerItems = [
-  "Spielplan und Resultate offiziell über FVNWS",
+  "Spielplan und Resultate offiziell ueber FVNWS",
   "Kontakt: info@scbebbiunited.ch",
   "Instagram: @sc.bebbi.united",
   "Probetraining nach Absprache",
@@ -80,10 +80,10 @@ export const teams: Team[] = [
     ageGroup: "Academy",
     status: "Aktiv",
     summary:
-      "Das FF-17 bildet aktuell den sportlichen Fokus im älteren Juniorinnenbereich. Technik, Intensität und Spielverständnis stehen im Vordergrund.",
+      "Im FF-17 steht der naechste Entwicklungsschritt im Vordergrund. Das Team arbeitet an Tempo, Spielverstaendnis und einem klaren Auftreten auf dem Platz.",
     trainer: "Trainerteam auf Anfrage",
     training: "Trainingszeiten nach Absprache",
-    focus: "Technik, Spielrhythmus, Verantwortung im Team",
+    focus: "Technik, Intensitaet, Verantwortung im Team",
     officialUrl: "https://matchcenter.fvnws.ch/default.aspx?a=trr&lng=1&oid=8&t=77789&v=480",
   },
   {
@@ -92,10 +92,10 @@ export const teams: Team[] = [
     ageGroup: "Academy",
     status: "Aktiv",
     summary:
-      "Die FF-14 verbindet Grundlagenarbeit mit Spielfreude. Der Schritt in strukturierte Teamabläufe und taktisches Verständnis wird hier gezielt begleitet.",
+      "Die FF-14 verbindet Freude am Spiel mit sauberer Ausbildung. Grundlagen, Orientierung und erste klare Teamablaeufe werden hier gezielt aufgebaut.",
     trainer: "Trainerteam auf Anfrage",
     training: "Trainingszeiten nach Absprache",
-    focus: "Ballgefühl, Orientierung, Mut im Spiel",
+    focus: "Ballgefuehl, Orientierung, Mut im Spiel",
     officialUrl: "https://matchcenter.fvnws.ch/default.aspx?a=trr&lng=1&oid=8&t=77790&v=480",
   },
   {
@@ -104,7 +104,7 @@ export const teams: Team[] = [
     ageGroup: "Nachwuchs",
     status: "Aktiv",
     summary:
-      "Im D-9 geht es um saubere Grundlagen, viel Ballkontakt und Freude an Bewegung. Das Team bildet einen wichtigen Teil des Nachwuchsaufbaus.",
+      "Im D-9 geht es um die Basis: viele Ballaktionen, gute Gewohnheiten im Training und Freude am gemeinsamen Lernen im Team.",
     trainer: "Trainerteam auf Anfrage",
     training: "Trainingszeiten nach Absprache",
     focus: "Grundtechnik, Entscheidungsverhalten, Teamgeist",
@@ -117,19 +117,19 @@ export const clubMatchcenterUrl =
 
 export const academyPillars: AcademyPillar[] = [
   {
-    title: "Technische Förderung",
+    title: "Technische Foerderung",
     description:
-      "Saubere Grundlagen, Ballkontrolle, Timing und Handlungsschnelligkeit werden altersgerecht aufgebaut.",
+      "Saubere Grundlagen, Ballkontrolle und sichere technische Ablaeufe werden altersgerecht aufgebaut und gefestigt.",
   },
   {
-    title: "Taktisches Verständnis",
+    title: "Taktisches Verstaendnis",
     description:
-      "Spielerinnen und Spieler lernen Raum, Rhythmus und Verantwortung innerhalb des Teams zu lesen und umzusetzen.",
+      "Spielerinnen und Spieler lernen, Spielsituationen besser zu erkennen, Loesungen zu finden und Verantwortung im Team zu uebernehmen.",
   },
   {
-    title: "Mentale Stärke",
+    title: "Mentale Staerke",
     description:
-      "Respekt, Konzentration, Selbstvertrauen und Verlässlichkeit gehören für den Verein genauso zur Ausbildung wie Training auf dem Platz.",
+      "Respekt, Konzentration, Selbstvertrauen und Verlaesslichkeit gehoeren fuer den Verein genauso zur Ausbildung wie das Training auf dem Platz.",
   },
 ];
 
@@ -137,47 +137,47 @@ export const academyStaff: AcademyStaff[] = [
   {
     role: "Academy-Leitung",
     name: "Name folgt",
-    note: "Verantwortlich für Ausrichtung, Entwicklung und Koordination.",
+    note: "Verantwortlich fuer Ausrichtung, Entwicklung und die sportliche Linie der Academy.",
   },
   {
     role: "Nachwuchskoordination",
     name: "Name folgt",
-    note: "Begleitet Teamplanung, Kommunikation und Übergänge zwischen den Kategorien.",
+    note: "Begleitet Teamplanung, Kommunikation und die Uebergaenge zwischen den Kategorien.",
   },
   {
     role: "Technik & Taktik",
     name: "Name folgt",
-    note: "Unterstützt Trainingsinhalte, Methodik und Spielprinzipien.",
+    note: "Unterstuetzt Trainingsinhalte, Methodik und die Entwicklung klarer Spielprinzipien.",
   },
   {
     role: "Mentale Begleitung",
     name: "Name folgt",
-    note: "Fördert Haltung, Selbstvertrauen und Teamkultur im Alltag.",
+    note: "Foerdert Haltung, Selbstvertrauen und Teamkultur im Trainings- und Spielalltag.",
   },
 ];
 
 export const newsItems: NewsItem[] = [
   {
-    title: "Probetraining direkt anfragen",
+    title: "Probetraining anfragen",
     category: "Mitmachen",
     description:
-      "Interessierte Kinder, Jugendliche und Familien können sich bereits jetzt unverbindlich über das Kontaktformular melden.",
+      "Interessierte Kinder, Jugendliche und Familien koennen sich direkt und unverbindlich beim Verein melden.",
     href: "/kontakt",
     cta: "Zur Anfrage",
   },
   {
-    title: "Offizielle Resultate auf FVNWS",
+    title: "Resultate und Spielberichte",
     category: "Matchcenter",
     description:
-      "Auf der Clubseite zeigen wir den Einstieg. Alle aktuellen Resultate, Tabellen und Matchdetails bleiben bewusst auf der offiziellen Verbandsseite.",
+      "Auf unserer Website findest du den Einstieg in den Spielplan. Offizielle Resultate, Tabellen und Matchdetails laufen ueber FVNWS.",
     href: "/teams",
     cta: "Zu den Teams",
   },
   {
-    title: "Academy-Inhalte werden ausgebaut",
+    title: "Academy im Aufbau",
     category: "Academy",
     description:
-      "Die öffentliche Academy-Seite bildet bereits die Ausrichtung ab. Staff-Profile, weitere Inhalte und Flyer werden Schritt für Schritt ergänzt.",
+      "Die Academy-Seite zeigt bereits die Ausrichtung des Vereins. Weitere Inhalte, Profile und Unterlagen folgen laufend.",
     href: "/academy",
     cta: "Academy ansehen",
   },
@@ -188,14 +188,14 @@ export const flyerItems: FlyerItem[] = [
     title: "Academy-Flyer",
     status: "In Vorbereitung",
     description:
-      "Der erste Überblick zur Academy, zu den Schwerpunkten und zur Nachwuchsförderung wird hier publiziert.",
+      "Ein kompakter Ueberblick zur Academy, zu den Schwerpunkten und zur Nachwuchsfoerderung wird hier veroeffentlicht.",
     cta: "Folgt bald",
   },
   {
     title: "Sponsoring-Unterlagen",
     status: "Auf Anfrage",
     description:
-      "Informationen zu möglichen Partnerformaten und Sichtbarkeit im Verein werden individuell zur Verfügung gestellt.",
+      "Informationen zu Partnerformaten, Sichtbarkeit und moeglichen Paketen stellen wir aktuell direkt auf Anfrage zur Verfuegung.",
     href: "/kontakt",
     cta: "Kontakt aufnehmen",
   },
@@ -203,7 +203,7 @@ export const flyerItems: FlyerItem[] = [
     title: "Probetraining-Infos",
     status: "Aktiv",
     description:
-      "Anfragen für Probetrainings und allgemeine Fragen laufen bereits jetzt direkt über die Kontaktseite.",
+      "Anfragen fuer Probetrainings und allgemeine Fragen laufen aktuell direkt ueber die Kontaktseite.",
     href: "/kontakt",
     cta: "Jetzt anfragen",
   },
@@ -213,17 +213,17 @@ export const sponsorSlots: SponsorSlot[] = [
   {
     title: "Lokale Sichtbarkeit",
     description:
-      "Präsenz auf der Website, bei Vereinskommunikation und in künftigen Clubunterlagen.",
+      "Praesenz auf der Website, in der Vereinskommunikation und in kuenftigen Clubunterlagen.",
   },
   {
-    title: "Nachwuchs fördern",
+    title: "Nachwuchs foerdern",
     description:
-      "Partnerschaften sollen direkt zur Entwicklung der Academy und der Teams beitragen.",
+      "Partnerschaften sollen direkt zur Entwicklung der Academy und der aktiven Teams beitragen.",
   },
   {
-    title: "Platz für Ihr Logo",
+    title: "Platz fuer Ihr Logo",
     description:
-      "Die finale Sponsorendarstellung wird ergänzt, sobald Partner und Inhalte bestätigt sind.",
+      "Die finale Sponsorendarstellung wird laufend ergaenzt, sobald Partner und Inhalte bestaetigt sind.",
   },
 ];
 
@@ -232,19 +232,19 @@ export const merchItems: MerchItem[] = [
     title: "Clubwear",
     category: "Textilien",
     description:
-      "Hoodies, Shirts und weitere Vereinsprodukte sollen künftig gesammelt vorgestellt werden.",
+      "Hoodies, Shirts und weitere Vereinsprodukte sollen kuenftig gesammelt und sauber praesentiert werden.",
   },
   {
     title: "Training & Alltag",
-    category: "Ausrüstung",
+    category: "Ausruestung",
     description:
-      "Kleine Accessoires und praktisches Material können später als externer oder interner Shopbereich ergänzt werden.",
+      "Kleine Accessoires und praktisches Material koennen spaeter ueber einen internen oder externen Shopbereich ergaenzt werden.",
   },
   {
     title: "Fanartikel",
     category: "Gadgets",
     description:
-      "Phase 1 zeigt nur den Einstieg. Eine eigentliche Bestelllogik folgt erst nach Klärung von Sortiment und Abläufen.",
+      "Fanartikel sind als naechster Schritt denkbar. Sortiment, Partner und Bestellablauf werden zuerst sauber festgelegt.",
   },
 ];
 
@@ -255,13 +255,13 @@ export const contactDetails = {
   facebook: "#",
   contacts: [
     { label: "Dino (Sportchef)", href: "tel:+41763230825", value: "076 323 08 25" },
-    { label: "Claudio (Präsident)", href: "tel:+41763965091", value: "076 396 50 91" },
+    { label: "Claudio (Praesident)", href: "tel:+41763965091", value: "076 396 50 91" },
   ],
   formEndpoint: "https://formspree.io/f/mjgrnbeq",
 };
 
 export const homeStats = [
   { label: "Aktive Teams", value: "3" },
-  { label: "Academy-Fokus", value: "Technik, Taktik, Mentalität" },
+  { label: "Academy-Fokus", value: "Technik, Taktik, Mentalitaet" },
   { label: "Offizielle Matchdetails", value: "FVNWS" },
 ];

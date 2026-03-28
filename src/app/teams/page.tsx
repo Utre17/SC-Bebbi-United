@@ -18,10 +18,11 @@ export default function TeamsPage() {
         <section className="rounded-[2.3rem] border border-white/10 bg-[linear-gradient(135deg,rgba(6,78,59,1),rgba(2,17,11,0.98))] px-6 py-10 text-white shadow-[0_30px_90px_rgba(0,0,0,0.25)] md:px-10 md:py-14">
           <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#34d399]">Teams</p>
           <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
-            Drei aktive Kategorien, klar gegliedert und direkt mit dem offiziellen Matchcenter verbunden.
+            Unsere aktiven Teams auf einen Blick.
           </h1>
           <p className="mt-6 max-w-3xl text-base leading-8 text-white/75 md:text-lg">
-            Auf dieser Seite bleibt die Information bewusst kompakt. Fuer Resultate, Tabellen und alle Matchdetails verlinkt jedes Team direkt auf seine offizielle FVNWS-Seite.
+            Hier findest du die wichtigsten Informationen zu den aktuellen Kategorien von SC Bebbi United. Fuer
+            Spielplan, Resultate und Matchdetails gelangst du von jedem Team direkt zum offiziellen FVNWS-Eintrag.
           </p>
           <a
             href={clubMatchcenterUrl}
@@ -37,8 +38,8 @@ export default function TeamsPage() {
         <section className="rounded-[2.2rem] bg-[#f4f6f7] px-6 py-10 shadow-[0_24px_80px_rgba(0,0,0,0.16)] md:px-10 md:py-14">
           <SectionHeading
             eyebrow="Aktive Teams"
-            title="Die wichtigsten oeffentlichen Informationen pro Kategorie."
-            description="Trainerprofile, Fotos und zusaetzliche Inhalte koennen spaeter ergaenzt werden. Phase 1 konzentriert sich auf Klarheit, Einstieg und die Verbindung zum offiziellen Spielbetrieb."
+            title="Die wichtigsten Informationen pro Kategorie."
+            description="Trainingsinfos, sportlicher Schwerpunkt und der direkte Weg zu den offiziellen Spielbetriebsdaten sind hier bewusst klar und kompakt gehalten."
           />
           <div className="mt-10 grid gap-6 lg:grid-cols-[1.15fr_0.85fr_0.85fr]">
             <TeamCard team={teams[0]} featured />

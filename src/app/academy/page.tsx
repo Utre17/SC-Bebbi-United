@@ -17,10 +17,11 @@ export default function AcademyPage() {
         <section className="rounded-[2.3rem] border border-white/10 bg-[linear-gradient(135deg,rgba(6,78,59,1),rgba(2,17,11,0.98))] px-6 py-10 text-white shadow-[0_30px_90px_rgba(0,0,0,0.25)] md:px-10 md:py-14">
           <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#34d399]">Academy</p>
           <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
-            Nachwuchsförderung mit klarer Ausrichtung und langfristigem Anspruch.
+            Nachwuchsfoerderung mit klarer Ausrichtung und echtem Entwicklungsfokus.
           </h1>
           <p className="mt-6 max-w-3xl text-base leading-8 text-white/75 md:text-lg">
-            Die Academy ist der Bereich, in dem SC Bebbi United Entwicklung sichtbar machen will. Technik, Taktik und Mentalität werden nicht getrennt gedacht, sondern als gemeinsamer Rahmen für Training, Spiel und Zusammenhalt im Verein.
+            Die Academy steht fuer die sportliche und persoenliche Entwicklung junger Spielerinnen und Spieler.
+            Technik, Taktik und Mentalitaet werden bei uns als gemeinsamer Weg verstanden, nicht als einzelne Bausteine.
           </p>
         </section>
 
@@ -28,7 +29,7 @@ export default function AcademyPage() {
           <SectionHeading
             eyebrow="Drei Schwerpunkte"
             title="Woran die Academy im Alltag arbeitet."
-            description="Die öffentliche Academy-Seite zeigt den Ausbildungsrahmen bereits heute. Weitere Staff-Profile, Inhalte und Flyer können später ergänzt werden, ohne die Grundstruktur zu ändern."
+            description="Unsere Ausbildungsarbeit soll auf dem Platz sichtbar werden: in sauberen Grundlagen, in besseren Entscheidungen und in einer klaren Teamhaltung."
           />
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {academyPillars.map((pillar) => (
@@ -48,7 +49,7 @@ export default function AcademyPage() {
             <SectionHeading
               eyebrow="Staff-Struktur"
               title="Vier Rollen, die den Bereich tragen."
-              description="Die Struktur steht bereits. Namen und Porträts folgen, sobald die finalen Inhalte bestätigt sind."
+              description="Die Academy wird durch klare Verantwortlichkeiten getragen. Namen und Portraets werden ergaenzt, sobald die finalen Inhalte bestaetigt sind."
             />
             <div className="mt-10 grid gap-5">
               {academyStaff.map((entry) => (
@@ -64,10 +65,11 @@ export default function AcademyPage() {
           <div className="rounded-[2.2rem] bg-[#064e3b] px-6 py-10 text-white shadow-[0_26px_90px_rgba(6,78,59,0.32)] md:px-10 md:py-14">
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#34d399]">Verbindung zu den Teams</p>
             <h2 className="mt-4 text-3xl font-black tracking-tight md:text-4xl">
-              Academy bedeutet nicht Theorie, sondern Alltag im Training.
+              Academy bedeutet nicht Theorie, sondern taegliche Arbeit im Training.
             </h2>
             <p className="mt-5 text-sm leading-7 text-white/75">
-              Die Academy prägt die Arbeitsweise in allen aktuellen Kategorien. Sie soll später mit zusätzlichen Profilen, Teamfotos und weiteren Inhalten wachsen, ohne das Grundprinzip zu verlieren.
+              Die Academy soll sich in allen Teams wiederfinden: in der Trainingskultur, in der Haltung und in der Art,
+              wie Entwicklung im Verein gedacht wird.
             </p>
             <div className="mt-8 grid gap-4">
               {teams.map((team) => (

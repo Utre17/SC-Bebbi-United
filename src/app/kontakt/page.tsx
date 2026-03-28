@@ -20,7 +20,8 @@ export default function ContactPage() {
             Probetraining, Vereinsfragen und Sponsoring direkt anfragen.
           </h1>
           <p className="mt-6 max-w-3xl text-base leading-8 text-white/75 md:text-lg">
-            Die Kontaktseite ist der oeffentliche Einstieg fuer Interessierte, Familien, Partner und allgemeine Anfragen. Sie buendelt die direkte Kommunikation, bis spaeter weitere interne Bereiche entstehen.
+            Ob Probetraining, allgemeine Frage oder Sponsoring-Anliegen: ueber diese Seite erreichst du den Verein
+            direkt und unkompliziert.
           </p>
         </section>
 
@@ -59,7 +60,7 @@ export default function ContactPage() {
           <div className="rounded-[2.2rem] bg-[#064e3b] px-6 py-10 shadow-[0_26px_90px_rgba(6,78,59,0.32)] md:px-10 md:py-14">
             <h2 className="text-3xl font-black tracking-tight text-white">Formular</h2>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-white/75">
-              Fuer Probetraining, allgemeine Fragen oder Sponsoring reicht eine kurze Nachricht. Das Formular bleibt bewusst direkt und oeffentlich.
+              Fuer Probetraining, allgemeine Fragen oder Sponsoring reicht eine kurze Nachricht. Wir melden uns so schnell wie moeglich.
             </p>
             <div className="mt-8 rounded-[1.8rem] border border-white/10 bg-white/5 p-6 backdrop-blur-sm md:p-8">
               <ContactForm variant="dark" />

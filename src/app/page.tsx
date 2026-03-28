@@ -10,7 +10,9 @@ function getHomepageMarkup() {
     throw new Error("Could not extract homepage markup from index.html.");
   }
 
-  return bodyMatch[1].trim();
+  return bodyMatch[1]
+    .replace(/<!-- Navigation -->[\s\S]*?<\/nav>/i, "")
+    .trim();
 }
 
 export default function Home() {

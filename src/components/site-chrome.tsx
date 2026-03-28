@@ -10,7 +10,12 @@ export function SiteChrome({ children }: { children: ReactNode }) {
   const isHome = pathname === "/";
 
   if (isHome) {
-    return <>{children}</>;
+    return (
+      <>
+        <SiteHeader />
+        {children}
+      </>
+    );
   }
 
   return (
