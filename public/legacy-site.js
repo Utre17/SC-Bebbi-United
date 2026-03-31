@@ -1,10 +1,27 @@
-lucide.createIcons();
+(() => {
+        lucide.createIcons();
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        function toggleMenu() {
+        function setMenuOpen(isOpen) {
             const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+            if (!menu) return;
+
+            menu.classList.toggle('hidden', !isOpen);
+            menu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+            document.body.classList.toggle('menu-open', isOpen);
         }
+
+        function toggleMenu(forceState) {
+            const menu = document.getElementById('mobile-menu');
+            if (!menu) return;
+
+            const nextState = typeof forceState === 'boolean'
+                ? forceState
+                : menu.classList.contains('hidden');
+            setMenuOpen(nextState);
+        }
+
+        window.toggleMenu = toggleMenu;
 
         function initContactForm() {
             const form = document.getElementById('contact-form');
@@ -717,6 +734,24 @@ lucide.createIcons();
         setActiveScheduleTab('ff17');
         initContactForm();
 
+        if (window.__legacySiteResizeHandler) {
+            window.removeEventListener('resize', window.__legacySiteResizeHandler);
+        }
+
+        window.__legacySiteResizeHandler = () => {
+            if (window.innerWidth >= 768) {
+                setMenuOpen(false);
+            }
+        };
+
+        window.addEventListener('resize', window.__legacySiteResizeHandler);
+
+        document.querySelectorAll('#mobile-menu a').forEach((link) => {
+            link.addEventListener('click', () => {
+                setMenuOpen(false);
+            });
+        });
+
         // --- ANIMATION LOGIC ---
 
         // 1. Intersection Observer for Scroll Reveals
@@ -747,3 +782,4 @@ lucide.createIcons();
         document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
             observer.observe(el);
         });
+})();

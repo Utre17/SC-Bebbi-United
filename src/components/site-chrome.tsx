@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { usePathname } from "next/navigation";
+import { LegacySiteRunner } from "@/components/legacy-site-runner";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
@@ -12,7 +13,8 @@ export function SiteChrome({ children }: { children: ReactNode }) {
   if (isHome) {
     return (
       <>
-        <SiteHeader />
+        <LegacySiteRunner />
+        <SiteHeader key={pathname} />
         {children}
       </>
     );
@@ -20,8 +22,9 @@ export function SiteChrome({ children }: { children: ReactNode }) {
 
   return (
     <>
+      <LegacySiteRunner />
       <div className="bg-texture" />
-      <SiteHeader />
+      <SiteHeader key={pathname} />
       {children}
       <SiteFooter />
     </>

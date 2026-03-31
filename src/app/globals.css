@@ -3,6 +3,7 @@
 body {
   background-color: #02110b;
   color: #1f2937;
+  overflow-x: hidden;
 }
 
 .bg-texture {
@@ -55,8 +56,8 @@ body {
 }
 
 .reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: translateY(0);
   transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -130,6 +131,23 @@ body {
 .matchday-logo {
   height: 100%;
   width: 100%;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+.home-status-rail {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.home-status-rail::-webkit-scrollbar {
+  display: none;
+}
+
+.schedule-scroll-hint {
+  display: none;
 }
 
 #site-nav-shell {
@@ -209,5 +227,208 @@ body {
   .matchday-logo-wrap.club {
     height: 9rem;
     width: 9rem;
+  }
+}
+
+@media (max-width: 767px) {
+  #site-nav-shell {
+    border-radius: 1.25rem;
+  }
+
+  #site-nav-shell.is-scrolled {
+    border-radius: 1rem;
+  }
+
+  .home-hero {
+    min-height: 100svh;
+    padding-top: 6.75rem;
+    padding-bottom: 2.75rem;
+  }
+
+  .home-hero-glow {
+    width: min(72vw, 18rem);
+    height: min(72vw, 18rem);
+  }
+
+  .home-status-rail {
+    overflow-x: auto;
+  }
+
+  .home-status-track {
+    width: max-content;
+    min-width: 100%;
+    animation: none !important;
+    gap: 0.875rem;
+    padding-inline: 1rem;
+    justify-content: flex-start;
+  }
+
+  .home-status-group {
+    gap: 0.875rem;
+    flex-shrink: 0;
+  }
+
+  .home-status-group--duplicate {
+    display: none;
+  }
+
+  .home-status-item,
+  .home-status-lead {
+    border: 1px solid rgba(52, 211, 153, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 9999px;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.75rem;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .home-status-lead {
+    color: #34d399;
+  }
+
+  .home-status-divider {
+    display: none;
+  }
+
+  .matchcenter-shell {
+    border-radius: 1.5rem;
+  }
+
+  .matchcenter-panel {
+    border-radius: 1.125rem;
+  }
+
+  .matchday-side,
+  .matchcenter-side,
+  .schedule-panel,
+  .home-panel {
+    padding: 1.25rem;
+  }
+
+  .matchday-team-row {
+    gap: 1rem;
+  }
+
+  .matchday-team-column {
+    min-width: 0;
+    gap: 0.75rem;
+  }
+
+  .matchday-team-name {
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+
+  .matchday-vs {
+    font-size: 2.25rem;
+    line-height: 1;
+  }
+
+  .matchday-meta-grid {
+    gap: 1rem;
+  }
+
+  .matchday-score-row {
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .matchday-score,
+  .next-match-stat {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .schedule-tabs {
+    gap: 0.5rem;
+  }
+
+  .schedule-tab {
+    min-height: 2.75rem;
+    padding-inline: 0.875rem;
+  }
+
+  .schedule-link {
+    min-height: 2.75rem;
+  }
+
+  .schedule-scroll-hint {
+    display: block;
+  }
+
+  .schedule-table-wrap {
+    margin-inline: -0.25rem;
+    padding-inline: 0.25rem;
+  }
+
+  .schedule-table {
+    min-width: 34rem;
+    font-size: 0.8125rem;
+  }
+
+  .schedule-table th,
+  .schedule-table td {
+    padding: 0.7rem 0.75rem;
+  }
+
+  .home-section-shell {
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .home-grid-tight {
+    gap: 1rem;
+  }
+
+  .home-content-title {
+    font-size: 2rem;
+    line-height: 0.98;
+  }
+
+  .home-copy {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .home-card {
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+  }
+
+  .home-cta-inline {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .home-footer {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .home-hero-glow {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .matchday-logo-wrap {
+    height: 4.5rem;
+    width: 4.5rem;
+  }
+
+  .matchday-logo-wrap.club {
+    height: 5.25rem;
+    width: 5.25rem;
+  }
+
+  .matchday-score,
+  .next-match-stat {
+    font-size: 2.5rem;
+  }
+
+  .schedule-table {
+    min-width: 31rem;
   }
 }

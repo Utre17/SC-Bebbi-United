@@ -116,8 +116,8 @@
 
         /* Scroll Reveal Utility Classes */
         .reveal-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
+            opacity: 1;
+            transform: translateY(0);
             transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
@@ -199,6 +199,23 @@
             width: 100%;
         }
 
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        .home-status-rail {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .home-status-rail::-webkit-scrollbar {
+            display: none;
+        }
+
+        .schedule-scroll-hint {
+            display: none;
+        }
+
         /* Scroll-state navbar */
         #site-nav-shell {
             border-radius: 1.75rem;
@@ -272,6 +289,209 @@
             .matchday-logo-wrap.club {
                 height: 9rem;
                 width: 9rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            #site-nav-shell {
+                border-radius: 1.25rem;
+            }
+
+            #site-nav-shell.is-scrolled {
+                border-radius: 1rem;
+            }
+
+            .home-hero {
+                min-height: 100svh;
+                padding-top: 6.75rem;
+                padding-bottom: 2.75rem;
+            }
+
+            .home-hero-glow {
+                width: min(72vw, 18rem);
+                height: min(72vw, 18rem);
+            }
+
+            .home-status-rail {
+                overflow-x: auto;
+            }
+
+            .home-status-track {
+                width: max-content;
+                min-width: 100%;
+                animation: none !important;
+                gap: 0.875rem;
+                padding-inline: 1rem;
+                justify-content: flex-start;
+            }
+
+            .home-status-group {
+                gap: 0.875rem;
+                flex-shrink: 0;
+            }
+
+            .home-status-group--duplicate {
+                display: none;
+            }
+
+            .home-status-item,
+            .home-status-lead {
+                border: 1px solid rgba(52, 211, 153, 0.2);
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 9999px;
+                padding: 0.55rem 0.85rem;
+                font-size: 0.75rem;
+                line-height: 1;
+                white-space: nowrap;
+            }
+
+            .home-status-lead {
+                color: #34d399;
+            }
+
+            .home-status-divider {
+                display: none;
+            }
+
+            .matchcenter-shell {
+                border-radius: 1.5rem;
+            }
+
+            .matchcenter-panel {
+                border-radius: 1.125rem;
+            }
+
+            .matchday-side,
+            .matchcenter-side,
+            .schedule-panel,
+            .home-panel {
+                padding: 1.25rem;
+            }
+
+            .matchday-team-row {
+                gap: 1rem;
+            }
+
+            .matchday-team-column {
+                min-width: 0;
+                gap: 0.75rem;
+            }
+
+            .matchday-team-name {
+                font-size: 1rem;
+                line-height: 1.25rem;
+            }
+
+            .matchday-vs {
+                font-size: 2.25rem;
+                line-height: 1;
+            }
+
+            .matchday-meta-grid {
+                gap: 1rem;
+            }
+
+            .matchday-score-row {
+                gap: 1.25rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .matchday-score,
+            .next-match-stat {
+                font-size: 3rem;
+                line-height: 1;
+            }
+
+            .schedule-tabs {
+                gap: 0.5rem;
+            }
+
+            .schedule-tab {
+                min-height: 2.75rem;
+                padding-inline: 0.875rem;
+            }
+
+            .schedule-link {
+                min-height: 2.75rem;
+            }
+
+            .schedule-scroll-hint {
+                display: block;
+            }
+
+            .schedule-table-wrap {
+                margin-inline: -0.25rem;
+                padding-inline: 0.25rem;
+            }
+
+            .schedule-table {
+                min-width: 34rem;
+                font-size: 0.8125rem;
+            }
+
+            .schedule-table th,
+            .schedule-table td {
+                padding: 0.7rem 0.75rem;
+            }
+
+            .home-section-shell {
+                border-radius: 1.5rem;
+                padding: 1.5rem;
+            }
+
+            .home-grid-tight {
+                gap: 1rem;
+            }
+
+            .home-content-title {
+                font-size: 2rem;
+                line-height: 0.98;
+            }
+
+            .home-copy {
+                font-size: 1rem;
+                line-height: 1.75;
+            }
+
+            .home-card {
+                border-radius: 1.25rem;
+                padding: 1.25rem;
+            }
+
+            .home-cta-inline {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .home-footer {
+                padding-top: 3rem;
+                padding-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 479px) {
+            .home-hero-glow {
+                width: 15rem;
+                height: 15rem;
+            }
+
+            .matchday-logo-wrap {
+                height: 4.5rem;
+                width: 4.5rem;
+            }
+
+            .matchday-logo-wrap.club {
+                height: 5.25rem;
+                width: 5.25rem;
+            }
+
+            .matchday-score,
+            .next-match-stat {
+                font-size: 2.5rem;
+            }
+
+            .schedule-table {
+                min-width: 31rem;
             }
         }
     </style>
@@ -372,7 +592,7 @@
 
     <!-- Sektion 1: Hero -->
     <section id="startseite"
-        class="relative min-h-screen flex flex-col justify-center items-center text-center text-white pt-20 pb-10 overflow-hidden z-10">
+        class="home-hero relative min-h-screen flex flex-col justify-center items-center text-center text-white pt-24 pb-12 sm:pt-28 sm:pb-12 overflow-hidden z-10">
 
         <!-- Hero Background Image with Vignette & Parallax base -->
         <div class="absolute inset-0 z-0">
@@ -387,51 +607,52 @@
 
             <!-- Animated Rotating Glow behind Logo -->
             <div
-                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none">
+                class="home-hero-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none"
+                >
                 <div
                     class="w-full h-full bg-[conic-gradient(from_0deg,transparent_0deg,#10b981_100deg,transparent_200deg)] rounded-full opacity-20 blur-[80px] animate-rotate-slow">
                 </div>
             </div>
 
             <!-- Grosses Logo -->
-            <div class="mb-10 relative reveal-on-scroll">
+            <div class="mb-8 relative reveal-on-scroll sm:mb-10">
                 <img src="assets/images/logo.png" alt="SC Bebbi United Wappen"
-                    class="h-48 w-auto md:h-64 drop-shadow-2xl relative z-10">
+                    class="h-36 w-auto sm:h-44 md:h-64 drop-shadow-2xl relative z-10">
             </div>
 
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight mb-6 drop-shadow-xl leading-none reveal-on-scroll"
+            <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight mb-5 sm:mb-6 drop-shadow-xl leading-none reveal-on-scroll"
                 style="transition-delay: 100ms;">
                 SC Bebbi <span
                     class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">United</span>
             </h1>
 
-            <div class="flex items-center gap-3 mb-8 reveal-on-scroll" style="transition-delay: 200ms;">
-                <span class="h-px w-12 bg-bebbi-neon/50"></span>
+            <div class="flex items-center gap-3 mb-6 sm:mb-8 reveal-on-scroll" style="transition-delay: 200ms;">
+                <span class="h-px w-8 sm:w-12 bg-bebbi-neon/50"></span>
                 <span
-                    class="text-bebbi-neon tracking-[0.3em] font-bold uppercase text-sm md:text-base text-shadow-glow">Basel
+                    class="text-bebbi-neon tracking-[0.24em] sm:tracking-[0.3em] font-bold uppercase text-[11px] sm:text-sm md:text-base text-shadow-glow">Basel
                     2025</span>
-                <span class="h-px w-12 bg-bebbi-neon/50"></span>
+                <span class="h-px w-8 sm:w-12 bg-bebbi-neon/50"></span>
             </div>
 
-            <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-300 font-light leading-relaxed mb-10 reveal-on-scroll"
+            <p class="max-w-xl mx-auto text-base sm:text-lg md:text-xl text-gray-300 font-light leading-relaxed mb-8 sm:mb-10 reveal-on-scroll"
                 style="transition-delay: 300ms;">
                 Leidenschaft. Zusammenhalt. Basler Kultur.<br>
                 <span class="text-white font-medium">Dein neuer Verein im Herzen der Stadt.</span>
             </p>
-            <div class="flex items-center gap-3 mb-8 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-xs uppercase tracking-widest text-gray-200 reveal-on-scroll"
+            <div class="flex items-center gap-3 mb-8 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-[11px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-widest text-gray-200 reveal-on-scroll"
                 style="transition-delay: 350ms;">
                 <span class="w-2 h-2 rounded-full bg-bebbi-neon"></span>
                 Spielplan live · Kontaktformular aktiv
             </div>
 
-            <div class="flex flex-col sm:flex-row gap-5 w-full justify-center px-4 reveal-on-scroll"
+            <div class="flex flex-col sm:flex-row gap-4 sm:gap-5 w-full justify-center px-4 reveal-on-scroll"
                 style="transition-delay: 400ms;">
                 <a href="#mitmachen"
-                    class="w-full sm:w-auto px-8 py-4 bg-bebbi-main hover:bg-bebbi-neon text-white hover:text-bebbi-void rounded-full font-bold text-lg shadow-glow hover:shadow-neon transition-all btn-interactive flex items-center justify-center gap-2">
+                    class="w-full sm:w-auto px-6 sm:px-8 py-4 bg-bebbi-main hover:bg-bebbi-neon text-white hover:text-bebbi-void rounded-full font-bold text-base sm:text-lg shadow-glow hover:shadow-neon transition-all btn-interactive flex items-center justify-center gap-2">
                     <i data-lucide="user-plus" class="w-5 h-5"></i> Interesse bekunden
                 </a>
                 <a href="#matchcenter"
-                    class="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/20 text-white hover:bg-white hover:text-bebbi-deep rounded-full font-bold text-lg transition-all btn-interactive flex items-center justify-center gap-2 backdrop-blur-sm">
+                    class="w-full sm:w-auto px-6 sm:px-8 py-4 bg-white/5 border border-white/20 text-white hover:bg-white hover:text-bebbi-deep rounded-full font-bold text-base sm:text-lg transition-all btn-interactive flex items-center justify-center gap-2 backdrop-blur-sm">
                     <i data-lucide="calendar" class="w-5 h-5"></i> Zum Spielplan
                 </a>
             </div>
@@ -448,23 +669,24 @@
     </section>
 
     <!-- Ticker Section -->
-    <div class="bg-bebbi-deep border-y border-bebbi-neon/30 overflow-hidden py-3 relative z-20">
-        <div class="flex animate-marquee gap-8 items-center">
-            <!-- Repeated Items for seamless loop -->
-            <span class="text-bebbi-neon font-bold uppercase tracking-widest text-sm inline-flex items-center gap-2"><i
-                    data-lucide="zap" class="w-3 h-3"></i> Spielplan live: FF-17, FF-14 (9v9) & Junioren D-9</span>
-            <span class="text-white/30">///</span>
-            <span class="text-white font-medium text-sm">Kontakt: info@scbebbiunited.ch</span>
-            <span class="text-white/30">///</span>
-            <span class="text-white font-medium text-sm">Instagram: @sc.bebbi.united</span>
-            <span class="text-white/30">///</span>
-            <!-- Duplicate for Loop -->
-            <span class="text-bebbi-neon font-bold uppercase tracking-widest text-sm inline-flex items-center gap-2"><i
-                    data-lucide="zap" class="w-3 h-3"></i> Spielplan live: FF-17, FF-14 (9v9) & Junioren D-9</span>
-            <span class="text-white/30">///</span>
-            <span class="text-white font-medium text-sm">Kontakt: info@scbebbiunited.ch</span>
-            <span class="text-white/30">///</span>
-            <span class="text-white font-medium text-sm">Instagram: @sc.bebbi.united</span>
+    <div class="home-status-rail bg-bebbi-deep border-y border-bebbi-neon/30 overflow-hidden py-3 relative z-20">
+        <div class="home-status-track flex animate-marquee gap-8 items-center">
+            <div class="home-status-group inline-flex items-center gap-8">
+                <span class="home-status-lead text-bebbi-neon font-bold uppercase tracking-widest text-sm inline-flex items-center gap-2"><i
+                        data-lucide="zap" class="w-3 h-3"></i> Spielplan live: FF-17, FF-14 (9v9) & Junioren D-9</span>
+                <span class="home-status-divider text-white/30">///</span>
+                <span class="home-status-item text-white font-medium text-sm">Kontakt: info@scbebbiunited.ch</span>
+                <span class="home-status-divider text-white/30">///</span>
+                <span class="home-status-item text-white font-medium text-sm">Instagram: @sc.bebbi.united</span>
+            </div>
+            <div class="home-status-group home-status-group--duplicate inline-flex items-center gap-8" aria-hidden="true">
+                <span class="home-status-lead text-bebbi-neon font-bold uppercase tracking-widest text-sm inline-flex items-center gap-2"><i
+                        data-lucide="zap" class="w-3 h-3"></i> Spielplan live: FF-17, FF-14 (9v9) & Junioren D-9</span>
+                <span class="home-status-divider text-white/30">///</span>
+                <span class="home-status-item text-white font-medium text-sm">Kontakt: info@scbebbiunited.ch</span>
+                <span class="home-status-divider text-white/30">///</span>
+                <span class="home-status-item text-white font-medium text-sm">Instagram: @sc.bebbi.united</span>
+            </div>
         </div>
     </div>
 
@@ -474,17 +696,17 @@
 
         <!-- Sektion 2: Matchcenter (Floating Panel) -->
         <section id="matchcenter" class="container mx-auto px-4 max-w-6xl reveal-on-scroll">
-            <div class="bg-bebbi-panel rounded-3xl p-1 md:p-2 shadow-2xl relative overflow-hidden group">
+            <div class="matchcenter-shell bg-bebbi-panel rounded-3xl p-1 md:p-2 shadow-2xl relative overflow-hidden group">
                 <!-- Neon Top Border -->
                 <div
                     class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-bebbi-deep via-bebbi-neon to-bebbi-deep opacity-80">
                 </div>
 
-                <div class="bg-white rounded-2xl overflow-hidden">
+                <div class="matchcenter-panel bg-white rounded-2xl overflow-hidden">
 
                     <div class="flex flex-col lg:flex-row">
                         <!-- Links: Matchday -->
-                        <div class="lg:w-7/12 p-6 sm:p-8 md:p-12 bg-white relative">
+                        <div class="matchday-side lg:w-7/12 p-6 sm:p-8 md:p-12 bg-white relative">
                             <div
                                 class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 sm:gap-0 mb-8 sm:mb-10">
                                 <div>
@@ -503,9 +725,9 @@
                             </div>
 
                             <div class="flex flex-col items-center text-center mb-8 sm:mb-10">
-                                <div
+                                <div class="matchday-team-row"
                                     class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 md:gap-14">
-                                    <div class="flex flex-col items-center gap-4 min-w-[120px] sm:min-w-[140px]">
+                                    <div class="matchday-team-column flex flex-col items-center gap-4 min-w-[120px] sm:min-w-[140px]">
                                         <div class="matchday-logo-wrap flex items-center justify-center">
                                             <img id="matchday-home-logo-img" src="assets/images/logo.png"
                                                 alt="SC Bebbi United Logo"
@@ -514,17 +736,17 @@
                                                 class="hidden px-4 py-2 rounded-xl border border-gray-200 bg-bebbi-panel text-3xl md:text-4xl font-black text-gray-500 uppercase"></span>
                                         </div>
                                         <p id="matchday-home-name"
-                                            class="text-lg md:text-xl font-black uppercase tracking-wide text-bebbi-deep">
+                                            class="matchday-team-name text-lg md:text-xl font-black uppercase tracking-wide text-bebbi-deep">
                                             SC Bebbi United
                                         </p>
                                     </div>
 
                                     <div
-                                        class="text-4xl sm:text-5xl md:text-6xl font-black text-gray-200 select-none tracking-tight">
+                                        class="matchday-vs text-4xl sm:text-5xl md:text-6xl font-black text-gray-200 select-none tracking-tight">
                                         VS
                                     </div>
 
-                                    <div class="flex flex-col items-center gap-4 min-w-[120px] sm:min-w-[140px]">
+                                    <div class="matchday-team-column flex flex-col items-center gap-4 min-w-[120px] sm:min-w-[140px]">
                                         <div class="matchday-logo-wrap flex items-center justify-center text-gray-400">
                                             <img id="matchday-away-logo-img" src="assets/images/logo.png"
                                                 alt="SC Bebbi United Logo"
@@ -533,14 +755,14 @@
                                                 class="px-4 py-2 rounded-xl border border-gray-200 bg-white text-3xl md:text-4xl font-black uppercase tracking-tight text-gray-500">FCK</span>
                                         </div>
                                         <p id="matchday-away-name"
-                                            class="text-lg md:text-xl font-black tracking-wide text-gray-600">
+                                            class="matchday-team-name text-lg md:text-xl font-black tracking-wide text-gray-600">
                                             FC Kleinbasel
                                         </p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-gray-100 pt-6 sm:pt-8">
+                            <div class="matchday-meta-grid grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-gray-100 pt-6 sm:pt-8">
                                 <div class="text-center md:text-left">
                                     <p class="text-xs text-gray-400 uppercase font-bold tracking-wider mb-2">Datum</p>
                                     <p
@@ -570,7 +792,7 @@
 
                         <!-- Rechts: Letztes Spiel -->
                         <div
-                            class="lg:w-5/12 bg-bebbi-deep text-white p-8 md:p-12 flex flex-col justify-center relative overflow-hidden">
+                            class="matchcenter-side lg:w-5/12 bg-bebbi-deep text-white p-8 md:p-12 flex flex-col justify-center relative overflow-hidden">
                             <div
                                 class="absolute inset-0 opacity-10 bg-[radial-gradient(#059669_1px,transparent_1px)] [background-size:20px_20px]">
                             </div>
@@ -592,12 +814,12 @@
                                         <div class="mt-6 flex items-end justify-center gap-8">
                                             <div class="text-center">
                                                 <div id="next-match-date"
-                                                    class="text-4xl md:text-5xl font-black text-white leading-none">14. Mär</div>
+                                                    class="next-match-stat text-4xl md:text-5xl font-black text-white leading-none">14. Mär</div>
                                                 <div class="mt-2 text-xs uppercase tracking-widest text-white/60">Datum</div>
                                             </div>
                                             <div class="text-center">
                                                 <div id="next-match-time"
-                                                    class="text-4xl md:text-5xl font-black text-bebbi-neon leading-none">11:00</div>
+                                                    class="next-match-stat text-4xl md:text-5xl font-black text-bebbi-neon leading-none">11:00</div>
                                                 <div class="mt-2 text-xs uppercase tracking-widest text-white/60">Zeit</div>
                                             </div>
                                         </div>
@@ -607,10 +829,10 @@
                                     </div>
                                 </div>
 
-                                <div id="last-result-score-row" class="flex items-end justify-center gap-10 mb-8">
+                                <div id="last-result-score-row" class="matchday-score-row flex items-end justify-center gap-10 mb-8">
                                     <div class="text-center">
                                         <div id="last-result-home-score"
-                                            class="text-6xl md:text-7xl font-black text-white/60 leading-none">1</div>
+                                            class="matchday-score text-6xl md:text-7xl font-black text-white/60 leading-none">1</div>
                                         <div id="last-result-home-name" class="mt-2 text-sm text-white/70">Allschwil</div>
                                     </div>
 
@@ -618,7 +840,7 @@
                                         <div
                                             class="inline-flex items-center justify-center px-6 py-3 rounded-2xl border border-bebbi-neon/40 bg-bebbi-void/40 shadow-neon">
                                             <span id="last-result-away-score"
-                                                class="text-6xl md:text-7xl font-black text-bebbi-neon leading-none">3</span>
+                                                class="matchday-score text-6xl md:text-7xl font-black text-bebbi-neon leading-none">3</span>
                                         </div>
                                         <div id="last-result-away-name" class="mt-2 text-sm font-bold text-white">SC Bebbi United</div>
                                     </div>
@@ -633,7 +855,7 @@
                     </div>
 
                     <!-- Full Schedule List -->
-                    <div class="bg-gray-50 p-8 md:p-10 border-t border-gray-100">
+                    <div class="schedule-panel bg-gray-50 p-8 md:p-10 border-t border-gray-100">
                         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
                             <div>
                                 <h3 class="font-bold text-xl text-bebbi-deep mb-1 flex items-center gap-2">
@@ -648,24 +870,24 @@
                                 </p>
                             </div>
                             <div class="flex flex-col items-start md:items-end gap-3">
-                                <div class="flex flex-wrap gap-2">
+                                <div class="schedule-tabs flex flex-wrap gap-2">
                                     <button data-schedule-tab="ff17"
-                                        class="px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-colors bg-bebbi-main text-white shadow-glow">
+                                        class="schedule-tab px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-colors bg-bebbi-main text-white shadow-glow">
                                         FF-17
                                     </button>
                                     <button data-schedule-tab="ff14"
-                                        class="px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-colors bg-white text-bebbi-deep border border-gray-200 hover:border-bebbi-main">
+                                        class="schedule-tab px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-colors bg-white text-bebbi-deep border border-gray-200 hover:border-bebbi-main">
                                         FF-14 (9v9)
                                     </button>
                                     <button data-schedule-tab="d9"
-                                        class="px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-colors bg-white text-bebbi-deep border border-gray-200 hover:border-bebbi-main">
+                                        class="schedule-tab px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider transition-colors bg-white text-bebbi-deep border border-gray-200 hover:border-bebbi-main">
                                         D-9
                                     </button>
                                 </div>
                                 <a id="schedule-full-link"
                                     href="https://matchcenter.fvnws.ch/default.aspx?a=trr&lng=1&oid=8&t=77789&v=480"
                                     target="_blank" rel="noreferrer"
-                                    class="inline-flex items-center gap-2 rounded-full border border-bebbi-main/20 bg-white px-4 py-2 text-xs font-black uppercase tracking-wider text-bebbi-deep transition-colors hover:border-bebbi-main hover:bg-bebbi-main hover:text-white">
+                                    class="schedule-link inline-flex items-center gap-2 rounded-full border border-bebbi-main/20 bg-white px-4 py-2 text-xs font-black uppercase tracking-wider text-bebbi-deep transition-colors hover:border-bebbi-main hover:bg-bebbi-main hover:text-white">
                                     Gesamten Spielplan öffnen
                                     <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                                 </a>
@@ -676,8 +898,11 @@
                             <p class="text-xs font-semibold uppercase tracking-wider text-gray-500">
                                 Meisterschaft Juniorinnen FF-17 2. Stärkeklasse / Frühjahrsrunde
                             </p>
-                            <div class="overflow-x-auto custom-scrollbar">
-                                <table class="w-full text-sm text-left border-collapse min-w-[600px]">
+                            <p class="schedule-scroll-hint text-xs font-medium text-gray-500">
+                                Nach links/rechts wischen
+                            </p>
+                            <div class="schedule-table-wrap overflow-x-auto custom-scrollbar">
+                                <table class="schedule-table w-full text-sm text-left border-collapse min-w-[540px]">
                                     <thead class="text-xs text-gray-500 uppercase bg-gray-100 font-bold tracking-wider">
                                         <tr>
                                             <th class="px-4 py-3 rounded-l-lg">Datum</th>
@@ -706,8 +931,11 @@
                             <p class="text-xs font-semibold uppercase tracking-wider text-gray-500">
                                 Meisterschaft Juniorinnen FF-14 (9v9) / Frühjahrsrunde
                             </p>
-                            <div class="overflow-x-auto custom-scrollbar">
-                                <table class="w-full text-sm text-left border-collapse min-w-[600px]">
+                            <p class="schedule-scroll-hint text-xs font-medium text-gray-500">
+                                Nach links/rechts wischen
+                            </p>
+                            <div class="schedule-table-wrap overflow-x-auto custom-scrollbar">
+                                <table class="schedule-table w-full text-sm text-left border-collapse min-w-[540px]">
                                     <thead class="text-xs text-gray-500 uppercase bg-gray-100 font-bold tracking-wider">
                                         <tr>
                                             <th class="px-4 py-3 rounded-l-lg">Datum</th>
@@ -736,8 +964,11 @@
                             <p class="text-xs font-semibold uppercase tracking-wider text-gray-500">
                                 Meisterschaft Junioren D-9 / Frühjahrsrunde
                             </p>
-                            <div class="overflow-x-auto custom-scrollbar">
-                                <table class="w-full text-sm text-left border-collapse min-w-[600px]">
+                            <p class="schedule-scroll-hint text-xs font-medium text-gray-500">
+                                Nach links/rechts wischen
+                            </p>
+                            <div class="schedule-table-wrap overflow-x-auto custom-scrollbar">
+                                <table class="schedule-table w-full text-sm text-left border-collapse min-w-[540px]">
                                     <thead class="text-xs text-gray-500 uppercase bg-gray-100 font-bold tracking-wider">
                                         <tr>
                                             <th class="px-4 py-3 rounded-l-lg">Datum</th>
@@ -768,26 +999,26 @@
 
         <!-- Sektion 3: Verein (Floating Panel) -->
         <section id="verein" class="container mx-auto px-4 max-w-7xl reveal-on-scroll">
-            <div class="bg-bebbi-panel rounded-3xl p-8 md:p-16 shadow-2xl relative overflow-hidden">
+            <div class="home-section-shell bg-bebbi-panel rounded-3xl p-8 md:p-16 shadow-2xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-40 h-40 bg-bebbi-main/10 rounded-bl-[3rem] pointer-events-none">
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-[1.25fr_0.9fr] gap-10 md:gap-14 items-start">
+                <div class="home-grid-tight grid grid-cols-1 lg:grid-cols-[1.25fr_0.9fr] gap-10 md:gap-14 items-start">
                     <div>
                         <span class="text-bebbi-main font-bold tracking-widest text-xs uppercase mb-3 block">Die Bebbi
                             DNA</span>
-                        <h2 class="text-4xl md:text-5xl font-black text-bebbi-deep leading-[0.95] tracking-tight mb-6">
+                        <h2 class="home-content-title text-4xl md:text-5xl font-black text-bebbi-deep leading-[0.95] tracking-tight mb-6">
                             Mehr als ein Club.<br>
                             Ein Verein für <span class="text-bebbi-main">Nachwuchs</span>, Zusammenhalt und Basel.
                         </h2>
-                        <p class="text-gray-600 text-lg leading-relaxed max-w-2xl mb-10">
+                        <p class="home-copy text-gray-600 text-lg leading-relaxed max-w-2xl mb-8 sm:mb-10">
                             SC Bebbi United steht für eine klare Haltung auf und neben dem Platz. Wir wollen Kinder und
                             Jugendliche fussballerisch fördern und gleichzeitig Werte wie Respekt, Disziplin und
                             Teamgeist mitgeben.
                         </p>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                            <div class="bg-white rounded-2xl border border-white/70 shadow-sm p-6">
+                        <div class="home-grid-tight grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div class="home-card bg-white rounded-2xl border border-white/70 shadow-sm p-6">
                                 <div
                                     class="w-12 h-12 rounded-2xl bg-bebbi-main/10 text-bebbi-deep flex items-center justify-center mb-4">
                                     <i data-lucide="heart-handshake" class="w-6 h-6"></i>
@@ -799,7 +1030,7 @@
                                 </p>
                             </div>
 
-                            <div class="bg-white rounded-2xl border border-white/70 shadow-sm p-6">
+                            <div class="home-card bg-white rounded-2xl border border-white/70 shadow-sm p-6">
                                 <div
                                     class="w-12 h-12 rounded-2xl bg-bebbi-main/10 text-bebbi-deep flex items-center justify-center mb-4">
                                     <i data-lucide="sprout" class="w-6 h-6"></i>
@@ -814,12 +1045,12 @@
                     </div>
 
                     <div class="space-y-4">
-                        <div class="bg-bebbi-deep text-white rounded-3xl p-8 shadow-glow">
+                        <div class="home-panel bg-bebbi-deep text-white rounded-3xl p-8 shadow-glow">
                             <span class="text-bebbi-neon font-bold tracking-[0.22em] text-xs uppercase">SC Bebbi
                                 United</span>
                             <div class="mt-6 flex items-end justify-between gap-6">
                                 <div>
-                                    <p class="text-3xl md:text-4xl font-black tracking-tight">Academy & Verein</p>
+                                    <p class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight">Academy & Verein</p>
                                     <p class="mt-3 max-w-xs text-sm leading-relaxed text-white/75">
                                         Förderung im technischen, taktischen und mentalen Bereich. Mit dem Blick auf
                                         den Menschen, nicht nur auf das Resultat.
@@ -830,12 +1061,12 @@
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
+                        <div class="home-grid-tight grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="home-card bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
                                 <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-bebbi-main">Academy</p>
                                 <p class="mt-3 text-lg font-black text-bebbi-deep">Förderung mit Struktur</p>
                             </div>
-                            <div class="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
+                            <div class="home-card bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
                                 <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-bebbi-main">Verein</p>
                                 <p class="mt-3 text-lg font-black text-bebbi-deep">Basler Fussballkultur</p>
                             </div>
@@ -847,28 +1078,28 @@
 
         <!-- Sektion 4: Teams (Floating Grid) -->
         <section id="teams" class="container mx-auto px-4 max-w-7xl reveal-on-scroll">
-            <div class="bg-bebbi-panel rounded-3xl p-8 md:p-12 shadow-2xl">
-                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+            <div class="home-section-shell bg-bebbi-panel rounded-3xl p-8 md:p-12 shadow-2xl">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 sm:mb-12 gap-4">
                     <div>
                         <span class="text-bebbi-main font-bold tracking-widest text-xs uppercase mb-2 block">Kader &
                             Kategorien</span>
-                        <h2 class="text-3xl md:text-4xl font-black text-bebbi-deep tracking-tight">Teams &
+                        <h2 class="home-content-title text-3xl md:text-4xl font-black text-bebbi-deep tracking-tight">Teams &
                             Kategorien</h2>
                     </div>
                     <a href="#mitmachen"
-                        class="text-bebbi-deep font-bold hover:text-bebbi-main transition-colors flex items-center gap-2 btn-interactive">
+                        class="home-cta-inline text-bebbi-deep font-bold hover:text-bebbi-main transition-colors flex items-center gap-2 btn-interactive">
                         Mehr Infos <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-[1.25fr_0.85fr] gap-6">
+                <div class="home-grid-tight grid grid-cols-1 lg:grid-cols-[1.25fr_0.85fr] gap-6">
                     <article class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
                         <div class="h-2 bg-bebbi-deep"></div>
-                        <div class="p-8">
+                        <div class="home-panel p-8">
                             <div class="flex items-start justify-between gap-4">
                                 <div>
                                     <p class="text-xs font-bold uppercase tracking-[0.24em] text-bebbi-main mb-3">Team</p>
-                                    <h3 class="text-3xl font-black tracking-tight text-bebbi-deep">Juniorinnen FF-17</h3>
+                                    <h3 class="text-2xl sm:text-3xl font-black tracking-tight text-bebbi-deep">Juniorinnen FF-17</h3>
                                 </div>
                                 <span
                                     class="text-xs bg-bebbi-main/10 text-bebbi-deep px-3 py-1.5 rounded-full font-bold uppercase tracking-[0.18em]">Aktiv</span>
@@ -879,13 +1110,13 @@
                                 Trainerinfos, Spielerfotos und weitere Teamdetails ergänzt werden.
                             </p>
 
-                            <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div class="rounded-2xl border border-bebbi-main/10 bg-bebbi-main/5 p-5">
+                            <div class="home-grid-tight mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="home-card rounded-2xl border border-bebbi-main/10 bg-bebbi-main/5 p-5">
                                     <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-bebbi-main mb-3">
                                         Trainer</p>
                                     <p class="text-lg font-black text-bebbi-deep">auf Anfrage</p>
                                 </div>
-                                <div class="rounded-2xl border border-gray-100 bg-white p-5">
+                                <div class="home-card rounded-2xl border border-gray-100 bg-white p-5">
                                     <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-bebbi-main mb-3">
                                         Trainingszeiten</p>
                                     <p class="text-lg font-black text-bebbi-deep">nach Absprache</p>
@@ -900,8 +1131,8 @@
                         </div>
                     </article>
 
-                    <div class="grid gap-4">
-                        <article class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+                    <div class="home-grid-tight grid gap-4">
+                        <article class="home-card bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
                             <div class="flex items-start justify-between gap-4">
                                 <div>
                                     <p class="text-xs font-bold uppercase tracking-[0.22em] text-bebbi-main mb-2">
@@ -922,7 +1153,7 @@
                             </a>
                         </article>
 
-                        <article class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+                        <article class="home-card bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
                             <div class="flex items-start justify-between gap-4">
                                 <div>
                                     <p class="text-xs font-bold uppercase tracking-[0.22em] text-bebbi-main mb-2">
@@ -942,7 +1173,7 @@
                             </a>
                         </article>
 
-                        <article class="rounded-2xl border border-dashed border-bebbi-main/25 bg-white/70 p-6">
+                        <article class="home-card rounded-2xl border border-dashed border-bebbi-main/25 bg-white/70 p-6">
                             <p class="text-xs font-bold uppercase tracking-[0.22em] text-bebbi-main mb-2">Demnächst</p>
                             <p class="text-sm leading-relaxed text-gray-600">
                                 Spielerfotos, Trainerprofile und zusätzliche Informationen zu den Mannschaften sollen
@@ -956,21 +1187,21 @@
 
         <!-- Sektion 6: News (Floating Panel with Skew trick) -->
         <section id="news" class="container mx-auto px-4 max-w-7xl reveal-on-scroll">
-            <div class="bg-bebbi-panel rounded-3xl p-8 md:p-14 shadow-2xl">
-                <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 items-start">
+            <div class="home-section-shell bg-bebbi-panel rounded-3xl p-8 md:p-14 shadow-2xl">
+                <div class="home-grid-tight grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 items-start">
                     <div>
                         <span class="text-bebbi-main font-bold tracking-widest text-xs uppercase mb-3 block">Aktuelles
                             vom Verein</span>
-                        <h2 class="text-3xl md:text-5xl font-black tracking-tight text-bebbi-deep leading-tight">
+                        <h2 class="home-content-title text-3xl md:text-5xl font-black tracking-tight text-bebbi-deep leading-tight">
                             Aktuelles, Flyer und Vereinsinfos auf einen Blick.
                         </h2>
-                        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">
+                        <p class="home-copy mt-5 sm:mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">
                             Hier sollen künftig offizielle Vereinsnews, Academy-Flyer, Spieltagsinfos und wichtige
                             Mitteilungen publiziert werden.
                         </p>
                     </div>
 
-                    <div class="bg-white rounded-3xl border border-gray-100 p-8 shadow-sm">
+                    <div class="home-card bg-white rounded-3xl border border-gray-100 p-8 shadow-sm">
                         <div class="flex items-center gap-3 text-bebbi-main">
                             <div
                                 class="w-12 h-12 rounded-2xl bg-bebbi-main/10 flex items-center justify-center text-bebbi-main">
@@ -993,18 +1224,18 @@
         <!-- Sektion 5: Mitmachen (Conversion Form - Dark Theme) -->
         <section id="mitmachen" class="container mx-auto px-4 max-w-5xl relative z-10 reveal-on-scroll">
             <div class="relative rounded-3xl p-1 bg-gradient-to-br from-bebbi-neon/50 to-bebbi-deep/50 shadow-glow">
-                <div class="bg-bebbi-deep rounded-[22px] p-8 md:p-12 overflow-hidden relative">
+                <div class="home-panel bg-bebbi-deep rounded-[22px] p-8 md:p-12 overflow-hidden relative">
                     <!-- Background blobs -->
                     <div
                         class="absolute top-0 right-0 w-[400px] h-[400px] bg-bebbi-main rounded-full mix-blend-overlay filter blur-[100px] opacity-20 pointer-events-none">
                     </div>
 
-                    <div class="flex flex-col lg:flex-row gap-12 relative z-10">
+                    <div class="flex flex-col lg:flex-row gap-8 sm:gap-12 relative z-10">
                         <div class="lg:w-1/3 text-white flex flex-col justify-center">
-                            <h2 class="text-3xl md:text-4xl font-black mb-6">Mitmachen bei den <span
+                            <h2 class="text-2xl sm:text-3xl md:text-4xl font-black mb-5 sm:mb-6">Mitmachen bei den <span
                                     class="text-bebbi-neon">Bebbi</span></h2>
-                            <p class="text-gray-300 mb-8">Melde dich für Probetraining oder Fragen direkt über das Formular.</p>
-                            <ul class="space-y-4 mb-8">
+                            <p class="text-gray-300 mb-6 sm:mb-8">Melde dich für Probetraining oder Fragen direkt über das Formular.</p>
+                            <ul class="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                                 <li class="flex items-center gap-3 text-sm font-medium"><i data-lucide="check-circle"
                                         class="text-bebbi-neon"></i> Probetrainings: nach Absprache</li>
                                 <li class="flex items-center gap-3 text-sm font-medium"><i data-lucide="check-circle"
@@ -1014,7 +1245,7 @@
                             </ul>
                         </div>
 
-                        <div class="lg:w-2/3 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 backdrop-blur-sm">
+                        <div class="home-card lg:w-2/3 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 backdrop-blur-sm">
                             <form id="contact-form" action="https://formspree.io/f/mjgrnbeq" method="POST" class="space-y-5">
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                                     <div>
@@ -1084,7 +1315,7 @@
 
                                 <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                                     <button id="contact-submit" type="submit"
-                                        class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-bebbi-neon text-bebbi-void font-bold uppercase tracking-wider shadow-neon hover:bg-white transition-colors">
+                                        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-bebbi-neon text-bebbi-void font-bold uppercase tracking-wider shadow-neon hover:bg-white transition-colors">
                                         Absenden <i data-lucide="send" class="w-4 h-4"></i>
                                     </button>
                                     <p class="text-xs text-white/60">
@@ -1102,22 +1333,22 @@
 
         <!-- Sektion 7: Sponsoren (Call to Action) -->
         <section id="sponsoren" class="container mx-auto px-4 max-w-7xl reveal-on-scroll">
-            <div class="bg-bebbi-deep rounded-3xl p-8 md:p-12 shadow-glow text-white">
-                <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 items-end">
+            <div class="home-section-shell bg-bebbi-deep rounded-3xl p-8 md:p-12 shadow-glow text-white">
+                <div class="home-grid-tight grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 items-end">
                     <div>
                         <span class="text-bebbi-neon font-bold tracking-[0.22em] text-xs uppercase mb-3 block">Partner
                             und Sponsoren</span>
-                        <h2 class="text-3xl md:text-5xl font-black tracking-tight leading-tight">
+                        <h2 class="home-content-title text-3xl md:text-5xl font-black tracking-tight leading-tight">
                             Gemeinsam mehr bewegen für den Nachwuchs.
                         </h2>
-                        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-white/75">
+                        <p class="home-copy mt-5 sm:mt-6 max-w-2xl text-lg leading-relaxed text-white/75">
                             Unsere Partner begleiten den Verein auf und neben dem Platz. Sichtbarkeit, lokale
                             Verbundenheit und die Förderung des Nachwuchses stehen dabei im Mittelpunkt.
                         </p>
                     </div>
 
                     <div
-                        class="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+                        class="home-card rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
                         <p class="text-bebbi-neon text-xs font-bold uppercase tracking-[0.22em]">Wirkung</p>
                         <div class="mt-5 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
                             <span class="px-3 py-2 rounded-full border border-white/10 bg-white/5">Community</span>
@@ -1126,7 +1357,7 @@
                             <span class="px-3 py-2 rounded-full border border-white/10 bg-white/5">Events</span>
                         </div>
                         <a href="#kontakt"
-                            class="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-bebbi-deep font-bold hover:bg-bebbi-neon hover:text-bebbi-void transition-all btn-interactive">
+                            class="home-cta-inline mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-bebbi-deep font-bold hover:bg-bebbi-neon hover:text-bebbi-void transition-all btn-interactive">
                             Partner werden <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
                     </div>
@@ -1137,11 +1368,11 @@
     </main>
 
     <!-- Footer Area -->
-    <footer id="kontakt" class="bg-black/50 border-t border-white/5 text-white pt-16 pb-10 backdrop-blur-md">
+    <footer id="kontakt" class="home-footer bg-black/50 border-t border-white/5 text-white pt-16 pb-10 backdrop-blur-md">
         <div class="container mx-auto px-4 max-w-7xl">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 mb-12 sm:mb-16">
                 <div>
-                    <img src="assets/images/logo.png" alt="Logo" class="h-12 w-auto mb-6 opacity-80">
+                    <img src="assets/images/logo.png" alt="Logo" class="h-10 sm:h-12 w-auto mb-4 sm:mb-6 opacity-80">
                     <p class="text-gray-500 text-sm leading-relaxed">Der Verein für Fussballkultur in Basel.</p>
                 </div>
                 <div>

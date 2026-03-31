@@ -75,7 +75,7 @@ export function ContactForm({ variant = "dark" }: ContactFormProps) {
             name="name"
             type="text"
             required
-            className={`w-full rounded-2xl border px-4 py-3 outline-none transition-colors ${inputClass}`}
+            className={`min-h-12 w-full rounded-2xl border px-4 py-3 text-sm outline-none transition-colors ${inputClass}`}
             placeholder="Vor- und Nachname"
           />
         </div>
@@ -88,7 +88,7 @@ export function ContactForm({ variant = "dark" }: ContactFormProps) {
             name="email"
             type="email"
             required
-            className={`w-full rounded-2xl border px-4 py-3 outline-none transition-colors ${inputClass}`}
+            className={`min-h-12 w-full rounded-2xl border px-4 py-3 text-sm outline-none transition-colors ${inputClass}`}
             placeholder="dein@email.ch"
           />
         </div>
@@ -100,7 +100,7 @@ export function ContactForm({ variant = "dark" }: ContactFormProps) {
             id="contact-phone"
             name="phone"
             type="tel"
-            className={`w-full rounded-2xl border px-4 py-3 outline-none transition-colors ${inputClass}`}
+            className={`min-h-12 w-full rounded-2xl border px-4 py-3 text-sm outline-none transition-colors ${inputClass}`}
             placeholder="079 123 45 67"
           />
         </div>
@@ -114,7 +114,7 @@ export function ContactForm({ variant = "dark" }: ContactFormProps) {
             type="number"
             min="4"
             max="99"
-            className={`w-full rounded-2xl border px-4 py-3 outline-none transition-colors ${inputClass}`}
+            className={`min-h-12 w-full rounded-2xl border px-4 py-3 text-sm outline-none transition-colors ${inputClass}`}
             placeholder="z. B. 15"
           />
         </div>
@@ -128,7 +128,7 @@ export function ContactForm({ variant = "dark" }: ContactFormProps) {
           <select
             id="contact-team"
             name="team"
-            className={`w-full rounded-2xl border px-4 py-3 outline-none transition-colors ${inputClass}`}
+            className={`min-h-12 w-full rounded-2xl border px-4 py-3 text-sm outline-none transition-colors ${inputClass}`}
             defaultValue=""
           >
             <option value="">Bitte wählen</option>
@@ -148,7 +148,7 @@ export function ContactForm({ variant = "dark" }: ContactFormProps) {
             id="contact-subject"
             name="subject"
             type="text"
-            className={`w-full rounded-2xl border px-4 py-3 outline-none transition-colors ${inputClass}`}
+            className={`min-h-12 w-full rounded-2xl border px-4 py-3 text-sm outline-none transition-colors ${inputClass}`}
             placeholder="Probetraining / Frage"
           />
         </div>
@@ -163,7 +163,7 @@ export function ContactForm({ variant = "dark" }: ContactFormProps) {
           name="message"
           rows={5}
           required
-          className={`w-full rounded-2xl border px-4 py-3 outline-none transition-colors ${inputClass}`}
+          className={`min-h-32 w-full rounded-2xl border px-4 py-3 text-sm outline-none transition-colors ${inputClass}`}
           placeholder="Deine Nachricht an uns..."
         />
       </div>
@@ -177,12 +177,12 @@ export function ContactForm({ variant = "dark" }: ContactFormProps) {
         <button
           type="submit"
           disabled={isPending}
-          className="inline-flex items-center justify-center gap-2 rounded-full bg-[#10b981] px-6 py-3 font-bold text-white transition-colors hover:bg-[#34d399] hover:text-[#02110b] disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#10b981] px-6 py-3.5 font-bold text-white transition-colors hover:bg-[#34d399] hover:text-[#02110b] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
         >
           {isPending ? "Wird gesendet..." : "Absenden"}
           <Icon name="send" className="h-4 w-4" />
         </button>
-        <p className={`text-xs leading-5 ${isDark ? "text-white/60" : "text-slate-500"}`}>
+        <p className={`max-w-md text-xs leading-5 ${isDark ? "text-white/60" : "text-slate-500"}`}>
           Mit dem Absenden stimmst du der Kontaktaufnahme zu. Wir melden uns so schnell wie möglich.
         </p>
       </div>

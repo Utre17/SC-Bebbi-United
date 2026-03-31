@@ -5,17 +5,17 @@ import { Icon } from "@/components/icon";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/10 bg-[rgba(0,0,0,0.35)] py-16 text-white backdrop-blur-sm">
-      <div className="mx-auto grid max-w-7xl gap-12 px-4 md:grid-cols-2 lg:grid-cols-4">
+    <footer className="border-t border-white/10 bg-[rgba(0,0,0,0.35)] py-12 text-white backdrop-blur-sm sm:py-16">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:gap-12 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <Image
             src="/assets/images/logo.png"
             alt="SC Bebbi United Logo"
             width={56}
             height={56}
-            className="h-14 w-auto"
+            className="h-12 w-auto sm:h-14"
           />
-          <p className="mt-6 max-w-xs text-sm leading-6 text-white/60">
+          <p className="mt-4 max-w-xs text-sm leading-6 text-white/60 sm:mt-6">
             Öffentliche Vereinswebsite für Academy, Teams, News, Sponsoren und den Einstieg ins offizielle Matchcenter.
           </p>
         </div>
@@ -64,13 +64,13 @@ export function SiteFooter() {
               href={contactDetails.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-white/10 bg-white/5 p-3 text-white/80 transition-colors hover:border-[#34d399]/40 hover:bg-[#34d399] hover:text-[#02110b]"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80 transition-colors hover:border-[#34d399]/40 hover:bg-[#34d399] hover:text-[#02110b]"
             >
               <Icon name="instagram" className="h-5 w-5" />
             </a>
             <a
               href={contactDetails.facebook}
-              className="rounded-full border border-white/10 bg-white/5 p-3 text-white/80 transition-colors hover:border-[#34d399]/40 hover:bg-[#34d399] hover:text-[#02110b]"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80 transition-colors hover:border-[#34d399]/40 hover:bg-[#34d399] hover:text-[#02110b]"
             >
               <Icon name="facebook" className="h-5 w-5" />
             </a>
@@ -80,7 +80,7 @@ export function SiteFooter() {
           </p>
         </div>
       </div>
-      <div className="mx-auto mt-12 max-w-7xl border-t border-white/10 px-4 pt-8 text-xs text-white/40">
+      <div className="mx-auto mt-10 max-w-7xl border-t border-white/10 px-4 pt-7 text-xs text-white/40 sm:mt-12 sm:pt-8">
         © {new Date().getFullYear()} SC Bebbi United Basel. Phase 1 der öffentlichen Vereinswebsite.
       </div>
     </footer>
