@@ -69,6 +69,10 @@
             color: #1f2937;
         }
 
+        #matchcenter {
+            scroll-margin-top: 9rem;
+        }
+
         /* Noise Overlay fixed to background */
         .bg-texture {
             position: fixed;
@@ -197,6 +201,270 @@
         .matchday-logo {
             height: 100%;
             width: 100%;
+        }
+
+        .matchcenter-side {
+            background:
+                linear-gradient(135deg, rgba(2, 17, 11, 0.98) 0%, rgba(4, 45, 32, 0.98) 54%, rgba(3, 24, 18, 0.98) 100%),
+                linear-gradient(90deg, rgba(52, 211, 153, 0.08) 0 1px, transparent 1px 100%) !important;
+        }
+
+        .result-card {
+            container-type: inline-size;
+            width: 100%;
+            max-width: 31rem;
+            margin-inline: auto;
+            padding: 1rem;
+            border: 1px solid rgba(210, 255, 236, 0.16);
+            border-radius: 0.875rem;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035)),
+                rgba(1, 13, 9, 0.58);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.12),
+                inset 0 -1px 0 rgba(52, 211, 153, 0.08),
+                0 24px 54px rgba(0, 0, 0, 0.28);
+            overflow: hidden;
+        }
+
+        .result-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(52, 211, 153, 0.075) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(52, 211, 153, 0.06) 1px, transparent 1px);
+            background-size: 28px 28px;
+            mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.78), transparent 78%);
+        }
+
+        .result-card__topline {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 0.875rem;
+        }
+
+        .result-card__eyebrow {
+            color: #9ff5d2;
+            font-size: 0.75rem;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+
+        .result-card__status {
+            display: inline-flex;
+            min-height: 2rem;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(52, 211, 153, 0.28);
+            border-radius: 0.5rem;
+            background: rgba(52, 211, 153, 0.1);
+            color: #d8fff0;
+            padding: 0.45rem 0.7rem;
+            font-size: 0.72rem;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: 0;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .result-score-card {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+            align-items: center;
+            gap: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            background: rgba(1, 10, 7, 0.62);
+            padding: 1.1rem;
+        }
+
+        .result-score-card__team {
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .result-score-card__crest {
+            display: flex;
+            width: 4.35rem;
+            height: 4.35rem;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 0.75rem;
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 14px 26px rgba(0, 0, 0, 0.24);
+        }
+
+        .result-score-card__crest--club {
+            border-color: rgba(52, 211, 153, 0.28);
+            background: rgba(225, 255, 242, 0.96);
+        }
+
+        .result-score-card__logo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 0.45rem;
+        }
+
+        .result-score-card__abbr {
+            color: #064e3b;
+            font-size: 1rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .result-score-card__side {
+            margin-top: 0.75rem;
+            color: rgba(255, 255, 255, 0.48);
+            font-size: 0.68rem;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+
+        .result-score-card__name {
+            width: 100%;
+            margin-top: 0.4rem;
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 0.86rem;
+            font-weight: 700;
+            line-height: 1.2;
+            text-wrap: balance;
+        }
+
+        .result-score-card__name--club {
+            color: #ffffff;
+            font-weight: 900;
+        }
+
+        .result-score-card__plate {
+            display: flex;
+            min-width: 8.8rem;
+            align-items: baseline;
+            justify-content: center;
+            border: 1px solid rgba(52, 211, 153, 0.24);
+            border-radius: 0.75rem;
+            background:
+                linear-gradient(180deg, rgba(52, 211, 153, 0.12), rgba(52, 211, 153, 0.035)),
+                rgba(0, 0, 0, 0.28);
+            padding: 0.45rem 0.75rem 0.65rem;
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                0 12px 34px rgba(0, 0, 0, 0.28);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .result-score-card__score {
+            color: #ffffff;
+            font-size: clamp(3.35rem, 6.8vw, 5.25rem);
+            font-weight: 950;
+            line-height: 0.9;
+        }
+
+        .result-score-card__score--muted {
+            color: rgba(255, 255, 255, 0.74);
+        }
+
+        .result-score-card__score--accent {
+            color: #34d399;
+        }
+
+        .result-score-card__divider {
+            margin-inline: 0.38rem;
+            color: rgba(255, 255, 255, 0.34);
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .result-score-card__meta {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.55rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 0.95rem;
+        }
+
+        .result-score-card__meta-item {
+            display: inline-flex;
+            min-height: 2.1rem;
+            align-items: center;
+            gap: 0.45rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            background: rgba(255, 255, 255, 0.045);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0.45rem 0.65rem;
+            font-size: 0.82rem;
+            font-weight: 700;
+            line-height: 1;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .result-score-card__meta-item svg {
+            color: #34d399;
+            flex: 0 0 auto;
+        }
+
+        @container (max-width: 26rem) {
+            .result-score-card {
+                grid-template-columns: minmax(0, 0.86fr) auto minmax(0, 0.86fr);
+                gap: 0.5rem;
+                padding: 0.7rem;
+            }
+
+            .result-score-card__crest {
+                width: 3.15rem;
+                height: 3.15rem;
+            }
+
+            .result-score-card__side {
+                margin-top: 0.55rem;
+                font-size: 0.62rem;
+            }
+
+            .result-score-card__name {
+                font-size: 0.7rem;
+            }
+
+            .result-score-card__plate {
+                min-width: 6.6rem;
+                border-radius: 0.65rem;
+                padding: 0.35rem 0.45rem 0.5rem;
+            }
+
+            .result-score-card__score {
+                font-size: clamp(2.55rem, 16cqw, 3.7rem);
+            }
+
+            .result-score-card__divider {
+                margin-inline: 0.22rem;
+                font-size: 1.7rem;
+            }
+
+            .result-score-card__meta-item {
+                min-height: 1.95rem;
+                padding-inline: 0.5rem;
+                font-size: 0.74rem;
+            }
         }
 
         body.menu-open {
@@ -402,6 +670,44 @@
                 line-height: 1;
             }
 
+            .result-card {
+                padding: 0.85rem;
+                border-radius: 0.75rem;
+            }
+
+            .result-card__topline {
+                align-items: flex-start;
+                margin-bottom: 0.75rem;
+            }
+
+            .result-score-card {
+                gap: 0.65rem;
+                padding: 0.85rem;
+            }
+
+            .result-score-card__crest {
+                width: 3.8rem;
+                height: 3.8rem;
+                border-radius: 0.65rem;
+            }
+
+            .result-score-card__plate {
+                min-width: 7.5rem;
+                padding-inline: 0.55rem;
+            }
+
+            .result-score-card__score {
+                font-size: clamp(3rem, 13vw, 4.4rem);
+            }
+
+            .result-score-card__divider {
+                margin-inline: 0.25rem;
+            }
+
+            .result-score-card__name {
+                font-size: 0.76rem;
+            }
+
             .schedule-tabs {
                 gap: 0.5rem;
             }
@@ -490,8 +796,248 @@
                 font-size: 2.5rem;
             }
 
+            .result-card__status {
+                padding-inline: 0.55rem;
+                font-size: 0.68rem;
+            }
+
+            .result-score-card {
+                grid-template-columns: minmax(0, 0.84fr) auto minmax(0, 0.84fr);
+                gap: 0.5rem;
+                padding: 0.7rem;
+            }
+
+            .result-score-card__crest {
+                width: 3.15rem;
+                height: 3.15rem;
+            }
+
+            .result-score-card__side {
+                margin-top: 0.55rem;
+                font-size: 0.62rem;
+            }
+
+            .result-score-card__name {
+                font-size: 0.7rem;
+            }
+
+            .result-score-card__plate {
+                min-width: 6.6rem;
+                border-radius: 0.65rem;
+                padding: 0.35rem 0.45rem 0.5rem;
+            }
+
+            .result-score-card__score {
+                font-size: clamp(2.55rem, 14vw, 3.7rem);
+            }
+
+            .result-score-card__divider {
+                font-size: 1.7rem;
+            }
+
+            .result-score-card__meta-item {
+                min-height: 1.95rem;
+                padding-inline: 0.5rem;
+                font-size: 0.74rem;
+            }
+
             .schedule-table {
                 min-width: 31rem;
+            }
+        }
+
+        /* Result card refinement: integrated scoreboard surface. */
+        .matchcenter-side {
+            padding: clamp(1.4rem, 3.4vw, 2.35rem) !important;
+        }
+
+        .result-card {
+            isolation: isolate;
+            max-width: 36rem;
+            padding: clamp(0.9rem, 2.5cqw, 1.25rem) 0;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+            overflow: visible;
+        }
+
+        .result-card::before {
+            inset: -0.25rem 0 0;
+            opacity: 0.5;
+            background-image:
+                linear-gradient(rgba(52, 211, 153, 0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(52, 211, 153, 0.055) 1px, transparent 1px);
+            background-size: 34px 34px;
+            mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 88%);
+        }
+
+        .result-card__topline {
+            justify-content: flex-start;
+            margin-bottom: 0.6rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(210, 255, 236, 0.14);
+        }
+
+        .result-card__eyebrow {
+            color: #f3fff9;
+            font-size: clamp(1rem, 3.35cqw, 1.35rem);
+            font-weight: 950;
+        }
+
+        .result-card__context {
+            position: relative;
+            z-index: 1;
+            display: block;
+            max-width: 29rem;
+            margin: 0 0 clamp(1.05rem, 3cqw, 1.45rem);
+            color: rgba(231, 255, 244, 0.66);
+            font-size: clamp(0.66rem, 1.9cqw, 0.78rem);
+            font-weight: 800;
+            line-height: 1.35;
+            text-align: left;
+            text-transform: uppercase;
+        }
+
+        .result-card__context::before,
+        .result-card__context::after {
+            display: none;
+        }
+
+        .result-score-card {
+            grid-template-columns: minmax(4.3rem, 1fr) auto minmax(4.3rem, 1fr);
+            gap: clamp(0.7rem, 2.2cqw, 1.25rem);
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            padding: 0;
+        }
+
+        .result-score-card__crest {
+            width: clamp(3.9rem, 12.8cqw, 5.25rem);
+            height: clamp(3.9rem, 12.8cqw, 5.25rem);
+            border-radius: 0.75rem;
+            box-shadow: 0 16px 28px rgba(0, 0, 0, 0.25);
+        }
+
+        .result-score-card__logo {
+            padding: 0.42rem;
+        }
+
+        .result-score-card__side {
+            margin-top: 0.68rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: clamp(0.62rem, 1.75cqw, 0.72rem);
+        }
+
+        .result-score-card__name {
+            max-width: 7.4rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: clamp(0.78rem, 2.35cqw, 1rem);
+            font-weight: 850;
+            line-height: 1.08;
+        }
+
+        .result-score-card__name--club {
+            color: #ffffff;
+        }
+
+        .result-score-card__plate {
+            min-width: auto;
+            min-height: clamp(4.25rem, 18.4cqw, 6.6rem);
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            align-items: center;
+            padding: 0;
+            box-shadow: none;
+        }
+
+        .result-score-card__score {
+            font-size: clamp(3.75rem, 18cqw, 6.55rem);
+            line-height: 0.95;
+            text-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+        }
+
+        .result-score-card__score--muted {
+            color: rgba(237, 250, 244, 0.86);
+        }
+
+        .result-score-card__divider {
+            margin-inline: clamp(0.16rem, 0.85cqw, 0.32rem);
+            color: #34d399;
+            font-size: clamp(2.1rem, 6.8cqw, 3.65rem);
+            text-shadow: 0 0 18px rgba(52, 211, 153, 0.34);
+        }
+
+        .result-card__status {
+            grid-column: 1 / -1;
+            justify-self: center;
+            min-height: auto;
+            margin-top: clamp(0.8rem, 2.4cqw, 1.05rem);
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            color: #78f2c4;
+            padding: 0;
+            font-size: clamp(0.78rem, 2.25cqw, 0.92rem);
+            font-weight: 900;
+            line-height: 1.18;
+            box-shadow: none;
+        }
+
+        .result-score-card__meta {
+            width: 100%;
+            margin-top: clamp(0.95rem, 3cqw, 1.3rem);
+            padding-top: clamp(0.9rem, 2.8cqw, 1.1rem);
+            border-top: 1px solid rgba(210, 255, 236, 0.13);
+            gap: clamp(1rem, 4cqw, 1.8rem);
+        }
+
+        .result-score-card__meta-item {
+            min-height: auto;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.84);
+            padding: 0.1rem 0;
+            font-size: clamp(0.82rem, 2.35cqw, 0.95rem);
+        }
+
+        @container (max-width: 27rem) {
+            .result-card {
+                padding: 0.7rem 0;
+            }
+
+            .result-card__context {
+                margin-bottom: 1rem;
+            }
+
+            .result-score-card {
+                grid-template-columns: minmax(4rem, 1fr) auto minmax(4rem, 1fr);
+                gap: 0.58rem;
+            }
+
+            .result-score-card__crest {
+                width: 3.95rem;
+                height: 3.95rem;
+            }
+
+            .result-score-card__name {
+                max-width: 5.8rem;
+                font-size: 0.76rem;
+            }
+
+            .result-score-card__score {
+                font-size: clamp(3.4rem, 16.5cqw, 4.5rem);
+            }
+
+            .result-score-card__divider {
+                font-size: 1.95rem;
+            }
+
+            .result-card__status {
+                margin-top: 0.75rem;
             }
         }
     </style>
@@ -797,10 +1343,13 @@
                                 class="absolute inset-0 opacity-10 bg-[radial-gradient(#059669_1px,transparent_1px)] [background-size:20px_20px]">
                             </div>
 
-                            <div class="relative z-10 text-center">
-                                <span
-                                    id="last-result-title"
-                                    class="text-xs font-bold uppercase tracking-widest text-bebbi-neon mb-6 block">Letztes Spiel</span>
+                            <div class="result-card relative z-10">
+                                <div class="result-card__topline">
+                                    <span id="last-result-title" class="result-card__eyebrow">Letztes Spiel</span>
+                                </div>
+                                <p id="last-result-context" class="result-card__context">
+                                    Meisterschaft Juniorinnen FF-17 2. Stärkeklasse / Frühjahrsrunde
+                                </p>
 
                                 <div id="next-match-panel" class="hidden mb-8">
                                     <div id="next-match-empty" class="text-sm text-white/80">
@@ -829,27 +1378,50 @@
                                     </div>
                                 </div>
 
-                                <div id="last-result-score-row" class="matchday-score-row flex items-end justify-center gap-10 mb-8">
-                                    <div class="text-center">
-                                        <div id="last-result-home-score"
-                                            class="matchday-score text-6xl md:text-7xl font-black text-white/60 leading-none">1</div>
-                                        <div id="last-result-home-name" class="mt-2 text-sm text-white/70">Allschwil</div>
+                                <div id="last-result-score-row" class="result-score-card">
+                                    <div class="result-score-card__team">
+                                        <div class="result-score-card__crest">
+                                            <img id="last-result-home-logo-img" src="assets/images/logo.png"
+                                                alt="" class="result-score-card__logo hidden">
+                                            <span id="last-result-home-logo-abbr" class="result-score-card__abbr">ALL</span>
+                                        </div>
+                                        <p class="result-score-card__side">Heim</p>
+                                        <div id="last-result-home-name" class="result-score-card__name">Allschwil</div>
                                     </div>
 
-                                    <div class="text-center">
-                                        <div
-                                            class="inline-flex items-center justify-center px-6 py-3 rounded-2xl border border-bebbi-neon/40 bg-bebbi-void/40 shadow-neon">
-                                            <span id="last-result-away-score"
-                                                class="matchday-score text-6xl md:text-7xl font-black text-bebbi-neon leading-none">3</span>
+                                    <div class="result-score-card__plate" aria-label="Resultat">
+                                        <span id="last-result-home-score" class="result-score-card__score result-score-card__score--muted">1</span>
+                                        <span class="result-score-card__divider">:</span>
+                                        <span id="last-result-away-score" class="result-score-card__score result-score-card__score--accent">3</span>
+                                    </div>
+
+                                    <div class="result-score-card__team">
+                                        <div class="result-score-card__crest result-score-card__crest--club">
+                                            <img id="last-result-away-logo-img" src="assets/images/logo.png"
+                                                alt="" class="result-score-card__logo">
+                                            <span id="last-result-away-logo-abbr" class="result-score-card__abbr hidden">SCB</span>
                                         </div>
-                                        <div id="last-result-away-name" class="mt-2 text-sm font-bold text-white">SC Bebbi United</div>
+                                        <p class="result-score-card__side">Gast</p>
+                                        <div id="last-result-away-name" class="result-score-card__name result-score-card__name--club">
+                                            SC Bebbi United
+                                        </div>
+                                    </div>
+
+                                    <span id="last-result-status" class="result-card__status">
+                                        Sieg
+                                    </span>
+
+                                    <div class="result-score-card__meta">
+                                        <div class="result-score-card__meta-item">
+                                            <i data-lucide="calendar" class="w-4 h-4"></i>
+                                            <span id="last-result-date">07.06.2026</span>
+                                        </div>
+                                        <div class="result-score-card__meta-item">
+                                            <i data-lucide="clock-3" class="w-4 h-4"></i>
+                                            <span id="last-result-time">13:00</span>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <span id="last-result-status"
-                                    class="inline-flex items-center gap-2 px-6 py-2.5 border border-bebbi-neon/40 rounded-full text-sm font-bold uppercase tracking-wide text-bebbi-neon bg-bebbi-void/40">
-                                    Sieg
-                                </span>
                             </div>
                         </div>
                     </div>
@@ -1413,7 +1985,18 @@
 
     <!-- Logic -->
     <script>
-        lucide.createIcons();
+        function refreshLucideIcons(attempts = 50) {
+            if (window.lucide && typeof window.lucide.createIcons === 'function') {
+                window.lucide.createIcons();
+                return;
+            }
+
+            if (attempts > 0) {
+                window.setTimeout(() => refreshLucideIcons(attempts - 1), 100);
+            }
+        }
+
+        refreshLucideIcons();
         document.getElementById('year').textContent = new Date().getFullYear();
 
         function toggleMenu() {
@@ -1519,70 +2102,102 @@
                 time: '11:00',
                 homeTeam: clubName,
                 awayTeam: 'FC Reinach',
-                location: '-'
+                location: '-',
+                homeScore: 2,
+                awayScore: 2,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-03-21',
                 time: '17:00',
                 homeTeam: 'FC Frenkendorf',
                 awayTeam: clubName,
-                location: '-'
+                location: '-',
+                homeScore: 1,
+                awayScore: 1,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-03-28',
-                time: '17:00',
+                time: '15:00',
                 homeTeam: clubName,
                 awayTeam: 'FC Gelterkinden',
-                location: '-'
+                location: '-',
+                homeScore: 5,
+                awayScore: 3,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-04-11',
                 time: '15:00',
                 homeTeam: 'FC Liestal',
                 awayTeam: clubName,
-                location: '-'
+                location: '-',
+                homeScore: 1,
+                awayScore: 3,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-04-18',
-                time: '14:00',
+                time: '15:00',
                 homeTeam: clubName,
                 awayTeam: 'FC Concordia Basel b',
-                location: '-'
+                location: '-',
+                homeScore: 1,
+                awayScore: 5,
+                status: 'Endstand'
             },
             {
-                dateIso: '2026-04-25',
-                time: '12:30',
-                homeTeam: 'FC Therwil FF-17',
+                dateIso: '2026-05-04',
+                time: '19:00',
+                homeTeam: 'FC Arlesheim',
                 awayTeam: clubName,
-                location: '-'
-            },
-            {
-                dateIso: '2026-05-02',
-                time: '11:00',
-                homeTeam: clubName,
-                awayTeam: 'FC Arlesheim',
-                location: '-'
+                location: '-',
+                homeScore: 11,
+                awayScore: 1,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-05-09',
                 time: '17:00',
                 homeTeam: 'FC Telegraph BS',
                 awayTeam: clubName,
-                location: '-'
+                location: '-',
+                homeScore: 0,
+                awayScore: 0,
+                resultCode: 'N',
+                status: 'Nullwertung'
+            },
+            {
+                dateIso: '2026-05-13',
+                time: '19:00',
+                homeTeam: 'FC Therwil FF-17',
+                awayTeam: clubName,
+                location: '-',
+                homeScore: 6,
+                awayScore: 0,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-05-30',
                 time: '13:00',
                 homeTeam: clubName,
                 awayTeam: 'BSC Old Boys b',
-                location: '-'
+                location: '-',
+                homeScore: 0,
+                awayScore: 3,
+                resultCode: 'F',
+                status: 'Forfait'
             },
             {
-                dateIso: '2026-06-06',
-                time: '',
+                dateIso: '2026-06-07',
+                time: '13:00',
                 homeTeam: 'SC Steinen Basel',
                 awayTeam: clubName,
-                location: '-'
+                location: '-',
+                homeScore: 12,
+                awayScore: 1,
+                status: 'Endstand'
             }
         ];
 
@@ -1592,135 +2207,189 @@
                 time: '16:00',
                 homeTeam: 'FC Therwil FF-14/9',
                 awayTeam: clubName,
-                location: '-'
+                location: '-',
+                homeScore: 6,
+                awayScore: 1,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-04-11',
                 time: '11:00',
                 homeTeam: clubName,
                 awayTeam: 'FC Nordstern BS',
-                location: '-'
+                location: '-',
+                homeScore: 1,
+                awayScore: 8,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-04-18',
                 time: '10:00',
                 homeTeam: 'FC Arlesheim',
                 awayTeam: clubName,
-                location: '-'
+                location: '-',
+                homeScore: 12,
+                awayScore: 0,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-04-25',
                 time: '13:00',
                 homeTeam: clubName,
                 awayTeam: 'FC Frenkendorf blau',
-                location: '-'
+                location: '-',
+                homeScore: 0,
+                awayScore: 10,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-05-02',
                 time: '11:00',
                 homeTeam: 'FC Concordia Basel a',
                 awayTeam: clubName,
-                location: '-'
+                location: '-',
+                homeScore: 12,
+                awayScore: 0,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-05-10',
                 time: '13:00',
                 homeTeam: clubName,
                 awayTeam: 'FC Breitenbach',
-                location: '-'
+                location: '-',
+                homeScore: 0,
+                awayScore: 3,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-05-16',
                 time: '10:00',
                 homeTeam: 'SV Muttenz',
                 awayTeam: clubName,
-                location: '-'
+                location: '-',
+                homeScore: 7,
+                awayScore: 1,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-05-31',
                 time: '11:30',
                 homeTeam: 'FC Allschwil',
                 awayTeam: clubName,
-                location: '-'
+                location: '-',
+                homeScore: 4,
+                awayScore: 0,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-06-07',
                 time: '13:00',
                 homeTeam: clubName,
                 awayTeam: 'BSC Old Boys a',
-                location: '-'
+                location: '-',
+                homeScore: 2,
+                awayScore: 8,
+                status: 'Endstand'
             }
         ];
 
         const matchesD9 = [
             {
-                dateIso: '2026-03-21',
-                time: '11:00',
+                dateIso: '2026-03-25',
+                time: '18:30',
                 homeTeam: 'FC Biel-Benken D1',
                 awayTeam: clubName,
-                location: '-'
-            },
-            {
-                dateIso: '2026-03-28',
-                time: '15:00',
-                homeTeam: clubName,
-                awayTeam: 'FC Black Stars D2',
-                location: '-'
+                location: '-',
+                homeScore: 7,
+                awayScore: 7,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-04-12',
                 time: '11:30',
                 homeTeam: 'FC Breitenbach rot',
                 awayTeam: clubName,
-                location: '-'
+                location: '-',
+                homeScore: 15,
+                awayScore: 3,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-04-18',
                 time: '11:00',
                 homeTeam: clubName,
                 awayTeam: 'FC Ettingen',
-                location: '-'
+                location: '-',
+                homeScore: 2,
+                awayScore: 13,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-04-25',
                 time: '11:45',
                 homeTeam: 'FC Laufen D14 schwarz',
                 awayTeam: clubName,
-                location: '-'
+                location: '-',
+                homeScore: 15,
+                awayScore: 5,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-05-02',
                 time: '11:00',
                 homeTeam: clubName,
                 awayTeam: 'FC Nordstern BS schwarz',
-                location: '-'
+                location: '-',
+                homeScore: 2,
+                awayScore: 18,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-05-09',
                 time: '10:00',
                 homeTeam: 'FC Oberwil rot',
                 awayTeam: clubName,
-                location: '-'
+                location: '-',
+                homeScore: 9,
+                awayScore: 3,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-05-16',
                 time: '11:00',
                 homeTeam: clubName,
                 awayTeam: 'FC Telegraph BS weiss',
-                location: '-'
+                location: '-',
+                homeScore: 0,
+                awayScore: 19,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-05-30',
                 time: '13:00',
                 homeTeam: clubName,
                 awayTeam: 'US Olympia 1963',
-                location: '-'
+                location: '-',
+                homeScore: 7,
+                awayScore: 19,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-06-06',
                 time: '09:30',
                 homeTeam: 'SC Binningen D9 c',
                 awayTeam: clubName,
+                location: '-',
+                homeScore: 16,
+                awayScore: 0,
+                status: 'Endstand'
+            },
+            {
+                dateIso: '2026-06-13',
+                time: '13:00',
+                homeTeam: clubName,
+                awayTeam: 'FC Black Stars D2',
                 location: '-'
             }
         ];
@@ -1797,6 +2466,26 @@
             }
         }
 
+        function setResultTeamVisual(side, teamName) {
+            const imgEl = document.getElementById(`last-result-${side}-logo-img`);
+            const abbrEl = document.getElementById(`last-result-${side}-logo-abbr`);
+            if (!imgEl || !abbrEl) return;
+
+            const isClub = teamName === clubName;
+            const logoSrc = isClub ? clubLogoSrc : teamLogos[teamName];
+
+            if (logoSrc) {
+                imgEl.src = logoSrc;
+                imgEl.alt = `${teamName} Logo`;
+                imgEl.classList.remove('hidden');
+                abbrEl.classList.add('hidden');
+            } else {
+                abbrEl.textContent = getAbbreviation(teamName);
+                abbrEl.classList.remove('hidden');
+                imgEl.classList.add('hidden');
+            }
+        }
+
         function renderMatchday(match) {
             if (!match) return;
 
@@ -1836,6 +2525,10 @@
             return dateTime;
         }
 
+        function hasMatchResult(match) {
+            return Number.isFinite(match?.homeScore) && Number.isFinite(match?.awayScore);
+        }
+
         function getNextMatch(list) {
             if (!Array.isArray(list) || list.length === 0) return null;
 
@@ -1844,11 +2537,27 @@
 
             const upcoming = list
                 .map((match) => ({ match, dateTime: getMatchDateTime(match) }))
-                .filter((entry) => entry.dateTime && !Number.isNaN(entry.dateTime.getTime()))
+                .filter((entry) => (
+                    entry.dateTime &&
+                    !Number.isNaN(entry.dateTime.getTime()) &&
+                    !hasMatchResult(entry.match)
+                ))
                 .sort((a, b) => a.dateTime - b.dateTime);
 
             const next = upcoming.find((entry) => entry.dateTime >= today);
-            return (next || upcoming[0] || { match: list[0] }).match;
+            return (next || upcoming[0])?.match || null;
+        }
+
+        function getLastPlayedResult(list) {
+            if (!Array.isArray(list) || list.length === 0) return null;
+
+            const played = list
+                .filter((match) => hasMatchResult(match))
+                .map((match) => ({ match, dateTime: getMatchDateTime(match) }))
+                .filter((entry) => entry.dateTime && !Number.isNaN(entry.dateTime.getTime()))
+                .sort((a, b) => b.dateTime - a.dateTime);
+
+            return played[0]?.match || null;
         }
 
         function renderNextMatch(match) {
@@ -1880,6 +2589,7 @@
         }
 
         function renderLastResult(result, matchList) {
+            const resolvedResult = result || getLastPlayedResult(matchList);
             const titleEl = document.getElementById('last-result-title');
             const nextMatchPanelEl = document.getElementById('next-match-panel');
             const scoreRowEl = document.getElementById('last-result-score-row');
@@ -1888,8 +2598,10 @@
             const homeNameEl = document.getElementById('last-result-home-name');
             const awayNameEl = document.getElementById('last-result-away-name');
             const statusEl = document.getElementById('last-result-status');
+            const dateEl = document.getElementById('last-result-date');
+            const timeEl = document.getElementById('last-result-time');
 
-            if (!result) {
+            if (!resolvedResult) {
                 if (titleEl) titleEl.textContent = 'Nächstes Spiel';
                 if (nextMatchPanelEl) nextMatchPanelEl.classList.remove('hidden');
                 if (scoreRowEl) scoreRowEl.classList.add('hidden');
@@ -1903,11 +2615,22 @@
             if (scoreRowEl) scoreRowEl.classList.remove('hidden');
             if (statusEl) statusEl.classList.remove('hidden');
 
-            if (homeScoreEl) homeScoreEl.textContent = String(result.homeScore);
-            if (awayScoreEl) awayScoreEl.textContent = String(result.awayScore);
-            if (homeNameEl) homeNameEl.textContent = result.homeTeam;
-            if (awayNameEl) awayNameEl.textContent = result.awayTeam;
-            if (statusEl) statusEl.textContent = result.status;
+            if (homeScoreEl) homeScoreEl.textContent = String(resolvedResult.homeScore);
+            if (awayScoreEl) awayScoreEl.textContent = String(resolvedResult.awayScore);
+            if (homeNameEl) homeNameEl.textContent = resolvedResult.homeTeam;
+            if (awayNameEl) awayNameEl.textContent = resolvedResult.awayTeam;
+            if (statusEl) statusEl.textContent = resolvedResult.status || 'Endstand';
+            if (dateEl) dateEl.textContent = resolvedResult.dateIso
+                ? new Intl.DateTimeFormat('de-CH', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric'
+                }).format(getDateFromMatch(resolvedResult))
+                : formatMatchDateShort(resolvedResult);
+            if (timeEl) timeEl.textContent = resolvedResult.time || '-';
+
+            setResultTeamVisual('home', resolvedResult.homeTeam);
+            setResultTeamVisual('away', resolvedResult.awayTeam);
         }
 
         function buildMatchRow(match, index, totalVisible, officialUrl) {
@@ -1920,13 +2643,19 @@
             const dateLabel = formatMatchDateLabel(match);
             const location = match.location || '-';
             const time = match.time || '-';
+            const resultDisplay = hasMatchResult(match)
+                ? `${match.homeScore} : ${match.awayScore}${match.resultCode ? ` ${match.resultCode}` : ''}`
+                : '-';
+            const resultClasses = hasMatchResult(match)
+                ? 'font-semibold text-gray-700'
+                : 'text-gray-400';
 
             return `
                 <tr class="cursor-pointer hover:bg-bebbi-main/5 transition-colors ${borderClass}" tabindex="0" role="link" data-official-url="${officialUrl}" title="Offizielle Details auf FVNWS öffnen">
                     <td class="px-4 py-3 font-semibold text-gray-800">${dateLabel}</td>
                     <td class="px-4 py-3 text-gray-600">${time}</td>
                     <td class="px-4 py-3 text-right ${homeClasses}">${match.homeTeam}</td>
-                    <td class="px-4 py-3 text-center text-gray-400">-</td>
+                    <td class="px-4 py-3 text-center ${resultClasses}">${resultDisplay}</td>
                     <td class="px-4 py-3 ${awayClasses}">${match.awayTeam}</td>
                     <td class="px-4 py-3 text-gray-500">${location}<span class="ml-2 text-[11px] font-bold uppercase tracking-[0.16em] text-bebbi-main">FVNWS</span></td>
                 </tr>
@@ -1945,7 +2674,12 @@
                 : list;
 
             matchListBody.innerHTML = visibleMatches
-                .map((match, index) => buildMatchRow(match, index, visibleMatches.length, officialUrl))
+                .map((match, index) => buildMatchRow(
+                    match,
+                    index,
+                    visibleMatches.length,
+                    match.officialUrl || officialUrl
+                ))
                 .join('');
 
             matchListBody.querySelectorAll('tr[data-official-url]').forEach((row) => {
@@ -1989,13 +2723,18 @@
 
         function renderMatchdayForTab(tab) {
             const config = scheduleConfig[tab] || scheduleConfig.ff17;
-            const matchdayMatch = getNextMatch(config.matches) || config.matches[0];
+            const matchdayMatch = getNextMatch(config.matches) || getLastPlayedResult(config.matches) || config.matches[0];
             renderMatchday(matchdayMatch);
             renderLastResult(lastResult, config.matches);
 
             const competitionEl = document.getElementById('matchday-competition');
             if (competitionEl) {
                 competitionEl.textContent = config.label;
+            }
+
+            const resultContextEl = document.getElementById('last-result-context');
+            if (resultContextEl) {
+                resultContextEl.textContent = config.label;
             }
         }
 

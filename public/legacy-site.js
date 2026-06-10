@@ -1,5 +1,16 @@
 (() => {
-        lucide.createIcons();
+        function refreshLucideIcons(attempts = 50) {
+            if (window.lucide && typeof window.lucide.createIcons === 'function') {
+                window.lucide.createIcons();
+                return;
+            }
+
+            if (attempts > 0) {
+                window.setTimeout(() => refreshLucideIcons(attempts - 1), 100);
+            }
+        }
+
+        refreshLucideIcons();
         document.getElementById('year').textContent = new Date().getFullYear();
 
         function setMenuOpen(isOpen) {
@@ -133,7 +144,7 @@
             },
             {
                 dateIso: '2026-03-28',
-                time: '17:00',
+                time: '15:00',
                 homeTeam: clubName,
                 awayTeam: 'FC Gelterkinden',
                 location: '-',
@@ -148,7 +159,10 @@
                 homeTeam: 'FC Liestal',
                 awayTeam: clubName,
                 location: '-',
-                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4255372&v=0'
+                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4255372&v=0',
+                homeScore: 1,
+                awayScore: 3,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-04-18',
@@ -156,30 +170,41 @@
                 homeTeam: clubName,
                 awayTeam: 'FC Concordia Basel b',
                 location: '-',
-                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4255376&v=0'
+                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4255376&v=0',
+                homeScore: 1,
+                awayScore: 5,
+                status: 'Endstand'
             },
             {
-                dateIso: '2026-04-25',
-                time: '12:30',
-                homeTeam: 'FC Therwil FF-17',
+                dateIso: '2026-05-04',
+                time: '19:00',
+                homeTeam: 'FC Arlesheim',
                 awayTeam: clubName,
                 location: '-',
-                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4255383&v=0'
-            },
-            {
-                dateIso: '2026-05-02',
-                time: '11:00',
-                homeTeam: clubName,
-                awayTeam: 'FC Arlesheim',
-                location: '-',
-                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4255385&v=0'
+                homeScore: 11,
+                awayScore: 1,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-05-09',
                 time: '17:00',
                 homeTeam: 'FC Telegraph BS',
                 awayTeam: clubName,
-                location: '-'
+                location: '-',
+                homeScore: 0,
+                awayScore: 0,
+                resultCode: 'N',
+                status: 'Nullwertung'
+            },
+            {
+                dateIso: '2026-05-13',
+                time: '19:00',
+                homeTeam: 'FC Therwil FF-17',
+                awayTeam: clubName,
+                location: '-',
+                homeScore: 6,
+                awayScore: 0,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-05-30',
@@ -187,7 +212,11 @@
                 homeTeam: clubName,
                 awayTeam: 'BSC Old Boys b',
                 location: '-',
-                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4255404&v=0'
+                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4255404&v=0',
+                homeScore: 0,
+                awayScore: 3,
+                resultCode: 'F',
+                status: 'Forfait'
             },
             {
                 dateIso: '2026-06-07',
@@ -195,7 +224,10 @@
                 homeTeam: 'SC Steinen Basel',
                 awayTeam: clubName,
                 location: '-',
-                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4255405&v=0'
+                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4255405&v=0',
+                homeScore: 12,
+                awayScore: 1,
+                status: 'Endstand'
             }
         ];
 
@@ -215,56 +247,80 @@
                 time: '11:00',
                 homeTeam: clubName,
                 awayTeam: 'FC Nordstern BS',
-                location: '-'
+                location: '-',
+                homeScore: 1,
+                awayScore: 8,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-04-18',
                 time: '10:00',
                 homeTeam: 'FC Arlesheim',
                 awayTeam: clubName,
-                location: '-'
+                location: '-',
+                homeScore: 12,
+                awayScore: 0,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-04-25',
                 time: '13:00',
                 homeTeam: clubName,
                 awayTeam: 'FC Frenkendorf blau',
-                location: '-'
+                location: '-',
+                homeScore: 0,
+                awayScore: 10,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-05-02',
                 time: '11:00',
                 homeTeam: 'FC Concordia Basel a',
                 awayTeam: clubName,
-                location: '-'
+                location: '-',
+                homeScore: 12,
+                awayScore: 0,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-05-10',
                 time: '13:00',
                 homeTeam: clubName,
                 awayTeam: 'FC Breitenbach',
-                location: '-'
+                location: '-',
+                homeScore: 0,
+                awayScore: 3,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-05-16',
                 time: '10:00',
                 homeTeam: 'SV Muttenz',
                 awayTeam: clubName,
-                location: '-'
+                location: '-',
+                homeScore: 7,
+                awayScore: 1,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-05-31',
                 time: '11:30',
                 homeTeam: 'FC Allschwil',
                 awayTeam: clubName,
-                location: '-'
+                location: '-',
+                homeScore: 4,
+                awayScore: 0,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-06-07',
                 time: '13:00',
                 homeTeam: clubName,
                 awayTeam: 'BSC Old Boys a',
-                location: '-'
+                location: '-',
+                homeScore: 2,
+                awayScore: 8,
+                status: 'Endstand'
             }
         ];
 
@@ -286,7 +342,10 @@
                 homeTeam: 'FC Breitenbach rot',
                 awayTeam: clubName,
                 location: '-',
-                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4256391&v=0'
+                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4256391&v=0',
+                homeScore: 15,
+                awayScore: 3,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-04-18',
@@ -294,7 +353,10 @@
                 homeTeam: clubName,
                 awayTeam: 'FC Ettingen',
                 location: '-',
-                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4256399&v=0'
+                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4256399&v=0',
+                homeScore: 2,
+                awayScore: 13,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-04-25',
@@ -302,7 +364,10 @@
                 homeTeam: 'FC Laufen D14 schwarz',
                 awayTeam: clubName,
                 location: '-',
-                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4256404&v=0'
+                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4256404&v=0',
+                homeScore: 15,
+                awayScore: 5,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-05-02',
@@ -310,7 +375,10 @@
                 homeTeam: clubName,
                 awayTeam: 'FC Nordstern BS schwarz',
                 location: '-',
-                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4256414&v=0'
+                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4256414&v=0',
+                homeScore: 2,
+                awayScore: 18,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-05-09',
@@ -318,7 +386,10 @@
                 homeTeam: 'FC Oberwil rot',
                 awayTeam: clubName,
                 location: '-',
-                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4256417&v=0'
+                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4256417&v=0',
+                homeScore: 9,
+                awayScore: 3,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-05-16',
@@ -326,7 +397,10 @@
                 homeTeam: clubName,
                 awayTeam: 'FC Telegraph BS weiss',
                 location: '-',
-                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4256429&v=0'
+                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4256429&v=0',
+                homeScore: 0,
+                awayScore: 19,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-05-30',
@@ -334,7 +408,10 @@
                 homeTeam: clubName,
                 awayTeam: 'US Olympia 1963',
                 location: '-',
-                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4256430&v=0'
+                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4256430&v=0',
+                homeScore: 7,
+                awayScore: 19,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-06-06',
@@ -342,7 +419,10 @@
                 homeTeam: 'SC Binningen D9 c',
                 awayTeam: clubName,
                 location: '-',
-                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4256443&v=0'
+                officialUrl: 'https://matchcenter.fvnws.ch/default.aspx?ln=&lng=1&oid=8&tg=4256443&v=0',
+                homeScore: 16,
+                awayScore: 0,
+                status: 'Endstand'
             },
             {
                 dateIso: '2026-06-13',
@@ -426,6 +506,26 @@
             }
         }
 
+        function setResultTeamVisual(side, teamName) {
+            const imgEl = document.getElementById(`last-result-${side}-logo-img`);
+            const abbrEl = document.getElementById(`last-result-${side}-logo-abbr`);
+            if (!imgEl || !abbrEl) return;
+
+            const isClub = teamName === clubName;
+            const logoSrc = isClub ? clubLogoSrc : teamLogos[teamName];
+
+            if (logoSrc) {
+                imgEl.src = logoSrc;
+                imgEl.alt = `${teamName} Logo`;
+                imgEl.classList.remove('hidden');
+                abbrEl.classList.add('hidden');
+            } else {
+                abbrEl.textContent = getAbbreviation(teamName);
+                abbrEl.classList.remove('hidden');
+                imgEl.classList.add('hidden');
+            }
+        }
+
         function renderMatchday(match) {
             if (!match) return;
 
@@ -485,7 +585,7 @@
                 .sort((a, b) => a.dateTime - b.dateTime);
 
             const next = upcoming.find((entry) => entry.dateTime >= today);
-            return (next || upcoming[0] || { match: list[0] }).match;
+            return (next || upcoming[0])?.match || null;
         }
 
         function getLastPlayedResult(list) {
@@ -538,6 +638,8 @@
             const homeNameEl = document.getElementById('last-result-home-name');
             const awayNameEl = document.getElementById('last-result-away-name');
             const statusEl = document.getElementById('last-result-status');
+            const dateEl = document.getElementById('last-result-date');
+            const timeEl = document.getElementById('last-result-time');
 
             if (!resolvedResult) {
                 if (titleEl) titleEl.textContent = 'Nächstes Spiel';
@@ -558,6 +660,17 @@
             if (homeNameEl) homeNameEl.textContent = resolvedResult.homeTeam;
             if (awayNameEl) awayNameEl.textContent = resolvedResult.awayTeam;
             if (statusEl) statusEl.textContent = resolvedResult.status || 'Endstand';
+            if (dateEl) dateEl.textContent = resolvedResult.dateIso
+                ? new Intl.DateTimeFormat('de-CH', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric'
+                }).format(getDateFromMatch(resolvedResult))
+                : formatMatchDateShort(resolvedResult);
+            if (timeEl) timeEl.textContent = resolvedResult.time || '-';
+
+            setResultTeamVisual('home', resolvedResult.homeTeam);
+            setResultTeamVisual('away', resolvedResult.awayTeam);
         }
 
         function buildMatchRow(match, index, totalVisible, officialUrl) {
@@ -571,7 +684,7 @@
             const location = match.location || '-';
             const time = match.time || '-';
             const resultDisplay = hasMatchResult(match)
-                ? `${match.homeScore} : ${match.awayScore}`
+                ? `${match.homeScore} : ${match.awayScore}${match.resultCode ? ` ${match.resultCode}` : ''}`
                 : '-';
             const resultClasses = hasMatchResult(match)
                 ? 'font-semibold text-gray-700'
@@ -650,13 +763,18 @@
 
         function renderMatchdayForTab(tab) {
             const config = scheduleConfig[tab] || scheduleConfig.ff17;
-            const matchdayMatch = getNextMatch(config.matches) || config.matches[0];
+            const matchdayMatch = getNextMatch(config.matches) || getLastPlayedResult(config.matches) || config.matches[0];
             renderMatchday(matchdayMatch);
             renderLastResult(lastResult, config.matches);
 
             const competitionEl = document.getElementById('matchday-competition');
             if (competitionEl) {
                 competitionEl.textContent = config.label;
+            }
+
+            const resultContextEl = document.getElementById('last-result-context');
+            if (resultContextEl) {
+                resultContextEl.textContent = config.label;
             }
         }
 
