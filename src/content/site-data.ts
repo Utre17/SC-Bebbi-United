@@ -67,7 +67,7 @@ export const navItems: NavItem[] = [
 ];
 
 export const tickerItems = [
-  "Spielplan und Resultate offiziell ueber FVNWS",
+  "Herbstrunde 2026: FF-17, FF-14 (9v9) und Junioren C",
   "Kontakt: info@scbebbiunited.ch",
   "Instagram: @sc.bebbi.united",
   "Probetraining nach Absprache",
@@ -84,7 +84,7 @@ export const teams: Team[] = [
     trainer: "Trainerteam auf Anfrage",
     training: "Trainingszeiten nach Absprache",
     focus: "Technik, Intensitaet, Verantwortung im Team",
-    officialUrl: "https://matchcenter.fvnws.ch/default.aspx?a=trr&lng=1&oid=8&t=77789&v=480",
+    officialUrl: "https://matchcenter.fvnws.ch/default.aspx?a=pt&lng=1&ls=25808&oid=8&sg=70260&t=79287&v=1827266",
   },
   {
     slug: "ff-14",
@@ -96,19 +96,19 @@ export const teams: Team[] = [
     trainer: "Trainerteam auf Anfrage",
     training: "Trainingszeiten nach Absprache",
     focus: "Ballgefuehl, Orientierung, Mut im Spiel",
-    officialUrl: "https://matchcenter.fvnws.ch/default.aspx?a=trr&lng=1&oid=8&t=77790&v=480",
+    officialUrl: "https://matchcenter.fvnws.ch/default.aspx?a=pt&lng=1&ls=25810&oid=8&sg=70263&t=79298&v=1827266",
   },
   {
-    slug: "d-9",
-    name: "Junioren D-9",
+    slug: "junioren-c",
+    name: "Junioren C",
     ageGroup: "Nachwuchs",
     status: "Aktiv",
     summary:
-      "Im D-9 geht es um die Basis: viele Ballaktionen, gute Gewohnheiten im Training und Freude am gemeinsamen Lernen im Team.",
+      "Die Junioren C entwickeln ihre technischen Grundlagen weiter und verbinden sie mit Spielverständnis, Tempo und wachsender Verantwortung im Team.",
     trainer: "Trainerteam auf Anfrage",
     training: "Trainingszeiten nach Absprache",
-    focus: "Grundtechnik, Entscheidungsverhalten, Teamgeist",
-    officialUrl: "https://matchcenter.fvnws.ch/default.aspx?a=trr&lng=1&oid=8&t=77791&v=480",
+    focus: "Technik, Spielverständnis, Tempo und Teamgeist",
+    officialUrl: "https://matchcenter.fvnws.ch/default.aspx?a=pt&lng=1&ls=26135&oid=8&sg=71116&t=79304&v=1827266",
   },
 ];
 

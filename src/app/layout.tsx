@@ -13,7 +13,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "SC Bebbi United Basel 2025",
   description:
-    "SC Bebbi United Basel: Spielplan und Matchcenter der Juniorinnen FF-17 & FF-14 (9v9) sowie Junioren D-9 (Fruehjahrsrunde).",
+    "SC Bebbi United Basel: Spielplan und Matchcenter der Juniorinnen FF-17 & FF-14 (9v9) sowie Junioren C (Herbstrunde 2026).",
   metadataBase: new URL("https://www.scbebbiunited.ch"),
   alternates: {
     canonical: "https://www.scbebbiunited.ch/",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "SC Bebbi United Basel 2025",
     description:
-      "Spielplan und Matchcenter der Juniorinnen FF-17 & FF-14 (9v9) sowie Junioren D-9 (Fruehjahrsrunde).",
+      "Spielplan und Matchcenter der Juniorinnen FF-17 & FF-14 (9v9) sowie Junioren C (Herbstrunde 2026).",
     url: "https://www.scbebbiunited.ch/",
     images: ["/assets/images/logo.png"],
   },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "SC Bebbi United Basel 2025",
     description:
-      "Spielplan und Matchcenter der Juniorinnen FF-17 & FF-14 (9v9) sowie Junioren D-9 (Fruehjahrsrunde).",
+      "Spielplan und Matchcenter der Juniorinnen FF-17 & FF-14 (9v9) sowie Junioren C (Herbstrunde 2026).",
     images: ["/assets/images/logo.png"],
   },
   icons: {
