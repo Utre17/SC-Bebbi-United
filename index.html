@@ -471,6 +471,30 @@
             overflow: hidden;
         }
 
+        .home-hero-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.85rem;
+            color: rgba(255, 255, 255, 0.66);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            line-height: 1.25;
+            text-transform: uppercase;
+        }
+
+        .home-hero-meta__season {
+            color: #6ee7b7;
+            font-weight: 700;
+        }
+
+        .home-hero-meta__divider {
+            width: 1px;
+            height: 0.9rem;
+            background: rgba(255, 255, 255, 0.28);
+        }
+
         .home-status-rail {
             -ms-overflow-style: none;
             scrollbar-width: none;
@@ -578,6 +602,12 @@
             .home-hero-glow {
                 width: min(72vw, 18rem);
                 height: min(72vw, 18rem);
+            }
+
+            .home-hero-meta {
+                gap: 0.65rem;
+                font-size: 0.64rem;
+                letter-spacing: 0.12em;
             }
 
             .home-status-rail {
@@ -1185,10 +1215,11 @@
                 Leidenschaft. Zusammenhalt. Basler Kultur.<br>
                 <span class="text-white font-medium">Dein neuer Verein im Herzen der Stadt.</span>
             </p>
-            <div class="flex items-center gap-3 mb-8 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-[11px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-widest text-gray-200 reveal-on-scroll"
-                style="transition-delay: 350ms;">
-                <span class="w-2 h-2 rounded-full bg-bebbi-neon"></span>
-                Spielplan live · Kontaktformular aktiv
+            <div class="home-hero-meta mb-8 reveal-on-scroll" style="transition-delay: 350ms;"
+                aria-label="Herbstrunde 2026. Spielplan und Kontakt online.">
+                <span class="home-hero-meta__season">Herbstrunde 2026</span>
+                <span class="home-hero-meta__divider" aria-hidden="true"></span>
+                <span>Spielplan und Kontakt online</span>
             </div>
 
             <div class="flex flex-col sm:flex-row gap-4 sm:gap-5 w-full justify-center px-4 reveal-on-scroll"
@@ -1204,14 +1235,6 @@
             </div>
         </div>
 
-        <!-- Scroll Down Indicator -->
-        <div class="hidden md:block absolute bottom-8 md:bottom-10 animate-bounce cursor-pointer opacity-70 hover:opacity-100 transition-opacity z-10"
-            onclick="document.getElementById('matchcenter').scrollIntoView({behavior: 'smooth'})">
-            <div class="flex flex-col items-center gap-2">
-                <span class="text-[10px] uppercase tracking-widest text-white/50">Scroll</span>
-                <i data-lucide="arrow-down-circle" class="w-8 h-8 text-bebbi-neon"></i>
-            </div>
-        </div>
     </section>
 
     <!-- Ticker Section -->

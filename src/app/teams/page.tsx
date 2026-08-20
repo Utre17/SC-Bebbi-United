@@ -30,7 +30,7 @@ export default function TeamsPage() {
             rel="noopener noreferrer"
             className="mt-8 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-[#064e3b] transition-colors hover:bg-[#34d399] hover:text-[#02110b] sm:w-auto"
           >
-            Gesamtes FVNWS-Matchcenter
+            Alle Spiele von SC Bebbi United
             <Icon name="arrowUpRight" className="h-4 w-4" />
           </a>
         </section>

@@ -113,7 +113,7 @@ export const teams: Team[] = [
 ];
 
 export const clubMatchcenterUrl =
-  "https://matchcenter.fvnws.ch/default.aspx?lng=1&v=480&bn=0";
+  "https://matchcenter.fvnws.ch/default.aspx?lng=1&v=1827266&bn=0";
 
 export const academyPillars: AcademyPillar[] = [
   {
